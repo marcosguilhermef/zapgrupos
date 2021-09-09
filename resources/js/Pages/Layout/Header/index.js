@@ -14,14 +14,18 @@ const NavBarComponent = (props) => {
     const user = props.user 
     const verified  =   props.verified
     const authenticated = props.authenticated
-    const logoNav = window.location.origin+'/images/logo2.svg'
+    const logoNav = window.location.origin+'/assets/logo/logo.png'
     const NavParaAuthenticados = () => {
         return(
                         <Nav className="mr-auto">
-                            <Nav.Link href="/comparador">Comparador</Nav.Link>
-                            <NavDropdown title="Informações" id="basic-nav-dropdown">
-                                <NavDropdown.Item href="/banca">Bancas</NavDropdown.Item>
-                                <NavDropdown.Item href="/adicionar-banca">Reinvindicar Banca</NavDropdown.Item>
+                            <Nav.Link href="/">Iniciar</Nav.Link>
+                            <NavDropdown title="Categorias" id="basic-nav-dropdown">
+                                <NavDropdown.Item href="/">Amizade</NavDropdown.Item>
+                                <NavDropdown.Item href="/">Namoro</NavDropdown.Item>
+                                <NavDropdown.Item href="/">Trabalho</NavDropdown.Item>
+                                <NavDropdown.Item href="/">Apostas esportivas</NavDropdown.Item>
+                                <NavDropdown.Item href="/">Esportes</NavDropdown.Item>
+                                <NavDropdown.Item href="/">Mais categorias</NavDropdown.Item>
                                 {/* <NavDropdown.Divider />
                                 <NavDropdown.Item href="/comparador">Separated link</NavDropdown.Item> */}
                             </NavDropdown>
@@ -31,16 +35,27 @@ const NavBarComponent = (props) => {
 
     const NavParaNaoAuthenticados = () =>{
         return(
-                        <Nav className="mr-auto">
-                            <Nav.Link href="/">Comparador</Nav.Link>
-                            <Nav.Link href="/banca">Bancas</Nav.Link>
-                            <Nav.Link href="/">Sobre</Nav.Link>
-                        </Nav>
+            <Nav className="mr-auto">
+                <Nav.Link href="/">Iniciar</Nav.Link>
+                <NavDropdown title="Categorias" id="basic-nav-dropdown">
+                    <NavDropdown.Item href="/">Amizade</NavDropdown.Item>
+                    <NavDropdown.Item href="/">Namoro</NavDropdown.Item>
+                    <NavDropdown.Item href="/">Trabalho</NavDropdown.Item>
+                    <NavDropdown.Item href="/">Apostas esportivas</NavDropdown.Item>
+                    <NavDropdown.Item href="/">Esportes</NavDropdown.Item>
+                    <NavDropdown.Item href="/">Mais categorias</NavDropdown.Item>
+                    {/* <NavDropdown.Divider />
+                    <NavDropdown.Item href="/comparador">Separated link</NavDropdown.Item> */}
+                </NavDropdown>
+                <Nav.Link href="/">Adicionar Grupo</Nav.Link>
+                <Nav.Link href="/">Sobre</Nav.Link>
+
+            </Nav>
         )
     }
 
     return (
-        <Navbar bg="light" expand="lg" className="d-flex justify-content-between">
+        <Navbar bg="dark"  variant="dark" expand="lg" className="d-flex justify-content-between">
             <Navbar.Brand href="/comparador" 
 >
                 <img
@@ -62,7 +77,7 @@ const NavBarComponent = (props) => {
                 }
                 
 
-                <Nav>
+{/*                 <Nav>
                     {
                         authenticated ? (
                         <Dropdown>
@@ -79,7 +94,7 @@ const NavBarComponent = (props) => {
                         )
                     }
                     
-                </Nav>
+                </Nav> */}
             </Navbar.Collapse>
 
         </Navbar>

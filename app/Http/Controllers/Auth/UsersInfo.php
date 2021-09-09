@@ -23,7 +23,7 @@ class UsersInfo{
         }
         self::$info = [
             'verified' => true,
-            'authenticated' => true
+            'authenticated' => false
         ];
         return self::$info;
     }
