@@ -17,3 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/maisAcessados', [App\Http\Controllers\gruposMaisAcessados::class, 'index']);
+
+Route::get('/recentes', [App\Http\Controllers\gruposRecentes::class, 'index']);

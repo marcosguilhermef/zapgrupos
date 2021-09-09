@@ -14,10 +14,9 @@ use Inertia\Inertia;
 |
 */
 
-Route::get('/', function () {
-    return Inertia::render('Externo/Inicio');
-});
+Route::get('/', [App\Http\Controllers\InicioController::class,'index']);
 
+Route::get('link/{categoria}/{id}', [App\Http\Controllers\InformacoesLinkWhatsApp::class,'index']);
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
