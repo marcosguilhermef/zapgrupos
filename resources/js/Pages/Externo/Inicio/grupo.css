@@ -1,0 +1,12 @@
+.carousel{
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    flex-direction: row;
+}
+
+
+.chevrons{
+    font-size: xx-large;
+    margin: 2em;
+}
