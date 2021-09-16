@@ -20,4 +20,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('/maisAcessados', [App\Http\Controllers\gruposMaisAcessados::class, 'index']);
 
+Route::get('/grupos/{categoria}', [App\Http\Controllers\ApiGruposPorCategoria::class, 'show']);
+
 Route::get('/recentes', [App\Http\Controllers\gruposRecentes::class, 'index']);

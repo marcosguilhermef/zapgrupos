@@ -1,40 +1,20 @@
 import React, { useEffect, useRef } from "react";
-import {Col, Row, Card, Button, Image} from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
 import { faChevronCircleRight,faChevronCircleLeft } from '@fortawesome/free-solid-svg-icons'
 import { useDispatch, useSelector } from 'react-redux'
 import {  makeOneRequest, setStatus, setGrupos } from '../../../Api/requets/request'
-
-const CardInfo = (props) => {
-    const {link, titulo, categoria, descricao, img} = {...props}
-    return(
-        <Col xs={12} sm={12} md={4} lg={2}>
-            <Card>
-                <Card.Header>
-                    { titulo }
-                </Card.Header>
-                <Image src="assets/generico/reactangle.png" className="card-img-top"/>
-                <Card.Body className="card-orverflowy">
-                <span className="card-category">{categoria}</span>
-                <p className="text-justify">
-                    { descricao }
-                </p>
-                </Card.Body>
-                <Card.Footer className="text-center">
-                    <Button variant="success">Entrar</Button>
-                </Card.Footer>
-            </Card>
-        </Col>
-    )
-}
+import { CardWait, CardInfo } from '../Componentes/Cards'
 
 const CardGrupo = (props) => {
     const carousel = useRef(null)
     
     const dados = useSelector( dados => dados.grupos )
     const grupos = useSelector( dados => dados.grupos.grupos?.data || [] )
+    const status = useSelector( dados => dados.grupos.status  )
+    const current_page = useSelector( dados => dados.grupos.grupos?.current_page  )
+    const last_page = useSelector( dados => dados.grupos.grupos?.last_page  )
 
+    const {api} = {...props}
 
     const dispatch = useDispatch()
 
@@ -47,33 +27,66 @@ const CardGrupo = (props) => {
     const handleRightClick = (e) => {
         e.preventDefault();
         carousel.current.scrollLeft += carousel.current.offsetWidth;
+        dispararNovaPagina();
     };
+    const dispararNovaPagina = () => {
+        let avaliacao = carousel.current.offsetWidth + carousel.current.scrollLeft >= carousel.current.scrollWidth
+        if(avaliacao){
+            if(status !== 'await' &&  (current_page < last_page)){
+                dispatch(setStatus('await'))
+                makeRequest(current_page)
+            }
 
-    useEffect( () => {
+        }
+    }
+    const makeRequest = (page) => {
+        page = (page+1) 
         dispatch(makeOneRequest({
-            'link': 'api/maisAcessados',
+            'link': api,
             'action': setGrupos,
-            'status': setStatus
-          })); 
+            'status': setStatus,
+            'parameter': '?page='+page
+        }));
+    }
+    const NextPrevious = () => {
+        return(
+            <>
+                <FontAwesomeIcon icon={faChevronCircleLeft} className="mr-2" onClick={handleLeftClick}/>
+                {
+                    status == 'ok'
+                    ? 
+                    <FontAwesomeIcon icon={faChevronCircleRight} className="ml-2" onClick={handleRightClick}/>
+                    :
+                    <FontAwesomeIcon icon={faChevronCircleRight} className="ml-2"/>
+                }
+            </>
+        )
+    }
+    useEffect( () => {
+        makeRequest()
+        console.log(dados) 
     } ,[])
-
-
+   
     return(
         <div>
-            <div className="carousel" ref={carousel}>
+            <div className="carousel" ref={carousel} onScroll={dispararNovaPagina}>
 
-                    {
+                {
                     grupos.map(
                         (e,i,a) => (
-                            <CardInfo titulo={e?.titulo} categoria={e?.categoria} descricao={e?.descricao} img={e?.img} link={e?.url} />
-                        )
+                            <CardInfo titulo={e?.titulo} categoria={e?.categoria} descricao={e?.descricao} img={e?.img} link={e?.url} _id={e?._id}/>
+                         )
                     )
-                    }
+                    
+                }
+
+                {
+                    status != 'ok' ? <CardWait ativo={false}/> : <CardWait ativo={true}/>
+                }
                 
             </div>
             <div className="text-center chevrons">
-                <FontAwesomeIcon icon={faChevronCircleLeft} className="mr-2" onClick={handleLeftClick}/>
-                <FontAwesomeIcon icon={faChevronCircleRight} className="ml-2" onClick={handleRightClick}/>
+                <NextPrevious/>
             </div>
         </div>
     )

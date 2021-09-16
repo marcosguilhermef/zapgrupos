@@ -1,4 +1,4 @@
-import { setStatus, setGrupos } from '../slices/Grupos'
+import { setStatus, setGrupos, setGrupo } from '../slices/Grupos'
 
 var config = [
   {'link': 'api//maisAcessados?page', 'action': setGrupos, 'status': setStatus },
@@ -27,4 +27,4 @@ export const fetchDados =  ({link,action, status}) => async (dispatch)  => {
     }
 }
 
-export {setStatus, setGrupos }
+export {setStatus, setGrupos, setGrupo }

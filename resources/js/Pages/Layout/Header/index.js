@@ -23,9 +23,8 @@ const NavBarComponent = (props) => {
                                 <NavDropdown.Item href="/">Amizade</NavDropdown.Item>
                                 <NavDropdown.Item href="/">Namoro</NavDropdown.Item>
                                 <NavDropdown.Item href="/">Trabalho</NavDropdown.Item>
-                                <NavDropdown.Item href="/">Apostas esportivas</NavDropdown.Item>
                                 <NavDropdown.Item href="/">Esportes</NavDropdown.Item>
-                                <NavDropdown.Item href="/">Mais categorias</NavDropdown.Item>
+                                <Nav.Link href="/mais">Adicionar Grupo</Nav.Link>
                                 {/* <NavDropdown.Divider />
                                 <NavDropdown.Item href="/comparador">Separated link</NavDropdown.Item> */}
                             </NavDropdown>
@@ -38,17 +37,16 @@ const NavBarComponent = (props) => {
             <Nav className="mr-auto">
                 <Nav.Link href="/">Iniciar</Nav.Link>
                 <NavDropdown title="Categorias" id="basic-nav-dropdown">
-                    <NavDropdown.Item href="/">Amizade</NavDropdown.Item>
-                    <NavDropdown.Item href="/">Namoro</NavDropdown.Item>
-                    <NavDropdown.Item href="/">Trabalho</NavDropdown.Item>
-                    <NavDropdown.Item href="/">Apostas esportivas</NavDropdown.Item>
-                    <NavDropdown.Item href="/">Esportes</NavDropdown.Item>
-                    <NavDropdown.Item href="/">Mais categorias</NavDropdown.Item>
+                    <NavDropdown.Item href="/Amizade">Amizade</NavDropdown.Item>
+                    <NavDropdown.Item href="/Namoro">Namoro</NavDropdown.Item>
+                    <NavDropdown.Item href="/Figurinhas e Stickers">Figurinhas e Stickers</NavDropdown.Item>
+                    <NavDropdown.Item href="/Esportes">Esportes</NavDropdown.Item>
+                    <NavDropdown.Item href="/mais">Mais categorias</NavDropdown.Item>
                     {/* <NavDropdown.Divider />
                     <NavDropdown.Item href="/comparador">Separated link</NavDropdown.Item> */}
                 </NavDropdown>
-                <Nav.Link href="/">Adicionar Grupo</Nav.Link>
-                <Nav.Link href="/">Sobre</Nav.Link>
+                <Nav.Link href="/adicionar">Adicionar Grupo</Nav.Link>
+                <Nav.Link href="/sobre">Sobre</Nav.Link>
 
             </Nav>
         )
@@ -56,8 +54,7 @@ const NavBarComponent = (props) => {
 
     return (
         <Navbar bg="dark"  variant="dark" expand="lg" className="d-flex justify-content-between">
-            <Navbar.Brand href="/comparador" 
->
+            <Navbar.Brand href="/">
                 <img
                     alt=""
                     src={logoNav}

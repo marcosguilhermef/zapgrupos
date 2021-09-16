@@ -15,8 +15,13 @@ use Inertia\Inertia;
 */
 
 Route::get('/', [App\Http\Controllers\InicioController::class,'index']);
+Route::get('/mais', [App\Http\Controllers\maisCategorias::class, 'index']);
+Route::get('/sobre',[App\Http\Controllers\sobre::class, 'index']);
+Route::redirect('/adicionar','/');
+Route::get('/{categoria}/{id}', [App\Http\Controllers\InformacoesLinkWhatsApp::class,'index']);
+Route::get('/{categoria}', [App\Http\Controllers\PorCategoria::class,'index']);
 
-Route::get('link/{categoria}/{id}', [App\Http\Controllers\InformacoesLinkWhatsApp::class,'index']);
+
 Auth::routes();
 
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

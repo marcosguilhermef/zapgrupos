@@ -4,9 +4,12 @@ export const grupos = createSlice({
     name: 'bancas',
     initialState:{
       grupos:{
-        
+        data: []
       },
       recentes: {
+        data: []
+      },
+      grupo: {
 
       },
       status: 'await',
@@ -14,7 +17,10 @@ export const grupos = createSlice({
     },
     reducers: {
       setGrupos: (state, action) => {
-        state.grupos = {...state.grupos,...action.payload}
+        state.grupos = {...state.grupos,...action.payload, data: [ ...state.grupos.data,...action.payload.data ]}
+      },
+      setGrupo: (state, action) => {
+        state.grupo = {...action.payload}
       },
       setGruposRecentes: (state, action) => {
         state.recentes = {...state.recentes,...action.payload}
@@ -28,5 +34,5 @@ export const grupos = createSlice({
     }
   })
 
-export const { setGrupos, setStatus } = grupos.actions
+export const { setGrupos, setStatus, setGrupo } = grupos.actions
 export const gruposReducer = grupos.reducer
