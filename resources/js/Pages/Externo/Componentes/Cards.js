@@ -134,4 +134,35 @@ const CardInfoLink = (props) => {
     )
 }
 
-export {CardWait,CardInfo,CardInfoLink,CardInfo2}
+const CardPreview = (props) => {
+    const {_id,link, titulo, categoria, descricao, img} = {...props ||'Informacao Auxente'}
+    const redirect = (cat) =>{
+        cat = cat.replaceAll(" ","-")
+        window.location.href = window.location.origin+'/'+cat+'/'+_id
+    }
+    return(
+        <Col xs={12} sm={12} md={12} lg={12}>
+            <Card>
+                <Card.Header>
+                    { titulo }
+                </Card.Header>
+                {
+                    img.length == 0 ?
+                    (
+                        <Image src="/assets/generico/reactangle.png" className="card-img-top"/>)
+                    :
+                    (
+                        <Image src={img[0]}  onError={(e) => e.target.src = "/assets/generico/reactangle.png"} className="card-img-top"/>)
+                }
+                <Card.Body className="card-orverflowy">
+                <span className="card-category">{categoria}</span>
+                <p className="text-justify">
+                    { descricao }
+                </p>
+                </Card.Body>
+            </Card>
+        </Col>
+    )
+}
+
+export {CardWait,CardInfo,CardInfoLink,CardInfo2,CardPreview}

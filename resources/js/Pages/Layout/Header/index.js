@@ -4,11 +4,11 @@ import './styles.css'
 import Verificado  from './verificado'
 //import { InertiaLink } from '@inertiajs/inertia-react'
 
-//import ReactGA from 'react-ga';
+import ReactGA from 'react-ga';
 
-//ReactGA.initialize('UA-185476496-1');
+ReactGA.initialize('UA-207744095-1');
 
-//ReactGA.pageview(window.location.pathname + window.location.search);
+ReactGA.pageview(window.location.pathname + window.location.search);
 
 const NavBarComponent = (props) => {
     const user = props.user 

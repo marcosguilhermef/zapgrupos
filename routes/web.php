@@ -13,15 +13,14 @@ use Inertia\Inertia;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/sitemap.xml',[App\Http\Controllers\sitemap::class,'index']);
 Route::get('/', [App\Http\Controllers\InicioController::class,'index']);
 Route::get('/mais', [App\Http\Controllers\maisCategorias::class, 'index']);
 Route::get('/sobre',[App\Http\Controllers\sobre::class, 'index']);
-Route::redirect('/adicionar','/');
+Route::get('/adicionar',[App\Http\Controllers\addGrupo::class,'index']);
 Route::get('/{categoria}/{id}', [App\Http\Controllers\InformacoesLinkWhatsApp::class,'index']);
 Route::get('/{categoria}', [App\Http\Controllers\PorCategoria::class,'index']);
 
-
-Auth::routes();
+//Auth::routes();
 
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
