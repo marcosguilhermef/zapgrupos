@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
     <meta property="fb:app_id" content="1279398252524269" />
     <meta name="ahrefs-site-verification" content="9166d4c52b2af56d66b35a02ad4659b88541705de263e9f39ba5305247d9b085">
-    {!! isset($page['props']['meta']) ? $page['props']['meta'] : '' !!}
+    {!! isset($meta) ? $meta : '' !!}
     <title>{{ isset($page['props']['title']) ? $page['props']['title'] : 'Zapgrupos'  }}</title>
 
     <link rel="shortcut icon" href="{{ request()->root().'/images/favicon.ico' }}" />
