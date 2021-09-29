@@ -25,11 +25,11 @@ class InformacoesLinkWhatsApp extends Controller
     <meta name=\"twitter:description\" content=\"".$conf["grupo"][0]["descricao"]."\">\n
     <meta name=\"twitter:image\" content=\"".$conf["grupo"][0]["img"][0]."\">\n
 
-    <meta property=\"og:title\" content=\"".$conf['title']."\" />\n
-    <meta property=\"og:type\" content=\"article\" />\n
     <meta property=\"og:url\" content=\"https://zapgrupos.xyz/\" />\n
-    <meta property=\"og:image\" content=\"".$conf["grupo"][0]["img"][0]."\" />\n
+    <meta property=\"og:type\" content=\"article\" />\n
+    <meta property=\"og:title\" content=\"".$conf['title']."\" />\n
     <meta property=\"og:description\" content=\"".$conf["grupo"][0]["descricao"]."\" />\n
+    <meta property=\"og:image\" content=\"".$conf["grupo"][0]["img"][0]."\" />\n
     <meta property=\"og:site_name\" content=\"Zapgrupos\" />\n
     <meta property=\"fb:admins\" content=\"1279398252524269\" />\n
         ";
