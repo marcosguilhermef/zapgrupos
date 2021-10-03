@@ -22,12 +22,12 @@ const Index = (props) => {
                                                 { e["categoria"] } 
                                             </Card.Header>
                                             {
-                                                true ?
+                                                !e.img ?
                                                 (
                                                     <Image src="/assets/generico/reactangle.png" className="card-img-top"/>)
                                                 :
                                                 (
-                                                    <Image src={img[0]}  onError={(e) => e.target.src = "/assets/generico/reactangle.png"} className="card-img-top"/>)
+                                                    <Image  src={e.img} onError={(e) => e.target.src = "/assets/generico/reactangle.png"} className="card-img-top"/>)
                                             }
                                             <Card.Footer className="text-center">
                                                 <Button variant="success" onClick={ () =>document.location.href = ("/"+e["categoria"])  }>Informações</Button>

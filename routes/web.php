@@ -13,6 +13,7 @@ use Inertia\Inertia;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/grupo/{id}', [App\Http\Controllers\linkProtector::class,'index']);
 Route::get('/sitemap.xml',[App\Http\Controllers\sitemap::class,'index']);
 Route::get('/', [App\Http\Controllers\InicioController::class,'index']);
 Route::get('/mais', [App\Http\Controllers\maisCategorias::class, 'index']);

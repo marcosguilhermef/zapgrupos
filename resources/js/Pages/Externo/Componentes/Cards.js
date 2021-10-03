@@ -71,7 +71,6 @@ const CardInfo2 = (props) => {
 
 const CardWait = (props) => {
     const {ativo} = {...props}
-    console.log("teste",ativo)
     return(
         <Col xs={12} sm={12} md={4} lg={2} hidden={ativo}>
             <Card>
@@ -103,9 +102,9 @@ const CardInfoLink = (props) => {
     const {_id,link, titulo, categoria, descricao, img} = {...props}
     const redirect = (cat) =>{
         cat = cat.replaceAll(" ","-")
-        window.location.href = link
+        window.location.href = `/grupo/${_id}`
     }
-
+   
     return(
         <Col xs={12} sm={12} md={12} lg={12}>
             <Card>
