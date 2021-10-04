@@ -14,7 +14,7 @@ const NavBarComponent = (props) => {
     const user = props.user 
     const verified  =   props.verified
     const authenticated = props.authenticated
-    const logoNav = window.location.origin+'/assets/logo/logo.png'
+    const logoNav = window.location.origin+'/img/logo/logo.png'
     const NavParaAuthenticados = () => {
         return(
                         <Nav className="mr-auto">

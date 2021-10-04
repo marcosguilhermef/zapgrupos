@@ -9,7 +9,7 @@ const Index = (props) => {
     const [status, setStatus]   = useState('Liberar')
     const [time, setTime]       = useState(10)
     const [intervaelId, setItervalId]   = useState()
-    const redirectLink = "https://thaudray.com/4/4563545"
+    const redirectLink = "https://glugreez.com/4/4563780"
   
     function firstClick(){
         setClicked(true)

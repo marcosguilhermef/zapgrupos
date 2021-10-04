@@ -16,10 +16,10 @@ const CardInfo = (props) => {
                 {
                     img.length == 0 ?
                     (
-                        <Image src="/assets/generico/reactangle.png" className="card-img-top"/>)
+                        <Image src="/img/generico/reactangle.png" className="card-img-top"/>)
                     :
                     (
-                        <Image src={img[0]}  onError={(e) => e.target.src = "/assets/generico/reactangle.png"} className="card-img-top"/>)
+                        <Image src={img[0]}  onError={(e) => e.target.src = "/img/generico/reactangle.png"} className="card-img-top"/>)
                 }
                 <Card.Body className="card-orverflowy">
                 <span className="card-category">{categoria}</span>
@@ -49,10 +49,10 @@ const CardInfo2 = (props) => {
                 {
                     img.length == 0 ?
                     (
-                        <Image src="/assets/generico/reactangle.png" className="card-img-top"/>)
+                        <Image src="/img/generico/reactangle.png" className="card-img-top"/>)
                     :
                     (
-                        <Image src={img[0]} onError={(e) => e.target.src = "/assets/generico/reactangle.png"} className="card-img-top"/>)
+                        <Image src={img[0]} onError={(e) => e.target.src = "/img/generico/reactangle.png"} className="card-img-top"/>)
                 }
                 <Card.Body className="card-orverflowy">
                 <span className="card-category">{categoria}</span>
@@ -77,7 +77,7 @@ const CardWait = (props) => {
                 <Card.Header>
                     Aguarde 
                 </Card.Header>
-                <Image src="/assets/generico/reactangle.png" className="card-img-top"/>
+                <Image src="/img/generico/reactangle.png" className="card-img-top"/>
                 <Card.Body className="card-orverflowy">
                 <span className="card-category"> Aguarda </span>
                 <div className="cardx"></div>
@@ -114,10 +114,10 @@ const CardInfoLink = (props) => {
                 {
                     img.length == 0 ?
                     (
-                        <Image src="/assets/generico/reactangle.png" className="card-img-top"/>)
+                        <Image src="/img/generico/reactangle.png" className="card-img-top"/>)
                     :
                     (
-                        <Image src={img[0]} onError={(e) => e.target.src = "/assets/generico/reactangle.png"}  className="card-img-top"/>)
+                        <Image src={img[0]} onError={(e) => e.target.src = "/img/generico/reactangle.png"}  className="card-img-top"/>)
                 }
                 <Card.Body className="card-orverflowy">
                 <span className="card-category">{categoria}</span>
@@ -148,10 +148,10 @@ const CardPreview = (props) => {
                 {
                     img.length == 0 ?
                     (
-                        <Image src="/assets/generico/reactangle.png" className="card-img-top"/>)
+                        <Image src="/img/generico/reactangle.png" className="card-img-top"/>)
                     :
                     (
-                        <Image src={img[0]}  onError={(e) => e.target.src = "/assets/generico/reactangle.png"} className="card-img-top"/>)
+                        <Image src={img[0]}  onError={(e) => e.target.src = "/img/generico/reactangle.png"} className="card-img-top"/>)
                 }
                 <Card.Body className="card-orverflowy">
                 <span className="card-category">{categoria}</span>

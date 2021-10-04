@@ -15,7 +15,7 @@ class InformacoesLinkWhatsApp extends Controller
         $conf['grupo'] = gruposWhatsApp::getGrupoById($parametro['_id']);
         $conf['maisgrupos'] = gruposWhatsApp::getGrupoByCategory($parametro['categoria']);
         $conf['title'] = $conf['grupo'][0]['titulo'];
-        $img = isset($conf["grupo"][0]["img"][0]) ? $conf["grupo"][0]["img"][0] : "https://".$_SERVER['HTTP_HOST'].'/assets/generico/reactangle.png' ;
+        $img = isset($conf["grupo"][0]["img"][0]) ? $conf["grupo"][0]["img"][0] : "https://".$_SERVER['HTTP_HOST'].'/img/generico/reactangle.png' ;
         $meta = "
     <meta name=\"description\" content=\"".$conf["grupo"][0]["descricao"]."\" />\n
     <meta property=\"og:url\" content=\"https://zapgrupos.xyz/\" />\n
@@ -32,6 +32,7 @@ class InformacoesLinkWhatsApp extends Controller
     <meta name=\"twitter:description\" content=\"".$conf["grupo"][0]["descricao"]."\">\n
     <meta name=\"twitter:image\" content=\"".$img."\">\n
         ";
+      
         return Inertia::render('Externo/Informacoes',$conf)->withViewData(['meta' => $meta]);
     }
 

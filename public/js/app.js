@@ -16776,12 +16776,12 @@ var CardInfo = function CardInfo(props) {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["default"].Header, {
         children: titulo
       }), img.length == 0 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["default"], {
-        src: "/assets/generico/reactangle.png",
+        src: "/img/generico/reactangle.png",
         className: "card-img-top"
       }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["default"], {
         src: img[0],
         onError: function onError(e) {
-          return e.target.src = "/assets/generico/reactangle.png";
+          return e.target.src = "/img/generico/reactangle.png";
         },
         className: "card-img-top"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["default"].Body, {
@@ -16830,12 +16830,12 @@ var CardInfo2 = function CardInfo2(props) {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["default"].Header, {
         children: titulo
       }), img.length == 0 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["default"], {
-        src: "/assets/generico/reactangle.png",
+        src: "/img/generico/reactangle.png",
         className: "card-img-top"
       }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["default"], {
         src: img[0],
         onError: function onError(e) {
-          return e.target.src = "/assets/generico/reactangle.png";
+          return e.target.src = "/img/generico/reactangle.png";
         },
         className: "card-img-top"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["default"].Body, {
@@ -16875,7 +16875,7 @@ var CardWait = function CardWait(props) {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["default"].Header, {
         children: "Aguarde"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["default"], {
-        src: "/assets/generico/reactangle.png",
+        src: "/img/generico/reactangle.png",
         className: "card-img-top"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["default"].Body, {
         className: "card-orverflowy",
@@ -16925,12 +16925,12 @@ var CardInfoLink = function CardInfoLink(props) {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["default"].Header, {
         children: titulo
       }), img.length == 0 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["default"], {
-        src: "/assets/generico/reactangle.png",
+        src: "/img/generico/reactangle.png",
         className: "card-img-top"
       }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["default"], {
         src: img[0],
         onError: function onError(e) {
-          return e.target.src = "/assets/generico/reactangle.png";
+          return e.target.src = "/img/generico/reactangle.png";
         },
         className: "card-img-top"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["default"].Body, {
@@ -16979,12 +16979,12 @@ var CardPreview = function CardPreview(props) {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["default"].Header, {
         children: titulo
       }), img.length == 0 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["default"], {
-        src: "/assets/generico/reactangle.png",
+        src: "/img/generico/reactangle.png",
         className: "card-img-top"
       }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["default"], {
         src: img[0],
         onError: function onError(e) {
-          return e.target.src = "/assets/generico/reactangle.png";
+          return e.target.src = "/img/generico/reactangle.png";
         },
         className: "card-img-top"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["default"].Body, {
@@ -17518,7 +17518,7 @@ var Index = function Index(props) {
       intervaelId = _useState8[0],
       setItervalId = _useState8[1];
 
-  var redirectLink = "https://thaudray.com/4/4563545";
+  var redirectLink = "https://glugreez.com/4/4563780";
 
   function firstClick() {
     setClicked(true);
@@ -17742,7 +17742,7 @@ var NavBarComponent = function NavBarComponent(props) {
   var user = props.user;
   var verified = props.verified;
   var authenticated = props.authenticated;
-  var logoNav = window.location.origin + '/assets/logo/logo.png';
+  var logoNav = window.location.origin + '/img/logo/logo.png';
 
   var NavParaAuthenticados = function NavParaAuthenticados() {
     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["default"], {
