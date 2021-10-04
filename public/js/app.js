@@ -16764,7 +16764,7 @@ var CardInfo = function CardInfo(props) {
 
   var redirect = function redirect(cat) {
     cat = cat.replaceAll(" ", "-");
-    window.location.href = window.location.origin + '/' + cat + '/' + _id;
+    return '/' + cat + '/' + _id;
   };
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -16795,11 +16795,10 @@ var CardInfo = function CardInfo(props) {
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["default"].Footer, {
         className: "text-center",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__["default"], {
-          variant: "success",
-          onClick: function onClick() {
-            return redirect(categoria);
-          },
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
+          "class": "btn btn-success",
+          href: redirect(categoria),
+          role: "button",
           children: "Informa\xE7\xF5es"
         })
       })]
@@ -16818,7 +16817,7 @@ var CardInfo2 = function CardInfo2(props) {
 
   var redirect = function redirect(cat) {
     cat = cat.replaceAll(" ", "-");
-    window.location.href = window.location.origin + '/' + cat + '/' + _id;
+    return '/' + cat + '/' + _id;
   };
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -16849,11 +16848,10 @@ var CardInfo2 = function CardInfo2(props) {
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["default"].Footer, {
         className: "text-center",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__["default"], {
-          variant: "success",
-          onClick: function onClick() {
-            return redirect(categoria);
-          },
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
+          "class": "btn btn-success",
+          href: redirect(categoria),
+          role: "button",
           children: "Informa\xE7\xF5es"
         })
       })]
@@ -16913,7 +16911,7 @@ var CardInfoLink = function CardInfoLink(props) {
 
   var redirect = function redirect(cat) {
     cat = cat.replaceAll(" ", "-");
-    window.location.href = "/grupo/".concat(_id);
+    return "/grupo/".concat(_id);
   };
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -16944,11 +16942,10 @@ var CardInfoLink = function CardInfoLink(props) {
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["default"].Footer, {
         className: "text-center",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__["default"], {
-          variant: "success",
-          onClick: function onClick() {
-            return redirect(categoria);
-          },
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
+          "class": "btn btn-success",
+          href: "/grupo/".concat(_id),
+          role: "button",
           children: "Entrar"
         })
       })]

@@ -5,7 +5,7 @@ const CardInfo = (props) => {
     const {_id,link, titulo, categoria, descricao, img} = {...props}
     const redirect = (cat) =>{
         cat = cat.replaceAll(" ","-")
-        window.location.href = window.location.origin+'/'+cat+'/'+_id
+        return '/'+cat+'/'+_id
     }
     return(
         <Col xs={12} sm={12} md={4} lg={2}>
@@ -19,7 +19,7 @@ const CardInfo = (props) => {
                         <Image src="/img/generico/reactangle.png" className="card-img-top"/>)
                     :
                     (
-                        <Image src={img[0]}  onError={(e) => e.target.src = "/img/generico/reactangle.png"} className="card-img-top"/>)
+                        <Image src={img[0]} onError={(e) => e.target.src = "/img/generico/reactangle.png"} className="card-img-top"/>)
                 }
                 <Card.Body className="card-orverflowy">
                 <span className="card-category">{categoria}</span>
@@ -28,7 +28,7 @@ const CardInfo = (props) => {
                 </p>
                 </Card.Body>
                 <Card.Footer className="text-center">
-                    <Button variant="success" onClick={() => redirect(categoria)}>Informações</Button>
+                    <a class="btn btn-success" href={redirect(categoria)} role="button">Informações</a>
                 </Card.Footer>
             </Card>
         </Col>
@@ -38,7 +38,7 @@ const CardInfo2 = (props) => {
     const {_id,link, titulo, categoria, descricao, img} = {...props}
     const redirect = (cat) =>{
         cat = cat.replaceAll(" ","-")
-        window.location.href = window.location.origin+'/'+cat+'/'+_id
+        return '/'+cat+'/'+_id
     }
     return(
         <Col xs={12} sm={12} md={12} lg={12}>
@@ -61,7 +61,7 @@ const CardInfo2 = (props) => {
                 </p>
                 </Card.Body>
                 <Card.Footer className="text-center">
-                    <Button variant="success" onClick={() => redirect(categoria)}>Informações</Button>
+                    <a class="btn btn-success" href={redirect(categoria)} role="button">Informações</a>
                 </Card.Footer>
             </Card>
         </Col>
@@ -102,7 +102,7 @@ const CardInfoLink = (props) => {
     const {_id,link, titulo, categoria, descricao, img} = {...props}
     const redirect = (cat) =>{
         cat = cat.replaceAll(" ","-")
-        window.location.href = `/grupo/${_id}`
+        return `/grupo/${_id}`
     }
    
     return(
@@ -126,7 +126,8 @@ const CardInfoLink = (props) => {
                 </p>
                 </Card.Body>
                 <Card.Footer className="text-center">
-                    <Button variant="success" onClick={() => redirect(categoria)}>Entrar</Button>
+                    <a class="btn btn-success" href={`/grupo/${_id}`} role="button">Entrar</a>
+                    {/* <Button variant="success" onClick={() => redirect(categoria)}>Entrar</Button> */}
                 </Card.Footer>
             </Card>
         </Col>
