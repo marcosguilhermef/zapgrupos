@@ -23,3 +23,7 @@ Route::get('/maisAcessados', [App\Http\Controllers\gruposMaisAcessados::class, '
 Route::get('/grupos/{categoria}', [App\Http\Controllers\ApiGruposPorCategoria::class, 'show']);
 
 Route::get('/recentes', [App\Http\Controllers\gruposRecentes::class, 'index']);
+
+Route::get('/recentes', [App\Http\Controllers\gruposRecentes::class, 'index']);
+
+Route::post('/add-banca', [App\Http\Controllers\addGrupo::class,'addGrupo']);
