@@ -16,7 +16,8 @@ class InformacoesLinkWhatsApp extends Controller
         $conf['maisgrupos'] = gruposWhatsApp::getGrupoByCategory($parametro['categoria']);
         $conf['title'] = "Grupo whatsapp: ".$conf['grupo'][0]['titulo'];
         $img = isset($conf["grupo"][0]["img"][0]) ? $conf["grupo"][0]["img"][0] : "https://".$_SERVER['HTTP_HOST'].'/img/generico/reactangle.png' ;
-        $meta = "
+        $conf['meta'] = "
+    <link rel=\"canonical\" href=\"https://".url()->current()."\"/>
     <meta name=\"description\" content=\"Grupo de whatsapp: ".$conf["grupo"][0]["descricao"]."\" />\n
     <meta property=\"og:url\" content=\"https://zapgrupos.xyz/\" />\n
     <meta property=\"og:type\" content=\"article\" />\n
@@ -33,7 +34,7 @@ class InformacoesLinkWhatsApp extends Controller
     <meta name=\"twitter:image\" content=\"".$img."\">\n
         ";
       
-        return Inertia::render('Externo/Informacoes',$conf)->withViewData(['meta' => $meta]);
+        return Inertia::render('Externo/Informacoes',$conf);
     }
 
     public function parametrizar($categoria,$id){
