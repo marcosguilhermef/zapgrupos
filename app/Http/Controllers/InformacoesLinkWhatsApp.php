@@ -17,9 +17,9 @@ class InformacoesLinkWhatsApp extends Controller
         $conf['title'] = "Grupo whatsapp: ".$conf['grupo'][0]['titulo'];
         $img = isset($conf["grupo"][0]["img"][0]) ? $conf["grupo"][0]["img"][0] : "https://".$_SERVER['HTTP_HOST'].'/img/generico/reactangle.png' ;
         $conf['meta'] = "
-    <link rel=\"canonical\" href=\"https://".url()->current()."\"/>
+    <link rel=\"canonical\" href=\"".url()->current()."\"/>
     <meta name=\"description\" content=\"Grupo de whatsapp: ".$conf["grupo"][0]["descricao"]."\" />\n
-    <meta property=\"og:url\" content=\"https://zapgrupos.xyz/\" />\n
+    <meta property=\"og:url\" content=\"".url()->current()."\" />\n
     <meta property=\"og:type\" content=\"article\" />\n
     <meta property=\"og:title\" content=\"".$conf['title']."\" />\n
     <meta property=\"og:description\" content=\"".$conf["grupo"][0]["descricao"]."\" />\n
