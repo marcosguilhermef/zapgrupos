@@ -34,6 +34,39 @@ const CardInfo = (props) => {
         </Col>
     )
 }
+
+const CardAds = (props) => {
+    useEffect(() => {
+        try{
+            (window.adsbygoogle = window.adsbygoogle || []).push({});
+        }catch{
+            console.log("erro carregamento ads")
+            //document.getElementsByName("ins")[0].setAttribute("hidden","true")
+        }
+    })
+    function adsComponent(){
+        return(
+            <ins className="adsbygoogle"
+                 style={{ display: "block" }}
+                 data-ad-format="fluid"
+                 data-ad-layout-key="+2f+pt+42-22+39"
+                 data-ad-client="ca-pub-8817634033676287"
+                 data-adtest="on"
+                 data-ad-slot="2754058875">
+            </ins>
+        )
+    }
+    return(
+        <Col xs={12} sm={12} md={4} lg={2} onError={ () => console.log("ERRO DETECTADO") }>
+            <Card id="google-ads">
+                { adsComponent() }
+            </Card>
+        </Col>
+    );
+
+}
+
+
 const CardInfo2 = (props) => {
     const {_id,link, titulo, categoria, descricao, img} = {...props}
     const redirect = (cat) =>{
@@ -75,7 +108,7 @@ const CardWait = (props) => {
         <Col xs={12} sm={12} md={4} lg={2} hidden={ativo}>
             <Card>
                 <Card.Header>
-                    Aguarde 
+                    Aguarde
                 </Card.Header>
                 <Image src="/img/generico/reactangle.png" className="card-img-top"/>
                 <Card.Body className="card-orverflowy">
@@ -104,7 +137,7 @@ const CardInfoLink = (props) => {
         cat = cat.replaceAll(" ","-")
         return `/grupo/${_id}`
     }
-   
+
     return(
         <Col xs={12} sm={12} md={12} lg={12}>
             <Card>
@@ -165,4 +198,4 @@ const CardPreview = (props) => {
     )
 }
 
-export {CardWait,CardInfo,CardInfoLink,CardInfo2,CardPreview}
+export {CardWait,CardInfo,CardInfoLink,CardInfo2,CardPreview, CardAds}

@@ -3,11 +3,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronCircleRight,faChevronCircleLeft } from '@fortawesome/free-solid-svg-icons'
 import { useDispatch, useSelector } from 'react-redux'
 import {  makeOneRequest, setStatus, setGrupos } from '../../../Api/requets/request'
-import { CardWait, CardInfo } from '../Componentes/Cards'
+import { CardWait, CardInfo, CardAds } from '../Componentes/Cards'
 
 const CardGrupo = (props) => {
     const carousel = useRef(null)
-    
+
     const dados = useSelector( dados => dados.grupos )
     const grupos = useSelector( dados => dados.grupos.grupos?.data || [] )
     const status = useSelector( dados => dados.grupos.status  )
@@ -23,7 +23,7 @@ const CardGrupo = (props) => {
         carousel.current.scrollLeft -= carousel.current.offsetWidth;
 
     };
-    
+
     const handleRightClick = (e) => {
         e.preventDefault();
         carousel.current.scrollLeft += carousel.current.offsetWidth;
@@ -40,7 +40,7 @@ const CardGrupo = (props) => {
         }
     }
     const makeRequest = (page) => {
-        page = (page+1) 
+        page = (page+1)
         dispatch(makeOneRequest({
             'link': api,
             'action': setGrupos,
@@ -54,7 +54,7 @@ const CardGrupo = (props) => {
                 <FontAwesomeIcon icon={faChevronCircleLeft} className="mr-2" onClick={handleLeftClick}/>
                 {
                     status == 'ok'
-                    ? 
+                    ?
                     <FontAwesomeIcon icon={faChevronCircleRight} className="ml-2" onClick={handleRightClick}/>
                     :
                     <FontAwesomeIcon icon={faChevronCircleRight} className="ml-2"/>
@@ -62,11 +62,12 @@ const CardGrupo = (props) => {
             </>
         )
     }
+
     useEffect( () => {
         makeRequest()
-        console.log(dados) 
+        console.log(dados)
     } ,[])
-   
+
     return(
         <div>
             <div className="carousel" ref={carousel} onScroll={dispararNovaPagina}>
@@ -74,16 +75,20 @@ const CardGrupo = (props) => {
                 {
                     grupos.map(
                         (e,i,a) => (
-                            <CardInfo titulo={e?.titulo} categoria={e?.categoria} descricao={e?.descricao} img={e?.img} link={e?.url} _id={e?._id}/>
-                         )
-                    )
-                    
-                }
+                            <>
+                                <CardInfo titulo={e?.titulo} categoria={e?.categoria} descricao={e?.descricao} img={e?.img} link={e?.url} _id={e?._id}/>
+                                { i%3 === 0 ? <CardAds /> : ''}
+                            </>
 
+                    )
+                    )
+
+                }
                 {
                     status != 'ok' ? <CardWait ativo={false}/> : <CardWait ativo={true}/>
                 }
-                
+
+
             </div>
             <div className="text-center chevrons">
                 <NextPrevious/>

@@ -16919,7 +16919,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "CardInfo": () => (/* binding */ CardInfo),
 /* harmony export */   "CardInfoLink": () => (/* binding */ CardInfoLink),
 /* harmony export */   "CardInfo2": () => (/* binding */ CardInfo2),
-/* harmony export */   "CardPreview": () => (/* binding */ CardPreview)
+/* harmony export */   "CardPreview": () => (/* binding */ CardPreview),
+/* harmony export */   "CardAds": () => (/* binding */ CardAds)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/Col.js");
@@ -16990,6 +16991,44 @@ var CardInfo = function CardInfo(props) {
           children: "Informa\xE7\xF5es"
         })
       })]
+    })
+  });
+};
+
+var CardAds = function CardAds(props) {
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    try {
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+    } catch (_unused) {
+      console.log("erro carregamento ads"); //document.getElementsByName("ins")[0].setAttribute("hidden","true")
+    }
+  });
+
+  function adsComponent() {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("ins", {
+      className: "adsbygoogle",
+      style: {
+        display: "block"
+      },
+      "data-ad-format": "fluid",
+      "data-ad-layout-key": "+2f+pt+42-22+39",
+      "data-ad-client": "ca-pub-8817634033676287",
+      "data-adtest": "on",
+      "data-ad-slot": "2754058875"
+    });
+  }
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    xs: 12,
+    sm: 12,
+    md: 4,
+    lg: 2,
+    onError: function onError() {
+      return console.log("ERRO DETECTADO");
+    },
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      id: "google-ads",
+      children: adsComponent()
     })
   });
 };
@@ -17474,13 +17513,15 @@ var CardGrupo = function CardGrupo(props) {
       ref: carousel,
       onScroll: dispararNovaPagina,
       children: [grupos.map(function (e, i, a) {
-        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Componentes_Cards__WEBPACK_IMPORTED_MODULE_4__.CardInfo, {
-          titulo: e === null || e === void 0 ? void 0 : e.titulo,
-          categoria: e === null || e === void 0 ? void 0 : e.categoria,
-          descricao: e === null || e === void 0 ? void 0 : e.descricao,
-          img: e === null || e === void 0 ? void 0 : e.img,
-          link: e === null || e === void 0 ? void 0 : e.url,
-          _id: e === null || e === void 0 ? void 0 : e._id
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Componentes_Cards__WEBPACK_IMPORTED_MODULE_4__.CardInfo, {
+            titulo: e === null || e === void 0 ? void 0 : e.titulo,
+            categoria: e === null || e === void 0 ? void 0 : e.categoria,
+            descricao: e === null || e === void 0 ? void 0 : e.descricao,
+            img: e === null || e === void 0 ? void 0 : e.img,
+            link: e === null || e === void 0 ? void 0 : e.url,
+            _id: e === null || e === void 0 ? void 0 : e._id
+          }), i % 3 === 0 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Componentes_Cards__WEBPACK_IMPORTED_MODULE_4__.CardAds, {}) : '']
         });
       }), status != 'ok' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Componentes_Cards__WEBPACK_IMPORTED_MODULE_4__.CardWait, {
         ativo: false
