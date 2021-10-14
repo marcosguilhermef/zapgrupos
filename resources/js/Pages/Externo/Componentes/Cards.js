@@ -3,13 +3,15 @@ import {Col, Row, Card, Button, Image, Spinner} from 'react-bootstrap'
 import './card.css'
 
 const CardInfo = (props) => {
-const {_id,link, titulo, categoria, descricao, img} = {...props}
-const redirect = (cat) =>{
-        cat = cat.replaceAll(" ","-")
-        return '/'+cat+'/'+_id
+    const {_id,link, titulo, categoria, descricao, img, tipo} = {...props}
+    const redirect = (cat) =>{
+            cat = cat.replaceAll(" ","-")
+            return '/'+cat+'/'+_id
+
     }
+
     return(
-        <Col xs={12} sm={12} md={4} lg={2}>
+        <Col xs={12} sm={12} md={4} lg={2} >
             <Card>
                 <Card.Header>
                     { titulo }
@@ -17,13 +19,19 @@ const redirect = (cat) =>{
                 {
                     img.length == 0 ?
                     (
-                        <Image src="/img/generico/reactangle.png" className="card-img-top"/>)
+                        <Image src="/img/generico/reactangle.png" className="card-img-top" style={{ height:"280px" }} height="280px"/>)
                     :
                     (
-                        <Image src={img[0]} onError={(e) => e.target.src = "/img/generico/reactangle.png"} className="card-img-top"/>)
+                        <Image src={img[0]} onError={(e) => e.target.src = "/img/generico/reactangle.png"} className="card-img-top" style={{ height:"280px" }} height="280px" />)
                 }
                 <Card.Body className="card-orverflowy">
-                <span className="card-category">{categoria}</span>
+                <span className="card-category">
+                    {categoria}
+                    {
+                        tipo == "whatsapp" ? (<Image src="/img/generico/whatsapp.png" />) : (<Image src="/img/generico/telegram.png" />                        )
+                    }
+                </span>
+
                 <p className="text-justify">
                     { descricao }
                 </p>
@@ -40,23 +48,31 @@ const CardAds = (props) => {
     useEffect(() => {
         try{
             (window.adsbygoogle = window.adsbygoogle || []).push({});
+            console.log("sucesso: ",window.adsbygoogle)
         }catch{
-            console.log("erro carregamento ads")
+            console.log("erro carregamento ads: ",window.adsbygoogle)
             //document.getElementsByName("ins")[0].setAttribute("hidden","true")
         }
     })
+
     function AdsComponent(){
         return(
             <Col xs={12} sm={12} md={4} lg={2}>
                 <Card id="google-ads">
-                    <ins className="adsbygoogle"
-                         style={{ display: "block" }}
-                         data-ad-format="fluid"
-                         data-ad-layout-key="+2f+pt+42-22+39"
-                         data-ad-client="ca-pub-8817634033676287"
-                         data-ad-slot="2754058875">
-                    </ins>
-                </Card>
+                    <Card.Header>
+                        Patrocinado
+                    </Card.Header>
+                        <ins className="adsbygoogle"
+                             style={{ display: "block" }}
+                             data-ad-format="fluid"
+                             data-ad-layout-key="+2f+pt+42-22+39"
+                             data-ad-client="ca-pub-8817634033676287"
+                             data-ad-slot="2754058875">
+                        </ins>
+                    </Card>
+                <Card.Footer className="text-center">
+                    {/*<a className="btn btn-success" role="button">Saiba mais</a>*/}
+                </Card.Footer>
             </Col>
         )
     }

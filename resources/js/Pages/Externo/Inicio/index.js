@@ -2,10 +2,10 @@ import React ,{useEffect, useRef, useState}from 'react'
 import Layout from '../../Layout'
 import './grupo.css'
 import CardGrupo from './CardGrupo'
-import store from '../../../Api/store'; 
+import store from '../../../Api/store';
 import { Provider } from 'react-redux';
 
-import { Container } from 'react-bootstrap'; 
+import { Container } from 'react-bootstrap';
 const Index = (props) => {
     return(
         <Provider store={store}>

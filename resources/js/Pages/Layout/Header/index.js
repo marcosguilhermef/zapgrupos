@@ -11,7 +11,7 @@ ReactGA.initialize('UA-207744095-1');
 ReactGA.pageview(window.location.pathname + window.location.search);
 
 const NavBarComponent = (props) => {
-    const user = props.user 
+    const user = props.user
     const verified  =   props.verified
     const authenticated = props.authenticated
     const logoNav = window.location.origin+'/img/logo/logo.png'
@@ -72,7 +72,7 @@ const NavBarComponent = (props) => {
                         <NavParaNaoAuthenticados/>
                     )
                 }
-                
+
 
 {/*                 <Nav>
                     {
@@ -90,7 +90,7 @@ const NavBarComponent = (props) => {
                                 </>
                         )
                     }
-                    
+
                 </Nav> */}
             </Navbar.Collapse>
 
@@ -98,7 +98,7 @@ const NavBarComponent = (props) => {
     )
 }
 const Header = (props) => {
-    const user      =   props.user 
+    const user      =   props.user
     const verified  =   props.verified
     const authenticated = props.authenticated
     if(verified){
@@ -112,9 +112,9 @@ const Header = (props) => {
             <NavBarComponent user={user} verified={verified} authenticated={authenticated}/>
         </>
     );
-    
-    
-    
+
+
+
 }
 
 export default Header;

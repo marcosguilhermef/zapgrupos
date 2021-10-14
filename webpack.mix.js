@@ -10,12 +10,6 @@ const mix = require('laravel-mix');
  | file for the application as well as bundling up all the JS files.
  |
  */
-
-mix.js('resources/js/app.js', 'public/js')
-    .react()
-    .sass('resources/sass/app.scss', 'public/css')
-    .version()
-    ;
 mix.options({
     terser: {
         terserOptions: {
@@ -25,3 +19,10 @@ mix.options({
         }
     }
 });
+
+mix.js('resources/js/app.js', 'public/js');
+
+mix.react()
+    .sass('resources/sass/app.scss', 'public/css')
+    .version()
+;

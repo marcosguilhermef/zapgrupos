@@ -15,6 +15,12 @@
     flex-shrink: 0;
     width: 100%;
 }
+
+.card-category img{
+    width: 15px;
+    height: 15px;
+    margin-left: 10px;
+}
 .card-orverflowy{
     overflow-y: auto;
     height: 12em;
