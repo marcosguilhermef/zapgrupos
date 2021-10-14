@@ -65,7 +65,6 @@ const CardGrupo = (props) => {
 
     useEffect( () => {
         makeRequest()
-        console.log(dados)
     } ,[])
 
     return(

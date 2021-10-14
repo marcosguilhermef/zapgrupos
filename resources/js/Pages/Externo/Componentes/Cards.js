@@ -1,9 +1,10 @@
-import { useEffect } from 'react'
+import { useEffect, Component } from 'react'
 import {Col, Row, Card, Button, Image, Spinner} from 'react-bootstrap'
 import './card.css'
+
 const CardInfo = (props) => {
-    const {_id,link, titulo, categoria, descricao, img} = {...props}
-    const redirect = (cat) =>{
+const {_id,link, titulo, categoria, descricao, img} = {...props}
+const redirect = (cat) =>{
         cat = cat.replaceAll(" ","-")
         return '/'+cat+'/'+_id
     }
@@ -28,7 +29,7 @@ const CardInfo = (props) => {
                 </p>
                 </Card.Body>
                 <Card.Footer className="text-center">
-                    <a class="btn btn-success" href={redirect(categoria)} role="button">Informações</a>
+                    <a className="btn btn-success" href={redirect(categoria)} role="button">Informações</a>
                 </Card.Footer>
             </Card>
         </Col>
@@ -44,23 +45,23 @@ const CardAds = (props) => {
             //document.getElementsByName("ins")[0].setAttribute("hidden","true")
         }
     })
-    function adsComponent(){
+    function AdsComponent(){
         return(
-            <ins className="adsbygoogle"
-                 style={{ display: "block" }}
-                 data-ad-format="fluid"
-                 data-ad-layout-key="+2f+pt+42-22+39"
-                 data-ad-client="ca-pub-8817634033676287"
-                 data-ad-slot="2754058875">
-            </ins>
+            <Col xs={12} sm={12} md={4} lg={2}>
+                <Card id="google-ads">
+                    <ins className="adsbygoogle"
+                         style={{ display: "block" }}
+                         data-ad-format="fluid"
+                         data-ad-layout-key="+2f+pt+42-22+39"
+                         data-ad-client="ca-pub-8817634033676287"
+                         data-ad-slot="2754058875">
+                    </ins>
+                </Card>
+            </Col>
         )
     }
     return(
-        <Col xs={12} sm={12} md={4} lg={2} onError={ () => console.log("ERRO DETECTADO") }>
-            <Card id="google-ads">
-                { adsComponent() }
-            </Card>
-        </Col>
+        window?.adsbygoogle?.loaded ? (window?.adsbygoogle?.push.length ? (<AdsComponent/>) : '' ) : ('')
     );
 
 }
@@ -93,7 +94,7 @@ const CardInfo2 = (props) => {
                 </p>
                 </Card.Body>
                 <Card.Footer className="text-center">
-                    <a class="btn btn-success" href={redirect(categoria)} role="button">Informações</a>
+                    <a className="btn btn-success" href={redirect(categoria)} role="button">Informações</a>
                 </Card.Footer>
             </Card>
         </Col>
@@ -104,29 +105,29 @@ const CardInfo2 = (props) => {
 const CardWait = (props) => {
     const {ativo} = {...props}
     return(
-        <Col xs={12} sm={12} md={4} lg={2} hidden={ativo}>
-            <Card>
-                <Card.Header>
-                    Aguarde
-                </Card.Header>
-                <Image src="/img/generico/reactangle.png" className="card-img-top"/>
-                <Card.Body className="card-orverflowy">
-                <span className="card-category"> Aguarda </span>
-                <div className="cardx"></div>
-                </Card.Body>
-                <Card.Footer className="text-center">
-                    <Button variant="success">
-                        <Spinner
-                            as="span"
-                            animation="border"
-                            size="sm"
-                            role="status"
-                            aria-hidden="true"
-                        />
-                    </Button>
-                </Card.Footer>
-            </Card>
-        </Col>
+            <Col xs={12} sm={12} md={4} lg={2} hidden={ativo}>
+                <Card>
+                    <Card.Header>
+                        Aguarde
+                    </Card.Header>
+                    <Image src="/img/generico/reactangle.png" className="card-img-top"/>
+                    <Card.Body className="card-orverflowy">
+                    <span className="card-category"> Aguarda </span>
+                    <div className="cardx"></div>
+                    </Card.Body>
+                    <Card.Footer className="text-center">
+                        <Button variant="success">
+                            <Spinner
+                                as="span"
+                                animation="border"
+                                size="sm"
+                                role="status"
+                                aria-hidden="true"
+                            />
+                        </Button>
+                    </Card.Footer>
+                </Card>
+            </Col>
     )
 }
 

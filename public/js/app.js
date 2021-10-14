@@ -16985,7 +16985,7 @@ var CardInfo = function CardInfo(props) {
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["default"].Footer, {
         className: "text-center",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
-          "class": "btn btn-success",
+          className: "btn btn-success",
           href: redirect(categoria),
           role: "button",
           children: "Informa\xE7\xF5es"
@@ -16996,6 +16996,8 @@ var CardInfo = function CardInfo(props) {
 };
 
 var CardAds = function CardAds(props) {
+  var _window, _window$adsbygoogle, _window2, _window2$adsbygoogle;
+
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     try {
       (window.adsbygoogle = window.adsbygoogle || []).push({});
@@ -17004,33 +17006,29 @@ var CardAds = function CardAds(props) {
     }
   });
 
-  function adsComponent() {
-    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("ins", {
-      className: "adsbygoogle",
-      style: {
-        display: "block"
-      },
-      "data-ad-format": "fluid",
-      "data-ad-layout-key": "+2f+pt+42-22+39",
-      "data-ad-client": "ca-pub-8817634033676287",
-      "data-adtest": "on",
-      "data-ad-slot": "2754058875"
+  function AdsComponent() {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      xs: 12,
+      sm: 12,
+      md: 4,
+      lg: 2,
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        id: "google-ads",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("ins", {
+          className: "adsbygoogle",
+          style: {
+            display: "block"
+          },
+          "data-ad-format": "fluid",
+          "data-ad-layout-key": "+2f+pt+42-22+39",
+          "data-ad-client": "ca-pub-8817634033676287",
+          "data-ad-slot": "2754058875"
+        })
+      })
     });
   }
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    xs: 12,
-    sm: 12,
-    md: 4,
-    lg: 2,
-    onError: function onError() {
-      return console.log("ERRO DETECTADO");
-    },
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["default"], {
-      id: "google-ads",
-      children: adsComponent()
-    })
-  });
+  return (_window = window) !== null && _window !== void 0 && (_window$adsbygoogle = _window.adsbygoogle) !== null && _window$adsbygoogle !== void 0 && _window$adsbygoogle.loaded ? (_window2 = window) !== null && _window2 !== void 0 && (_window2$adsbygoogle = _window2.adsbygoogle) !== null && _window2$adsbygoogle !== void 0 && _window2$adsbygoogle.push.length ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(AdsComponent, {}) : '' : '';
 };
 
 var CardInfo2 = function CardInfo2(props) {
@@ -17076,7 +17074,7 @@ var CardInfo2 = function CardInfo2(props) {
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["default"].Footer, {
         className: "text-center",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
-          "class": "btn btn-success",
+          className: "btn btn-success",
           href: redirect(categoria),
           role: "button",
           children: "Informa\xE7\xF5es"
@@ -17505,7 +17503,6 @@ var CardGrupo = function CardGrupo(props) {
 
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     makeRequest();
-    console.log(dados);
   }, []);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
@@ -17621,9 +17618,6 @@ __webpack_require__.r(__webpack_exports__);
 var Index = function Index(props) {
   var _props$dados;
 
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    console.log(props);
-  });
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_redux__WEBPACK_IMPORTED_MODULE_3__.Provider, {
     store: _Api_store__WEBPACK_IMPORTED_MODULE_2__["default"],
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Layout__WEBPACK_IMPORTED_MODULE_1__["default"], {
