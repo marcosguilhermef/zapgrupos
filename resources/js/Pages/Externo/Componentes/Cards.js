@@ -67,6 +67,7 @@ const CardAds = (props) => {
                              data-ad-format="fluid"
                              data-ad-layout-key="+2f+pt+42-22+39"
                              data-ad-client="ca-pub-8817634033676287"
+                             data-adtest={process.env.APP_ENV == "production" ? 'off' : 'on' }
                              data-ad-slot="2754058875">
                         </ins>
                     </Card>
@@ -161,7 +162,7 @@ const CardInfoLink = (props) => {
                     { titulo  }
                 </Card.Header>
                 {
-                    img.length == 0 ?
+                    (typeof img === "undefined") ?
                     (
                         <Image src="/img/generico/reactangle.png" className="card-img-top"/>)
                     :
@@ -175,7 +176,7 @@ const CardInfoLink = (props) => {
                 </p>
                 </Card.Body>
                 <Card.Footer className="text-center">
-                    <a class="btn btn-success" href={`/grupo/${_id}`} role="button">Entrar</a>
+                    <a className="btn btn-success" href={`/grupo/${_id}`} role="button">Entrar</a>
                     {/* <Button variant="success" onClick={() => redirect(categoria)}>Entrar</Button> */}
                 </Card.Footer>
             </Card>
@@ -184,10 +185,20 @@ const CardInfoLink = (props) => {
 }
 
 const CardPreview = (props) => {
-    const {_id,link, titulo, categoria, descricao, img} = {...props ||'Informacao Auxente'}
+    const {_id,link, titulo, categoria, descricao, img, tipo} = {...props ||'Informacao Auxente'}
     const redirect = (cat) =>{
         cat = cat.replaceAll(" ","-")
         window.location.href = window.location.origin+'/'+cat+'/'+_id
+    }
+    function imageGroup(tipo){
+        switch (tipo){
+            case "whatsapp": return (<Image src="/img/generico/whatsapp.png" />);
+            break;
+            case "telegram": return (<Image src="/img/generico/telegram.png" />);
+            break;
+            default: return '';
+            break;
+        }
     }
     return(
         <Col xs={12} sm={12} md={12} lg={12}>
@@ -201,10 +212,17 @@ const CardPreview = (props) => {
                         <Image src="/img/generico/reactangle.png" className="card-img-top"/>)
                     :
                     (
-                        <Image src={img[0]}  onError={(e) => e.target.src = "/img/generico/reactangle.png"} className="card-img-top"/>)
+                        <Image src={img[0]}  onError={(e) => e.target.src = "/img/generico/reactangle.png"} className="card-img-top"/>
+                    )
                 }
                 <Card.Body className="card-orverflowy">
                 <span className="card-category">{categoria}</span>
+                <span className="card-category">
+                    {categoria}
+                {
+                    imageGroup(tipo)
+                }
+                </span>
                 <p className="text-justify">
                     { descricao }
                 </p>

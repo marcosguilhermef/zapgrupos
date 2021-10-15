@@ -12,6 +12,7 @@ class gruposWhatsApp extends Model
     protected $collection = 'URLs';
     protected $connection = 'mongodb';
     protected $currentPage = 12;
+    public    $timestamps = true;
     //protected $dates = ['birthday'];
     public static function getMaisAcessados(){
         $limit = 8 ;

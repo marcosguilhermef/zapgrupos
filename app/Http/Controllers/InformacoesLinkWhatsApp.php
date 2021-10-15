@@ -15,7 +15,7 @@ class InformacoesLinkWhatsApp extends Controller
         $conf['grupo'] = gruposWhatsApp::getGrupoById($parametro['_id']);
         $conf['maisgrupos'] = gruposWhatsApp::getGrupoByCategory($parametro['categoria']);
         $conf['title'] = "Grupo whatsapp: ".$conf['grupo'][0]['titulo'];
-        $img = isset($conf["grupo"][0]["img"][0]) ? $conf["grupo"][0]["img"][0] : "https://".$_SERVER['HTTP_HOST'].'/img/generico/reactangle.png' ;
+        $img = @$conf["grupo"][0]["img"][0] !== null ? @$conf["grupo"][0]["img"][0] : url()->to("/").'/img/generico/reactangle.png' ;
         $conf['meta'] = "
     <link rel=\"canonical\" href=\"".url()->current()."\"/>
     <meta name=\"description\" content=\"Grupo de whatsapp: ".$conf["grupo"][0]["descricao"]."\" />\n
@@ -33,13 +33,13 @@ class InformacoesLinkWhatsApp extends Controller
     <meta name=\"twitter:description\" content=\"Grupo de whatsapp: ".$conf["grupo"][0]["descricao"]."\">\n
     <meta name=\"twitter:image\" content=\"".$img."\">\n
         ";
-      
+
         return Inertia::render('Externo/Informacoes',$conf);
     }
 
     public function parametrizar($categoria,$id){
         $parameters = [
-                'categoria' => preg_replace("/-/", " ", $categoria), 
+                'categoria' => preg_replace("/-/", " ", $categoria),
                 '_id'=> $id
             ];
         return $parameters;

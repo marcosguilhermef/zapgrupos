@@ -11,9 +11,13 @@ class categorias extends Model
     protected $primaryKey = '_id';
     protected $collection = 'Categorias';
     protected $connection = 'mongodb';
-    
+
     public static function getCategoryPaginate(){
         $limit = 100;
-        return categorias::paginate($limit);    
+        return categorias::paginate($limit);
+    }
+
+    public static function getCategoryInformation($categorioa){
+        return categorias::where("categoria",$categorioa)->get();
     }
 }

@@ -5,7 +5,11 @@ import { Provider } from 'react-redux';
 
 import { Container, Card, Row, Col, Button, Image } from 'react-bootstrap';
 const Index = (props) => {
+    const redirect = (cat) =>{
+        cat = cat.replaceAll(" ","-")
+        return cat
 
+    }
     return(
         <Provider store={store}>
             <Layout user={props?.user} verified={props?.verified} authenticated={props?.authenticated}>
@@ -28,7 +32,7 @@ const Index = (props) => {
                                                     <Image  src={e.img} onError={(e) => e.target.src = "/img/generico/reactangle.png"} className="card-img-top"/>)
                                             }
                                             <Card.Footer className="text-center">
-                                                <Button variant="success" onClick={ () =>document.location.href = ("/"+e["categoria"])  }>Informações</Button>
+                                                <Button variant="success" onClick={ () =>document.location.href = ("/"+redirect(e["categoria"]))  }>Informações</Button>
                                             </Card.Footer>
                                         </Card>
                                     </Col>
