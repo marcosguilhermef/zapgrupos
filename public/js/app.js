@@ -17034,6 +17034,9 @@ var CardAds = function CardAds(props) {
       console.log("erro carregamento ads: ", window.adsbygoogle); //document.getElementsByName("ins")[0].setAttribute("hidden","true")
     }
   });
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    console.log("TESTE: ", process);
+  });
 
   function AdsComponent() {
     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -17043,8 +17046,8 @@ var CardAds = function CardAds(props) {
       lg: 2,
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["default"], {
         id: "google-ads",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["default"].Header, {
-          children: "Patrocinado"
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["default"].Header, {
+          children: ["Patrocinado", "production"]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("ins", {
           className: "adsbygoogle",
           style: {

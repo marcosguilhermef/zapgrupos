@@ -6,7 +6,7 @@
         "watch": "mix watch",
         "watch-poll": "mix watch -- --watch-options-poll=1000",
         "hot": "mix watch --hot",
-        "prod": "npm run production",
+        "prod": "ENV_FILE=./.env npm run production",
         "production": "mix --production"
     },
     "devDependencies": {
@@ -34,6 +34,7 @@
         "@inertiajs/inertia-react": "^0.6.2",
         "@popperjs/core": "^2.9.2",
         "@reduxjs/toolkit": "^1.6.0",
+        "mix-env-file": "^0.1.1",
         "react-bootstrap": "^1.6.1",
         "react-ga": "^3.3.0",
         "react-redux": "^7.2.4",

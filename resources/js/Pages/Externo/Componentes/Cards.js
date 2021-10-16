@@ -54,13 +54,16 @@ const CardAds = (props) => {
             //document.getElementsByName("ins")[0].setAttribute("hidden","true")
         }
     })
+    useEffect(() => {
+        console.log("TESTE: ",process)
+    })
 
     function AdsComponent(){
         return(
             <Col xs={12} sm={12} md={4} lg={2}>
                 <Card id="google-ads">
                     <Card.Header>
-                        Patrocinado
+                        Patrocinado{process.env.MIX_APP_ENV}
                     </Card.Header>
                         <ins className="adsbygoogle"
                              style={{ display: "block" }}
