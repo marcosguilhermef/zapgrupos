@@ -17,7 +17,7 @@ class sitemap extends Controller
         $xml = "
             <urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">
                 <url>
-                        <loc>".url()->to("/")."</loc>
+                        <loc>".url()->secure("/")."</loc>
                         <lastmod>2021-08-16</lastmod>
                         <changefreq>daily</changefreq>
                         <priority>1.0</priority>
@@ -28,7 +28,7 @@ class sitemap extends Controller
             $date = new \DateTime(isset($value['updated_at']) ? $value['updated_at'] : (isset($value['created_at']) ? $value['created_at']: 'NOW'));
             $xml .= "
             <url>
-                    <loc>".url()->to("/")."/".str_replace(' ','-',$value["categoria"])."</loc>
+                    <loc>".url()->secure("/")."/".str_replace(' ','-',$value["categoria"])."</loc>
                     <lastmod>".$date->format('Y-m-d')."</lastmod>
                     <changefreq>weekly</changefreq>
                     <priority>1.0</priority>
@@ -40,7 +40,7 @@ class sitemap extends Controller
             $date = new \DateTime(isset($value['updated_at']) ? $value['updated_at'] : (isset($value['created_at']) ? $value['created_at']: 'NOW'));
             $xml .= "
             <url>
-                    <loc>".url()->to("/")."/".str_replace(' ','-',$value["categoria"])."/$value[_id]</loc>
+                    <loc>".url()->secure("/")."/".str_replace(' ','-',$value["categoria"])."/$value[_id]</loc>
                     <lastmod>".$date->format('Y-m-d')."</lastmod>
                     <changefreq>weekly</changefreq>
                     <priority>1.0</priority>
