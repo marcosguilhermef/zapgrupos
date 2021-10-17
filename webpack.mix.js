@@ -1,5 +1,5 @@
 const mix = require('laravel-mix');
-require('mix-env-file');
+//require('mix-env-file');
 
 /*
  |--------------------------------------------------------------------------
@@ -30,4 +30,4 @@ mix.react()
     .version()
 ;
 
-mix.env(process.env.ENV_FILE);
+//mix.env(process.env.ENV_FILE);

@@ -63,7 +63,7 @@ const CardAds = (props) => {
             <Col xs={12} sm={12} md={4} lg={2}>
                 <Card id="google-ads">
                     <Card.Header>
-                        Patrocinado{process.env.MIX_APP_ENV}
+                        Patrocinado
                     </Card.Header>
                         <ins className="adsbygoogle"
                              style={{ display: "block" }}
