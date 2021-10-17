@@ -70,7 +70,7 @@ const CardAds = (props) => {
                              data-ad-format="fluid"
                              data-ad-layout-key="+2f+pt+42-22+39"
                              data-ad-client="ca-pub-8817634033676287"
-                             data-adtest={process.env.APP_ENV == "production" ? 'off' : 'on' }
+                             data-adtest={process.env.MIX_APP_ENV == "production" ? 'off' : 'on' }
                              data-ad-slot="2754058875">
                         </ins>
                     </Card>
