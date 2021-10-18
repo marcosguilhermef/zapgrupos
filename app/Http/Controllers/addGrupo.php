@@ -34,7 +34,7 @@ class addGrupo extends Controller
         $grupo->url         =   $r["link"];
         $grupo->titulo      =   $r["titulo"];
         $grupo->descricao   =   $r["descricao"];
-        $grupo->tipo        =   "whatsapp";
+        $grupo->tipo        =   $r["tipo"];
         $grupo->ativo       =   true;
         $grupo->categoria   =   $r["categoria"];
         $grupo->email       =   $r["email"];
@@ -53,7 +53,7 @@ class addGrupo extends Controller
         $rules = [
             'descricao'     =>      'required|between:30,300',
             'titulo'        =>      'required|between:5,50',
-            'link'          =>      ["required","url:https",new uniqmongo],
+            'link'          =>      ["required","url",new uniqmongo],
             'telefone'      =>      'required',
             'categoria'     =>      'required',
             'email'     =>          'required|email',

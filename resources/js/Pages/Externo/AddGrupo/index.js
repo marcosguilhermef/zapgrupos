@@ -13,14 +13,12 @@ const Index = (props) => {
         "tipo": null
     });
     const [erros, setErros]            = useState({});
-
     const link          =       useRef(null)
     const titulo        =       useRef(null)
     const descricao     =       useRef(null)
     const categoria     =       useRef(null)
     const email         =       useRef(null)
     const telefone      =       useRef(null)
-
     const setingClients = (event) => {
         let obj = {
             [event.target.name]: event.target.value
@@ -31,8 +29,6 @@ const Index = (props) => {
     const submit = () => {
         fetchRequest(infoClient)
     }
-
-
 
     const fetchRequest =  async () => {
         try{
@@ -53,6 +49,21 @@ const Index = (props) => {
             console.log(e)
         }
     }
+    function AnalizarUrl(url){
+        if(/^https:\/\/chat.whatsapp.com\/\w{5,}|^https:\/\/t.me\/\w{4,}/.test(url.target.value)){
+
+            let tipo = url.target.value.match(/(whatsapp)|(t.me)/g)
+            setInfoCliente((value) => ({ ...value, tipo : tipo[0], [url.target.name]:url.target.value }))
+            setErros((values) => ({ ...values, [url.target.name]: null }))
+        }else{
+            setInfoCliente((value) => ({ ...value, tipo : null }))
+            setErros((values) => ({ ...values, [url.target.name]: ["Aceitamos apenas URLs de Telegram e WhatsApp. As URLs devem começar com \"https\"."]  }))
+        }
+    }
+
+    useEffect(() => {
+        console.log()
+    })
 
     return(
             <Layout user={user} verified={verified} authenticated={authenticated}>
@@ -67,7 +78,9 @@ const Index = (props) => {
 
                                 <Form.Group className="mb-3" controlId="linkWhatsapp">
                                     <Form.Label>Link:</Form.Label>
-                                    <Form.Control type="text" name="link" placeholder="Link do grupo" ref={link} onChange={setingClients} isInvalid={erros?.link}/>
+                                    <Form.Control type="text" name="link" placeholder="Link do grupo" ref={link} onChange={(e) => {
+                                        AnalizarUrl(e)
+                                    }} isInvalid={erros?.link}/>
                                     <Form.Control.Feedback type="invalid"  className="text-left" >
                                     {
                                         erros?.link?.map( (e,a,i) => {

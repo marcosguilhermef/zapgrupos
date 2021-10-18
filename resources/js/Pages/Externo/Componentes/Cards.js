@@ -17,7 +17,7 @@ const CardInfo = (props) => {
                     { titulo }
                 </Card.Header>
                 {
-                    img.length == 0 ?
+                    img?.length == 0 || typeof img === 'undefined' ?
                     (
                         <Image src="/img/generico/reactangle.png" className="card-img-top" style={{ height:"280px" }} height="280px"/>)
                     :
@@ -100,7 +100,7 @@ const CardInfo2 = (props) => {
                     { titulo }
                 </Card.Header>
                 {
-                    img.length == 0 ?
+                    img?.length == 0 || typeof img === "undefined"?
                     (
                         <Image src="/img/generico/reactangle.png" className="card-img-top"/>)
                     :
@@ -165,12 +165,12 @@ const CardInfoLink = (props) => {
                     { titulo  }
                 </Card.Header>
                 {
-                    (typeof img === "undefined") ?
-                    (
-                        <Image src="/img/generico/reactangle.png" className="card-img-top"/>)
-                    :
-                    (
-                        <Image src={img[0]} onError={(e) => e.target.src = "/img/generico/reactangle.png"}  className="card-img-top"/>)
+                    img?.length == 0 || typeof img === "undefined"?
+                        (
+                            <Image src="/img/generico/reactangle.png" className="card-img-top"/>)
+                        :
+                        (
+                            <Image src={img[0]} onError={(e) => e.target.src = "/img/generico/reactangle.png"} className="card-img-top"/>)
                 }
                 <Card.Body className="card-orverflowy">
                 <span className="card-category">{categoria}</span>
@@ -195,9 +195,9 @@ const CardPreview = (props) => {
     }
     function imageGroup(tipo){
         switch (tipo){
-            case "whatsapp": return (<Image src="/img/generico/whatsapp.png" />);
+            case "https://chat.whatsapp": return (<Image src="/img/generico/whatsapp.png" />);
             break;
-            case "telegram": return (<Image src="/img/generico/telegram.png" />);
+            case "https://t.me": return (<Image src="/img/generico/telegram.png" />);
             break;
             default: return '';
             break;
@@ -210,13 +210,12 @@ const CardPreview = (props) => {
                     { titulo }
                 </Card.Header>
                 {
-                    img.length == 0 ?
-                    (
-                        <Image src="/img/generico/reactangle.png" className="card-img-top"/>)
-                    :
-                    (
-                        <Image src={img[0]}  onError={(e) => e.target.src = "/img/generico/reactangle.png"} className="card-img-top"/>
-                    )
+                    img?.length == 0 || typeof img === "undefined"?
+                        (
+                            <Image src="/img/generico/reactangle.png" className="card-img-top"/>)
+                        :
+                        (
+                            <Image src={img[0]} onError={(e) => e.target.src = "/img/generico/reactangle.png"} className="card-img-top"/>)
                 }
                 <Card.Body className="card-orverflowy">
                 <span className="card-category">{categoria}</span>
