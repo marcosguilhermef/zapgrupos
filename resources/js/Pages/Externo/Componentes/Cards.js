@@ -195,9 +195,9 @@ const CardPreview = (props) => {
     }
     function imageGroup(tipo){
         switch (tipo){
-            case "https://chat.whatsapp": return (<Image src="/img/generico/whatsapp.png" />);
+            case "whatsapp": return (<Image src="/img/generico/whatsapp.png" />);
             break;
-            case "https://t.me": return (<Image src="/img/generico/telegram.png" />);
+            case "t.me": return (<Image src="/img/generico/telegram.png" />);
             break;
             default: return '';
             break;

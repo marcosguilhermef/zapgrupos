@@ -16738,9 +16738,6 @@ var Index = function Index(props) {
     }
   }
 
-  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
-    console.log();
-  });
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_Layout__WEBPACK_IMPORTED_MODULE_2__["default"], {
     user: user,
     verified: verified,
@@ -17260,13 +17257,13 @@ var CardPreview = function CardPreview(props) {
 
   function imageGroup(tipo) {
     switch (tipo) {
-      case "https://chat.whatsapp":
+      case "whatsapp":
         return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["default"], {
           src: "/img/generico/whatsapp.png"
         });
         break;
 
-      case "https://t.me":
+      case "t.me":
         return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["default"], {
           src: "/img/generico/telegram.png"
         });

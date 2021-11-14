@@ -12,13 +12,16 @@ const Index = (props) => {
         "categoria": "Sem categoria",
         "tipo": null
     });
+
     const [erros, setErros]            = useState({});
+
     const link          =       useRef(null)
     const titulo        =       useRef(null)
     const descricao     =       useRef(null)
     const categoria     =       useRef(null)
     const email         =       useRef(null)
     const telefone      =       useRef(null)
+
     const setingClients = (event) => {
         let obj = {
             [event.target.name]: event.target.value
@@ -39,7 +42,7 @@ const Index = (props) => {
                 "Content-Type": "application/json"
               })
           })
-          const dados    =  await response.json()
+          const dados = await response.json()
           if(response.ok){
             window.location.href = dados.redirect
           }else{
@@ -61,9 +64,6 @@ const Index = (props) => {
         }
     }
 
-    useEffect(() => {
-        console.log()
-    })
 
     return(
             <Layout user={user} verified={verified} authenticated={authenticated}>

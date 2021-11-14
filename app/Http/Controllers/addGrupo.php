@@ -10,8 +10,11 @@ use Illuminate\Support\Facades\Validator;
 use App\Rules\uniqmongo;
 use App\Rules\url;
 use App\Models\gruposWhatsApp;
+use MongoDB\BSON\ObjectId;
+
 class addGrupo extends Controller
 {
+
     public function index(){
         $conf = UsersInfo::getInfor();
         $conf["titulo"]     =   'Grupos mais acessados';
@@ -43,8 +46,20 @@ class addGrupo extends Controller
         $grupo->vizita      =   null;
         $grupo->siteMae     =   null;
         $grupo->save();
+        $this->resgartarImage($grupo->_id, $grupo->url,$grupo->tipo);
         return url()->to("/$grupo->categoria/".$grupo->_id);
 
+    }
+
+    public function resgartarImage(String $id, String $url, String $tipo){
+        try{
+            if($tipo === "whatsapp"){
+                shell_exec('java -jar '.env("JAVA_BOT")." scrapImageWhatsAppGroup $url $id ");
+                return;
+            }
+        }catch( \Exception $e ){
+            return;
+        }
     }
 
     public function validateRequest(Request $request){
