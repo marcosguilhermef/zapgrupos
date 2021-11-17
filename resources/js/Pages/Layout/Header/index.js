@@ -24,10 +24,11 @@ const NavBarComponent = (props) => {
                                 <NavDropdown.Item href="/">Namoro</NavDropdown.Item>
                                 <NavDropdown.Item href="/">Trabalho</NavDropdown.Item>
                                 <NavDropdown.Item href="/">Esportes</NavDropdown.Item>
-                                <Nav.Link href="/mais">Adicionar Grupo</Nav.Link>
                                 {/* <NavDropdown.Divider />
                                 <NavDropdown.Item href="/comparador">Separated link</NavDropdown.Item> */}
                             </NavDropdown>
+                            <Nav.Link href="/mais">Adicionar Grupo</Nav.Link>
+
                         </Nav>
         )
     }
@@ -46,6 +47,7 @@ const NavBarComponent = (props) => {
                     <NavDropdown.Item href="/comparador">Separated link</NavDropdown.Item> */}
                 </NavDropdown>
                 <Nav.Link href="/adicionar">Adicionar Grupo</Nav.Link>
+                <Nav.Link href="gerar-link-whatsapp">Gerar Link</Nav.Link>
                 <Nav.Link href="/sobre">Sobre</Nav.Link>
 
             </Nav>

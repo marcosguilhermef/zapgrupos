@@ -19,7 +19,7 @@ class PorCategoria extends Controller
         $img = isset($dados[0]["img"][0]) ? $dados[0]["img"][0] : url()->to('/') .'/img/generico/reactangle.png';
         $conf['meta'] = "
     <link rel=\"canonical\" href=\"".url()->current()."\"/>
-    <meta name=\"description\" content=".@$dados[0]["descricao"]."\" />\n
+    <meta name=\"description\" content=\"".@$dados[0]["descricao"]."\" />\n
     <meta property=\"og:url\" content=\"".url()->current()."\" />\n
     <meta property=\"og:type\" content=\"article\" />\n
     <meta property=\"og:title\" content=\"".$conf['title']."\" />\n

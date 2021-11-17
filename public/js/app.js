@@ -17313,6 +17313,176 @@ var CardPreview = function CardPreview(props) {
 
 /***/ }),
 
+/***/ "./resources/js/Pages/Externo/GerarLink/index.js":
+/*!*******************************************************!*\
+  !*** ./resources/js/Pages/Externo/GerarLink/index.js ***!
+  \*******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _Layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../Layout */ "./resources/js/Pages/Layout/index.js");
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/Container.js");
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/Form.js");
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/Button.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+
+
+
+var Index = function Index(props) {
+  var _props = _objectSpread({}, props),
+      user = _props.user,
+      verified = _props.verified,
+      authenticated = _props.authenticated,
+      categorias = _props.categorias,
+      _token = _props._token;
+
+  var url = "https://api.whatsapp.com/send?";
+  var refTelefone = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+  var link = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(url);
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({}),
+      _useState2 = _slicedToArray(_useState, 2),
+      dados = _useState2[0],
+      setDados = _useState2[1];
+
+  var formatTelefone = function formatTelefone(event) {
+    var string = event.target.value;
+    refTelefone.current.value = string.replace(/\D/g, "").replace(/(\d{2})(\d)/, "($1) $2").replace(/(\d{5})(\d{1})/, "$1-$2").replace(/(\d{5})(\d{2})/, "$1-$2").replace(/(\d{5})(\d{3})/, "$1-$2").replace(/(\d{5})(\d{4})+?$/, "$1-$2");
+  };
+
+  var handleChange = function handleChange(event) {
+    var _event$target = event.target,
+        name = _event$target.name,
+        value = _event$target.value;
+
+    if (name === 'phone') {
+      value = telefoneParametrizar(value);
+    }
+
+    setDados(_objectSpread(_objectSpread({}, dados), {}, _defineProperty({}, name, value)));
+  };
+
+  var telefoneParametrizar = function telefoneParametrizar(number) {
+    return number.replaceAll(/\(|\)|\s|\-/gi, "").replace(/(\d+)/, "55$1");
+  };
+
+  var copiar = function copiar() {
+    var linkGerado = link.current;
+
+    if (!navigator.clipboard) {
+      linkGerado.focus();
+      linkGerado.select();
+      document.execCommand('copy');
+    }
+
+    navigator.clipboard.writeText(linkGerado.value);
+  };
+
+  var gerarLink = function gerarLink() {
+    link.current.value = url + new URLSearchParams(dados).toString();
+  };
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    gerarLink();
+  });
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_Layout__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    user: user,
+    verified: verified,
+    authenticated: authenticated,
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h1", {
+        className: "text-center my-4",
+        children: "Gerador de link para Whatsapp"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+        children: "Como gerar o seu link?"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("ul", {
+        className: "mt-5",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+          children: "Insira o seu n\xFAmero de whtatspp;"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+          children: "Escreva a mensagem padr\xE3o que ser\xE1 enviada pelo whatsapp;"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+          children: "Clique em gerar link;"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
+          children: "Teste para ver se tudo est\xE1 funcionando corretamente."
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "mt-5",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["default"].Group, {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["default"].Label, {
+            children: "N\xFAmero do celular:"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["default"].Control, {
+            name: "phone",
+            maxLength: "15",
+            onChange: function onChange(event) {
+              formatTelefone(event);
+              handleChange(event);
+            },
+            placeholder: "(DDD) 0 0000 0000",
+            ref: refTelefone
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["default"].Group, {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["default"].Label, {
+            children: "Mensagem:"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["default"].Control, {
+            name: "text",
+            onChange: handleChange,
+            maxLength: "300",
+            as: "textarea",
+            rows: 3
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["default"].Group, {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["default"].Label, {
+            children: "Link:"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["default"].Control, {
+            name: "link",
+            disabled: true,
+            ref: link
+          })]
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        className: "text-center",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["default"], {
+          className: "w-100",
+          onClick: copiar,
+          variant: "success",
+          children: "Copiar link"
+        })
+      })]
+    })
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Index);
+
+/***/ }),
+
 /***/ "./resources/js/Pages/Externo/Informacoes/Carousel.js":
 /*!************************************************************!*\
   !*** ./resources/js/Pages/Externo/Informacoes/Carousel.js ***!
@@ -18080,10 +18250,10 @@ var NavBarComponent = function NavBarComponent(props) {
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__["default"].Item, {
           href: "/",
           children: "Esportes"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["default"].Link, {
-          href: "/mais",
-          children: "Adicionar Grupo"
         })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["default"].Link, {
+        href: "/mais",
+        children: "Adicionar Grupo"
       })]
     });
   };
@@ -18116,6 +18286,9 @@ var NavBarComponent = function NavBarComponent(props) {
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["default"].Link, {
         href: "/adicionar",
         children: "Adicionar Grupo"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["default"].Link, {
+        href: "gerar-link-whatsapp",
+        children: "Gerar Link"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["default"].Link, {
         href: "/sobre",
         children: "Sobre"
@@ -97538,6 +97711,10 @@ var map = {
 	"./Externo/Componentes/Cards": "./resources/js/Pages/Externo/Componentes/Cards.js",
 	"./Externo/Componentes/Cards.js": "./resources/js/Pages/Externo/Componentes/Cards.js",
 	"./Externo/Componentes/card.css": "./resources/js/Pages/Externo/Componentes/card.css",
+	"./Externo/GerarLink": "./resources/js/Pages/Externo/GerarLink/index.js",
+	"./Externo/GerarLink/": "./resources/js/Pages/Externo/GerarLink/index.js",
+	"./Externo/GerarLink/index": "./resources/js/Pages/Externo/GerarLink/index.js",
+	"./Externo/GerarLink/index.js": "./resources/js/Pages/Externo/GerarLink/index.js",
 	"./Externo/Informacoes": "./resources/js/Pages/Externo/Informacoes/index.js",
 	"./Externo/Informacoes/": "./resources/js/Pages/Externo/Informacoes/index.js",
 	"./Externo/Informacoes/Carousel": "./resources/js/Pages/Externo/Informacoes/Carousel.js",
