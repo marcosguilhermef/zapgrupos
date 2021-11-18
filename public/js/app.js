@@ -16742,7 +16742,7 @@ var Index = function Index(props) {
     user: user,
     verified: verified,
     authenticated: authenticated,
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h3", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h1", {
       className: "text-center my-4",
       children: "Adicionar grupo"
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
@@ -17609,7 +17609,7 @@ var Index = function Index(props) {
     authenticated: props === null || props === void 0 ? void 0 : props.authenticated,
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
       className: "m-lg-5 mx-sm-5 mt-5 mx-1 px-lg-5 px-md-3 px-0",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h3", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h1", {
         className: "text-center my-3",
         children: "Informa\xE7\xF5es do grupo"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__["default"], {
@@ -17831,7 +17831,7 @@ var Index = function Index(props) {
       user: props === null || props === void 0 ? void 0 : props.user,
       verified: props === null || props === void 0 ? void 0 : props.verified,
       authenticated: props === null || props === void 0 ? void 0 : props.authenticated,
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h3", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h1", {
         className: "text-center my-4",
         children: props === null || props === void 0 ? void 0 : props.titulo
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_CardGrupo__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -18134,7 +18134,10 @@ var Index = function Index(props) {
       verified: props === null || props === void 0 ? void 0 : props.verified,
       authenticated: props === null || props === void 0 ? void 0 : props.authenticated,
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["default"], {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h3", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h1", {
+          className: "text-certer",
+          children: "Sobre"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h3", {
           children: "O que o site zapgrupos.xyz?"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
           children: "Atrav\xE9z do nosso site, voc\xEA tem acesso a v\xE1rios links de grupos de WhatsApp que mais se adeque a seu interesse. Caso voc\xEA queira divultar o seu grupo, aqui \xE9 um ponto de partida."

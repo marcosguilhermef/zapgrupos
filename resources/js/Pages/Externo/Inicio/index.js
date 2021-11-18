@@ -10,7 +10,7 @@ const Index = (props) => {
     return(
         <Provider store={store}>
             <Layout user={props?.user} verified={props?.verified} authenticated={props?.authenticated}>
-                <h3 className="text-center my-4">{ props?.titulo }</h3>
+                <h1 className="text-center my-4">{ props?.titulo }</h1>
                 <CardGrupo api={props?.api}></CardGrupo>
             </Layout>
         </Provider>

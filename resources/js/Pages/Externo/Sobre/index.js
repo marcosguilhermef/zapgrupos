@@ -1,9 +1,9 @@
 import React ,{useEffect, useRef, useState}from 'react'
 import Layout from '../../Layout'
-import store from '../../../Api/store'; 
+import store from '../../../Api/store';
 import { Provider } from 'react-redux';
 
-import { Container, Card, Row, Col, Button, Image } from 'react-bootstrap'; 
+import { Container, Card, Row, Col, Button, Image } from 'react-bootstrap';
 const Index = (props) => {
     useEffect( () => {
     })
@@ -11,6 +11,7 @@ const Index = (props) => {
         <Provider store={store}>
             <Layout user={props?.user} verified={props?.verified} authenticated={props?.authenticated}>
                 <Container>
+                    <h1 className="text-certer">Sobre</h1>
                     <h3>O que o site zapgrupos.xyz?</h3>
                     <p>
                         Atravéz do nosso site, você tem acesso a vários links de grupos de WhatsApp que mais se adeque a seu interesse. Caso você queira divultar o seu grupo, aqui é um ponto de partida.
