@@ -11,6 +11,7 @@ class InicioController extends Controller
     public function index(){
         $conf = UsersInfo::getInfor();
         $conf["titulo"] = 'Grupos de whatsapp';
+        $conf["titulo_2"] = 'Mais acessados';
         $conf["api"]       = 'api/maisAcessados';
         $conf["meta"]      ='
 <meta name="description" content="Encontre grupos de whatsapp e telegram de acordo com o seu interesse. Temos mais de 20 categorias de grupos para os mais diversos interesses. Você também pode cadastrar o seu grupo para que mais pessoas entrem nos seus grupos." />

@@ -17834,6 +17834,9 @@ var Index = function Index(props) {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h1", {
         className: "text-center my-4",
         children: props === null || props === void 0 ? void 0 : props.titulo
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h3", {
+        className: "text-center my-4",
+        children: props === null || props === void 0 ? void 0 : props.titulo_2
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_CardGrupo__WEBPACK_IMPORTED_MODULE_3__["default"], {
         api: props === null || props === void 0 ? void 0 : props.api
       })]

@@ -12,7 +12,8 @@ class PorCategoria extends Controller
     public function index($categoria){
         $parametro = $this->parametrizar($categoria);
         $conf = UsersInfo::getInfor();
-        $conf["titulo"]    =  $parametro['categoria'];
+        $conf["titulo"] = 'Grupos de whatsapp';;
+        $conf["titulo_2"]    =  $parametro['categoria'];
         $conf["title"]     =  "zapgrupos | ".$parametro['categoria'];
         $conf["api"]       = 'api/grupos/'.$parametro['categoria'];
         $dados = categorias::getCategoryInformation($conf["titulo"]);
