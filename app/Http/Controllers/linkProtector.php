@@ -10,7 +10,7 @@ use App\Http\Controllers\Auth\UsersInfo;
 class linkProtector extends Controller
 {
     private $_id;
-    private gruposWhatsApp $grupo;
+    //private gruposWhatsApp $grupo;
 
     public function index($id){
         $this->setID($id);
