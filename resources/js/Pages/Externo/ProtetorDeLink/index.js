@@ -1,16 +1,16 @@
 import React ,{useEffect, useRef, useState}from 'react'
 import { Provider } from 'react-redux';
-import { Container, Button, Spinner } from 'react-bootstrap'; 
+import { Container, Button, Spinner } from 'react-bootstrap';
 import './app.css'
 const Index = (props) => {
-    const {verified, authenticated, titulo, url} = {...props} 
+    const {verified, authenticated, titulo, url} = {...props}
 
     const [clicked, setClicked] = useState(false)
-    const [status, setStatus]   = useState('Liberar')
-    const [time, setTime]       = useState(10)
+    const [status, setStatus]   = useState('Entrar')
+    const [time, setTime]       = useState(0)
     const [intervaelId, setItervalId]   = useState()
     const redirectLink = "https://glugreez.com/4/4563780"
-  
+
     function firstClick(){
         setClicked(true)
         redirect(redirectLink)
@@ -51,7 +51,7 @@ const Index = (props) => {
     },[time])
     const ButtonLink = () => {
         switch(status){
-            case 'Liberar': 
+            case 'Liberar':
             return (<Button onClick={() => firstClick()}>{ status }</Button>);
             break;
             case 'Aguardar':
@@ -64,7 +64,7 @@ const Index = (props) => {
                     role="status"
                     aria-hidden="true"
                     onClick={()=>firstClick()}
-                    />    
+                    />
                     <span className="visually-hidden">{time} segundos.</span>
                 </Button>
             );
@@ -75,13 +75,16 @@ const Index = (props) => {
                 return console.log(`Sorry, we are out of ${status}.`);
         }
     }
+    const ButtonLinkLiberado = () => {
+        return (<Button onClick={() => allowLink()}>{ status }</Button>)
+    }
     return(
         <Container className="text-center">
             <div className="align-self-center">
                     <p>
                         Para poder entrar no grupo, você deve clicar no botão abaixo e aguardar { time } segundos. { clicked }
                     </p>
-                    <ButtonLink/>
+                    <ButtonLinkLiberado/>
             </div>
         </Container>
     )

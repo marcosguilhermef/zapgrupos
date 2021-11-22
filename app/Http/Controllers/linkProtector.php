@@ -18,10 +18,10 @@ class linkProtector extends Controller
         $conf = UsersInfo::getInfor();
         $conf["titulo"] =   $this->getTitulo();
         $conf["url"]    =   $this->getLink();
-        $script = "
-        <script>(function(s,u,z,p){s.src=u,s.setAttribute('data-zone',z),p.appendChild(s);})(document.createElement('script'),'https://iclickcdn.com/tag.min.js',4563784,document.body||document.documentElement)</script>
-        ";
-        return Inertia::render('Externo/ProtetorDeLink', $conf)->withViewData(['script' => $script]);
+        //$script = "
+        // <script>(function(s,u,z,p){s.src=u,s.setAttribute('data-zone',z),p.appendChild(s);})(document.createElement('script'),'https://iclickcdn.com/tag.min.js',4563784,document.body||document.documentElement)</script>
+        //";
+        return Inertia::render('Externo/ProtetorDeLink', $conf);
 
 
     }

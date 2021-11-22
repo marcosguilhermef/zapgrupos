@@ -17991,12 +17991,12 @@ var Index = function Index(props) {
       clicked = _useState2[0],
       setClicked = _useState2[1];
 
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('Liberar'),
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)('Entrar'),
       _useState4 = _slicedToArray(_useState3, 2),
       status = _useState4[0],
       setStatus = _useState4[1];
 
-  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(10),
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
       _useState6 = _slicedToArray(_useState5, 2),
       time = _useState6[0],
       setTime = _useState6[1];
@@ -18088,13 +18088,22 @@ var Index = function Index(props) {
     }
   };
 
+  var ButtonLinkLiberado = function ButtonLinkLiberado() {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      onClick: function onClick() {
+        return allowLink();
+      },
+      children: status
+    });
+  };
+
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__["default"], {
     className: "text-center",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
       className: "align-self-center",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("p", {
         children: ["Para poder entrar no grupo, voc\xEA deve clicar no bot\xE3o abaixo e aguardar ", time, " segundos. ", clicked]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(ButtonLink, {})]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(ButtonLinkLiberado, {})]
     })
   });
 };
