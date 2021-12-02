@@ -12,7 +12,7 @@ class gerarLink extends Controller
         $conf["titulo"] = "Gerador de Link para Whatsapp - Zapgrupos";
         $conf['meta'] = "
 <link rel=\"canonical\" href=\"".url()->current()."\"/>
-<meta name=\"description\" content=\"Gerador de li\" />\n";
+<meta name=\"description\" content=\"Gerador de link de compartilhamento no whatsapp.\" />\n";
         return Inertia::render('Externo/GerarLink', $conf);
     }
 }

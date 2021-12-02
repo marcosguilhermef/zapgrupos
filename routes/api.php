@@ -24,6 +24,5 @@ Route::get('/grupos/{categoria}', [App\Http\Controllers\ApiGruposPorCategoria::c
 
 Route::get('/recentes', [App\Http\Controllers\gruposRecentes::class, 'index']);
 
-Route::get('/recentes', [App\Http\Controllers\gruposRecentes::class, 'index']);
 
 Route::post('/add-banca', [App\Http\Controllers\addGrupo::class,'addGrupo']);
