@@ -17886,6 +17886,10 @@ var Index = function Index(props) {
     return cat;
   };
 
+  var style = {
+    height: "280px",
+    objectFit: "cover"
+  };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_redux__WEBPACK_IMPORTED_MODULE_3__.Provider, {
     store: _Api_store__WEBPACK_IMPORTED_MODULE_2__["default"],
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Layout__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -17906,12 +17910,14 @@ var Index = function Index(props) {
                   children: e["categoria"]
                 }), !e.img ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_9__["default"], {
                   src: "/img/generico/reactangle.png",
-                  className: "card-img-top"
+                  className: "card-img-top",
+                  style: style
                 }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_9__["default"], {
                   src: e.img,
                   onError: function onError(e) {
                     return e.target.src = "/img/generico/reactangle.png";
                   },
+                  style: style,
                   className: "card-img-top"
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_8__["default"].Footer, {
                   className: "text-center",

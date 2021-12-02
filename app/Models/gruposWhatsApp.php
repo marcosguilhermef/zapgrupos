@@ -14,16 +14,19 @@ class gruposWhatsApp extends Model
     protected $currentPage = 12;
     public    $timestamps = true;
     //protected $dates = ['birthday'];
+
     public static function getMaisAcessados(){
         $limit = 8 ;
         $projections = ["_id", "vizita", "url", "categoria", "descricao", "img","titulo","tipo"];
         return gruposWhatsApp::where("ativo", true)->orderBy("vizita","asc")->paginate($limit,$projections);
     }
+
     public static function getRecentes(){
         $limit = 8 ;
         $projections = ["_id", "vizita", "url", "categoria", "descricao", "img","titulo","tipo"];
         return gruposWhatsApp::orderBy("_id","desc")->paginate($limit,$projections);
     }
+
     public static function getGrupoById($_id){
         return gruposWhatsApp::where("_id",$_id)->get();
     }

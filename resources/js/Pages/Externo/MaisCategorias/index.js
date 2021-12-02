@@ -10,6 +10,10 @@ const Index = (props) => {
         return cat
 
     }
+    const style = {
+        height: "280px",
+        objectFit: "cover",
+    }
     return(
         <Provider store={store}>
             <Layout user={props?.user} verified={props?.verified} authenticated={props?.authenticated}>
@@ -26,10 +30,10 @@ const Index = (props) => {
                                             {
                                                 !e.img ?
                                                 (
-                                                    <Image src="/img/generico/reactangle.png" className="card-img-top"/>)
+                                                    <Image src="/img/generico/reactangle.png" className="card-img-top" style={style}/> )
                                                 :
                                                 (
-                                                    <Image  src={e.img} onError={(e) => e.target.src = "/img/generico/reactangle.png"} className="card-img-top"/>)
+                                                    <Image  src={e.img} onError={(e) => e.target.src = "/img/generico/reactangle.png"} style={style} className="card-img-top"/>)
                                             }
                                             <Card.Footer className="text-center">
                                                 <Button variant="success" onClick={ () =>document.location.href = ("/"+redirect(e["categoria"]))  }>Informações</Button>
