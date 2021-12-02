@@ -16,7 +16,7 @@ class PorCategoria extends Controller
         $conf["titulo_2"]    =  $parametro['categoria'];
         $conf["title"]     =  "zapgrupos | ".$parametro['categoria'];
         $conf["api"]       = 'api/grupos/'.$parametro['categoria'];
-        $dados = categorias::getCategoryInformation($conf["titulo"]);
+        $dados = categorias::getCategoryInformation($parametro['categoria']);
         $img = isset($dados[0]["img"][0]) ? $dados[0]["img"][0] : url()->to('/') .'/img/generico/reactangle.png';
         $conf['meta'] = "
     <link rel=\"canonical\" href=\"".url()->current()."\"/>
