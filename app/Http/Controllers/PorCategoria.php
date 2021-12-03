@@ -22,12 +22,12 @@ class PorCategoria extends Controller
     <link rel=\"canonical\" href=\"".url()->current()."\"/>
     <meta name=\"description\" content=\"".@$dados[0]["descricao"]."\" />\n
     <meta property=\"og:url\" content=\"".url()->current()."\" />\n
-    <meta property=\"og:type\" content=\"article\" />\n
+    <meta property=\"og:type\" content=\"website\" />\n
     <meta property=\"og:title\" content=\"".$conf['title']."\" />\n
     <meta property=\"og:description\" content=\"".@$dados[0]["descricao"]."\" />\n
     <meta property=\"og:image\" content=\"".$img."\" />\n
-    <meta property=\"og:image:width\" content=\"200\" />\n
-    <meta property=\"og:image:height \" content=\"200\" />\n
+    <meta property=\"og:image:width\" content=\"800\" />\n
+    <meta property=\"og:image:height \" content=\"800\" />\n
     <meta property=\"og:site_name\" content=\"Zapgrupos\" />\n
     <meta itemprop=\"name\" content=\"".$conf['title']."\">\n
     <meta itemprop=\"description\" content=\"".@$dados[0]["descricao"]."\">\n
