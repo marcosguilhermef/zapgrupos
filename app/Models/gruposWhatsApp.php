@@ -24,7 +24,7 @@ class gruposWhatsApp extends Model
     public static function getRecentes(){
         $limit = 8 ;
         $projections = ["_id", "vizita", "url", "categoria", "descricao", "img","titulo","tipo"];
-        return gruposWhatsApp::orderBy("_id","desc")->paginate($limit,$projections);
+        return gruposWhatsApp::where("ativo", true)->orderBy("_id","desc")->paginate($limit,$projections);
     }
 
     public static function getGrupoById($_id){
