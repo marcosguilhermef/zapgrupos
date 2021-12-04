@@ -64,7 +64,7 @@ const CardGrupo = (props) => {
     }
 
     useEffect( () => {
-        makeRequest()
+        makeRequest(0)
     } ,[])
     useEffect(() => {
         console.log("aqui: ",dados)

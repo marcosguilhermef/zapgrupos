@@ -34,7 +34,10 @@ class gruposWhatsApp extends Model
     public static function getGrupoByCategoryPaginate($categoria){
         $limit = 8 ;
         $projections = ["_id", "vizita", "url", "categoria", "descricao", "img","titulo","tipo"];
-        return gruposWhatsApp::where("ativo", true)->where("categoria",$categoria)->orderBy("vizita","asc")->paginate($limit,$projections);
+        //return gruposWhatsApp::where("ativo", true)->where("categoria",$categoria)->orderBy("vizita","asc")->paginate($limit,$projections);
+
+        return gruposWhatsApp::where("ativo", true)->where(['$text' => [ '$search' =>  "\"$categoria\"" , '$diacriticSensitive'=> false]])->orderBy("vizita","asc")->paginate($limit,$projections);
+
     }
 
     public static function GetAllURLs(){
@@ -42,7 +45,7 @@ class gruposWhatsApp extends Model
     }
 
     public static function getGrupoByCategory($categoria){
-        return gruposWhatsApp::where("ativo", true)->where("categoria",$categoria)->orderBy("vizita","desc")->limit(10)->get();
+        return gruposWhatsApp::where("ativo", true)->where(['$text' => [ '$search' => "\"$categoria\"" , '$diacriticSensitive'=> false]])->orderBy("vizita","desc")->limit(10)->get();
     }
 
 }

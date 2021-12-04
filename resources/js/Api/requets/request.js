@@ -10,7 +10,7 @@ export const makeOneRequest = ({link,parameter,action,status}) => async (dispatc
   dispatch(fetchDados({
       'link': link+(parameter || ''),
       'action': action,
-      'status': status 
+      'status': status
     }))
 }
 export const fetchDados =  ({link,action, status}) => async (dispatch)  => {

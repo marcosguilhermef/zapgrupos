@@ -17758,7 +17758,7 @@ var CardGrupo = function CardGrupo(props) {
   };
 
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    makeRequest();
+    makeRequest(0);
   }, []);
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     console.log("aqui: ", dados);
