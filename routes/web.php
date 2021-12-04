@@ -14,7 +14,7 @@ use Inertia\Inertia;
 |
 */
 Route::get('/grupo/{id}', [App\Http\Controllers\linkProtector::class,'index']);
-Route::get('/sitemap.xml',[App\Http\Controllers\sitemap::class,'index']);
+//Route::get('/sitemap.xml',[App\Http\Controllers\sitemap::class,'index']);
 Route::get('/', [App\Http\Controllers\InicioController::class,'index']);
 Route::get('/mais', [App\Http\Controllers\maisCategorias::class, 'index']);
 Route::get('/sobre',[App\Http\Controllers\sobre::class, 'index']);
