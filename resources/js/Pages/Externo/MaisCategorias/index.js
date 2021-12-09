@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 import { Container, Card, Row, Col, Button, Image } from 'react-bootstrap';
 const Index = (props) => {
     const redirect = (cat) =>{
-        cat = cat.replaceAll(" ","-")
+        cat = cat.split(" ").join("-")
         return cat
 
     }

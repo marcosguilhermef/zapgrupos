@@ -16993,7 +16993,7 @@ var CardInfo = function CardInfo(props) {
       tipo = _props.tipo;
 
   var redirect = function redirect(cat) {
-    cat = cat.replaceAll(" ", "-");
+    cat = cat.split(" ").join("-");
     return '/' + cat + '/' + _id;
   };
 
@@ -17103,7 +17103,7 @@ var CardInfo2 = function CardInfo2(props) {
       img = _props2.img;
 
   var redirect = function redirect(cat) {
-    cat = cat.replaceAll(" ", "-");
+    cat = cat.split(" ").join("-");
     return '/' + cat + '/' + _id;
   };
 
@@ -17197,7 +17197,7 @@ var CardInfoLink = function CardInfoLink(props) {
       img = _props4.img;
 
   var redirect = function redirect(cat) {
-    cat = cat.replaceAll(" ", "-");
+    cat = cat.split(" ").join("-");
     return "/grupo/".concat(_id);
   };
 
@@ -17251,7 +17251,7 @@ var CardPreview = function CardPreview(props) {
       tipo = _ref.tipo;
 
   var redirect = function redirect(cat) {
-    cat = cat.replaceAll(" ", "-");
+    cat = cat.split(" ").join("-");
     window.location.href = window.location.origin + '/' + cat + '/' + _id;
   };
 
@@ -17882,7 +17882,7 @@ var Index = function Index(props) {
   var _props$dados;
 
   var redirect = function redirect(cat) {
-    cat = cat.replaceAll(" ", "-");
+    cat = cat.split(" ").join("-");
     return cat;
   };
 

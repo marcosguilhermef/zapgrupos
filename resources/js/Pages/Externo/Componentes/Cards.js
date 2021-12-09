@@ -5,7 +5,7 @@ import './card.css'
 const CardInfo = (props) => {
     const {_id,link, titulo, categoria, descricao, img, tipo} = {...props}
     const redirect = (cat) =>{
-            cat = cat.replaceAll(" ","-")
+            cat = cat.split(" ").join("-")
             return '/'+cat+'/'+_id
 
     }
@@ -90,7 +90,7 @@ const CardAds = (props) => {
 const CardInfo2 = (props) => {
     const {_id,link, titulo, categoria, descricao, img} = {...props}
     const redirect = (cat) =>{
-        cat = cat.replaceAll(" ","-")
+        cat = cat.split(" ").join("-")
         return '/'+cat+'/'+_id
     }
     return(
@@ -154,7 +154,7 @@ const CardWait = (props) => {
 const CardInfoLink = (props) => {
     const {_id,link, titulo, categoria, descricao, img} = {...props}
     const redirect = (cat) =>{
-        cat = cat.replaceAll(" ","-")
+        cat = cat.split(" ").join("-")
         return `/grupo/${_id}`
     }
 
@@ -190,7 +190,7 @@ const CardInfoLink = (props) => {
 const CardPreview = (props) => {
     const {_id,link, titulo, categoria, descricao, img, tipo} = {...props ||'Informacao Auxente'}
     const redirect = (cat) =>{
-        cat = cat.replaceAll(" ","-")
+        cat = cat.split(" ").join("-")
         window.location.href = window.location.origin+'/'+cat+'/'+_id
     }
     function imageGroup(tipo){
