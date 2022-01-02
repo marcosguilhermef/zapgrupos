@@ -13,4 +13,9 @@ class maisCategorias extends Controller
         $conf['dados'] = categorias::getCategoryPaginate();
         return Inertia::render('Externo/MaisCategorias', $conf);
     }
+    public function show(){
+        $conf = UsersInfo::getInfor();
+        //$conf['dados'] = categorias::getCategoryPaginate();
+        return response()->json(categorias::getCategoryPaginate(),200);
+    }
 }
