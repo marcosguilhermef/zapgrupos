@@ -14,7 +14,7 @@ class PorCategoria extends Controller
         $conf = UsersInfo::getInfor();
         $conf["titulo"] = 'Grupos de whatsapp';
         $conf["titulo_2"]    =  $parametro['categoria'];
-        $conf["title"]     =  "Grupo Whatsapp ".$parametro['categoria'];
+        $conf["title"]     =  "Grupos Whatsapp ".$parametro['categoria'];
         $conf["api"]       = 'api/grupos/'.$parametro['categoria'];
         $dados = categorias::getCategoryInformation($parametro['categoria']);
         $img = isset($dados[0]["img"][0]) ? $dados[0]["img"][0] : url()->to('/') .'/img/generico/reactangle.png';
