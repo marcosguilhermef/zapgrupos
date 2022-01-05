@@ -17,7 +17,8 @@ class addGrupo extends Controller
 
     public function index(){
         $conf = UsersInfo::getInfor();
-        $conf["titulo"]     =   'Grupos mais acessados';
+        $conf["title"]     =   'Adicionar Grupo';
+        $conf["titulo"]     =   $conf["title"];
         $conf["categorias"] =   categorias::all()->toArray();
         $conf["_token"]     =   csrf_token();
         return Inertia::render('Externo/AddGrupo', $conf);
