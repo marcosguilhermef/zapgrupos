@@ -1,9 +1,10 @@
 import { useEffect, Component } from 'react'
 import {Col, Row, Card, Button, Image, Spinner} from 'react-bootstrap'
+import  dateFormat,{ masks  } from 'dateformat'
 import './card.css'
 
 const CardInfo = (props) => {
-    const {_id,link, titulo, categoria, descricao, img, tipo} = {...props}
+    const {_id,link, titulo, categoria, descricao, img, tipo, created_at, updated_at} = {...props}
     const redirect = (cat) =>{
             cat = cat.split(" ").join("-")
             return '/'+cat+'/'+_id
@@ -31,7 +32,27 @@ const CardInfo = (props) => {
                         tipo == "whatsapp" ? (<Image src="/img/generico/whatsapp.png" />) : (<Image src="/img/generico/telegram.png" />                        )
                     }
                 </span>
+                <div className="my-2">
+                    <div>
+                        {
+                            created_at ? (
+                                <span className="fs-6"><b>Criado em: </b>{ dateFormat(created_at, "dd-mm-yyyy hh:MM") }</span>
+                            ):(
+                                ''
+                            )
+                        }
+                    </div>
+                    <div>
+                    {
+                            updated_at ? (
+                                <span className="fs-6"><b>Atualizado em: </b>{ dateFormat(updated_at, "dd-mm-yyyy hh:MM") }</span>
+                            ):(
+                                ''
 
+                            )
+                        }
+                    </div>
+                </div>
                 <p className="text-justify">
                     { descricao }
                 </p>
@@ -88,7 +109,7 @@ const CardAds = (props) => {
 
 
 const CardInfo2 = (props) => {
-    const {_id,link, titulo, categoria, descricao, img} = {...props}
+    const {_id,link, titulo, categoria, descricao, img, created_at, updated_at} = {...props}
     const redirect = (cat) =>{
         cat = cat.split(" ").join("-")
         return '/'+cat+'/'+_id
@@ -109,6 +130,27 @@ const CardInfo2 = (props) => {
                 }
                 <Card.Body className="card-orverflowy">
                 <span className="card-category">{categoria}</span>
+                <div className="my-2">
+                    <div>
+                        {
+                            created_at ? (
+                                <span className="fs-6"><b>Criado em: </b>{ dateFormat(created_at, "dd-mm-yyyy hh:MM") }</span>
+                            ):(
+                                ''
+                            )
+                        }
+                    </div>
+                    <div>
+                    {
+                            updated_at ? (
+                                <span className="fs-6"><b>Atualizado em: </b>{ dateFormat(updated_at, "dd-mm-yyyy hh:MM") }</span>
+                            ):(
+                                ''
+
+                            )
+                        }
+                    </div>
+                </div>
                 <p className="text-justify">
                     { descricao }
                 </p>
@@ -152,7 +194,7 @@ const CardWait = (props) => {
 }
 
 const CardInfoLink = (props) => {
-    const {_id,link, titulo, categoria, descricao, img} = {...props}
+    const {_id,link, titulo, categoria, descricao, img, created_at, updated_at } = {...props}
     const redirect = (cat) =>{
         cat = cat.split(" ").join("-")
         return `/grupo/${_id}`
@@ -174,6 +216,27 @@ const CardInfoLink = (props) => {
                 }
                 <Card.Body className="card-orverflowy">
                 <span className="card-category">{categoria}</span>
+                <div className="my-2">
+                    <div>
+                        {
+                            created_at ? (
+                                <span className="fs-6"><b>Criado em: </b>{ dateFormat(created_at, "dd-mm-yyyy hh:MM") }</span>
+                            ):(
+                                ''
+                            )
+                        }
+                    </div>
+                    <div>
+                    {
+                            updated_at ? (
+                                <span className="fs-6"><b>Atualizado em: </b>{ dateFormat(updated_at, "dd-mm-yyyy hh:MM") }</span>
+                            ):(
+                                ''
+
+                            )
+                        }
+                    </div>
+                </div>
                 <p className="text-justify">
                     { descricao }
                 </p>
@@ -188,7 +251,7 @@ const CardInfoLink = (props) => {
 }
 
 const CardPreview = (props) => {
-    const {_id,link, titulo, categoria, descricao, img, tipo} = {...props ||'Informacao Auxente'}
+    const {_id,link, titulo, categoria, descricao, img, tipo, created_at, updated_at } = {...props ||'Informacao Auxente'}
     const redirect = (cat) =>{
         cat = cat.split(" ").join("-")
         window.location.href = window.location.origin+'/'+cat+'/'+_id
@@ -219,6 +282,27 @@ const CardPreview = (props) => {
                 }
                 <Card.Body className="card-orverflowy">
                 <span className="card-category">{categoria}</span>
+                <div className="my-2">
+                    <div>
+                        {
+                            created_at ? (
+                                <span className="fs-6"><b>Criado em: </b>{ dateFormat(created_at, "dd-mm-yyyy hh:MM") }</span>
+                            ):(
+                                ''
+                            )
+                        }
+                    </div>
+                    <div>
+                    {
+                            updated_at ? (
+                                <span className="fs-6"><b>Atualizado em: </b>{ dateFormat(updated_at, "dd-mm-yyyy hh:MM") }</span>
+                            ):(
+                                ''
+
+                            )
+                        }
+                    </div>
+                </div>
                 <span className="card-category">
                     {categoria}
                 {

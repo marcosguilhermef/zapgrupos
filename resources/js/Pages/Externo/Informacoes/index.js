@@ -15,14 +15,13 @@ const Index = (props) => {
                 <Row className="text-center">
                     <Col lg={6}>
                         <h3 className="text-center my-3">Grupo que você escolheu</h3>
-                        <CardInfoLink _id={_id} titulo={titulo} categoria={categoria} descricao={descricao} link={url} img={img}/>
+                        <CardInfoLink {...props.grupo[0]}/>
                     </Col>
                     <Col lg={6}>
                         <h3 className="text-center my-3">Grupos semelhantes a esse</h3>
                         <Carousel grupos={props?.maisgrupos}></Carousel>
                     </Col>
                 </Row>
-
             </div>
         </Layout>
     )

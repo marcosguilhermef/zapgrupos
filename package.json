@@ -34,6 +34,7 @@
         "@inertiajs/inertia-react": "^0.6.2",
         "@popperjs/core": "^2.9.2",
         "@reduxjs/toolkit": "^1.6.0",
+        "dateformat": "^5.0.2",
         "mix-env-file": "^0.1.1",
         "react-bootstrap": "^1.6.1",
         "react-ga": "^3.3.0",

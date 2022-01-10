@@ -17,13 +17,13 @@ class gruposWhatsApp extends Model
 
     public static function getMaisAcessados(){
         $limit = 8 ;
-        $projections = ["_id", "vizita", "url", "categoria", "descricao", "img","titulo","tipo"];
+        $projections = ["_id", "vizita", "url", "categoria", "descricao", "img","titulo","tipo","created_at","updated_at"];
         return gruposWhatsApp::where("ativo", true)->orderBy("vizita","asc")->paginate($limit,$projections);
     }
 
     public static function getRecentes(){
         $limit = 8 ;
-        $projections = ["_id", "vizita", "url", "categoria", "descricao", "img","titulo","tipo"];
+        $projections = ["_id", "vizita", "url", "categoria", "descricao", "img","titulo","tipo","created_at","updated_at"];
         return gruposWhatsApp::where("ativo", true)->orderBy("_id","desc")->paginate($limit,$projections);
     }
 
@@ -33,7 +33,7 @@ class gruposWhatsApp extends Model
 
     public static function getGrupoByCategoryPaginate($categoria){
         $limit = 8 ;
-        $projections = ["_id", "vizita", "url", "categoria", "descricao", "img","titulo","tipo"];
+        $projections = ["_id", "vizita", "url", "categoria", "descricao", "img","titulo","tipo","created_at","updated_at"];
         //return gruposWhatsApp::where("ativo", true)->where("categoria",$categoria)->orderBy("vizita","asc")->paginate($limit,$projections);
         return gruposWhatsApp::where(['$text' => [ '$search' =>  "\"$categoria\"" , '$diacriticSensitive'=> true], "ativo" => true])->orderBy("vizita","desc")->orderBy("_id","desc")->paginate($limit,$projections);
 

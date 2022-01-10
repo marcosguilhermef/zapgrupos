@@ -78,7 +78,7 @@ const CardGrupo = (props) => {
                     grupos.map(
                         (e,i,a) => (
                             <>
-                                <CardInfo titulo={e?.titulo} categoria={e?.categoria} descricao={e?.descricao} img={e?.img} link={e?.url} _id={e?._id} tipo={ e?.tipo}/>
+                                <CardInfo {...e} />
                                 { i%3 === 0 ? <CardAds /> : ''}
                             </>
 
