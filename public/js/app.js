@@ -16586,6 +16586,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/Col.js");
 /* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/Form.js");
 /* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/Button.js");
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/Spinner.js");
 /* harmony import */ var _Componentes_Cards__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Componentes/Cards */ "./resources/js/Pages/Externo/Componentes/Cards.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
@@ -16619,6 +16620,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+
 var Index = function Index(props) {
   var _erros$link, _erros$titulo, _erros$descricao, _erros$categoria, _erros$email, _erros$telefone;
 
@@ -16639,10 +16641,15 @@ var Index = function Index(props) {
       infoClient = _useState2[0],
       setInfoCliente = _useState2[1];
 
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)({}),
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
       _useState4 = _slicedToArray(_useState3, 2),
-      erros = _useState4[0],
-      setErros = _useState4[1];
+      loading = _useState4[0],
+      setLoading = _useState4[1];
+
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)({}),
+      _useState6 = _slicedToArray(_useState5, 2),
+      erros = _useState6[0],
+      setErros = _useState6[1];
 
   var link = (0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)(null);
   var titulo = (0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)(null);
@@ -16660,7 +16667,8 @@ var Index = function Index(props) {
   };
 
   var submit = function submit() {
-    fetchRequest(infoClient);
+    setLoading(true);
+    fetchRequest();
   };
 
   var fetchRequest = /*#__PURE__*/function () {
@@ -16690,19 +16698,22 @@ var Index = function Index(props) {
 
               if (response.ok) {
                 window.location.href = dados.redirect;
+                setLoading(false);
               } else {
                 setErros(dados);
+                setLoading(false);
               }
 
-              _context.next = 13;
+              _context.next = 14;
               break;
 
             case 10:
               _context.prev = 10;
               _context.t0 = _context["catch"](0);
               console.log(_context.t0);
+              setLoading(false);
 
-            case 13:
+            case 14:
             case "end":
               return _context.stop();
           }
@@ -16892,7 +16903,25 @@ var Index = function Index(props) {
                   }, i);
                 })
               })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_9__["default"], {
+            }), loading ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_9__["default"], {
+                variant: "success",
+                type: "button",
+                style: {
+                  width: "100%"
+                },
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_10__["default"], {
+                  as: "span",
+                  animation: "border",
+                  size: "sm",
+                  role: "status",
+                  "aria-hidden": "true"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+                  className: "visually-hidden",
+                  children: "Loading..."
+                })]
+              }), ' ']
+            }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_9__["default"], {
               variant: "success",
               type: "button",
               onClick: submit,
@@ -17355,27 +17384,7 @@ var CardPreview = function CardPreview(props) {
         className: "card-img-top"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["default"].Body, {
         className: "card-orverflowy",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
-          className: "card-category",
-          children: categoria
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-          className: "my-2",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-            children: created_at ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("span", {
-              className: "fs-6",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("b", {
-                children: "Criado em: "
-              }), (0,dateformat__WEBPACK_IMPORTED_MODULE_1__["default"])(created_at, "dd-mm-yyyy hh:MM")]
-            }) : ''
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-            children: updated_at ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("span", {
-              className: "fs-6",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("b", {
-                children: "Atualizado em: "
-              }), (0,dateformat__WEBPACK_IMPORTED_MODULE_1__["default"])(updated_at, "dd-mm-yyyy hh:MM")]
-            }) : ''
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("span", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("span", {
           className: "card-category",
           children: [categoria, imageGroup(tipo)]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
@@ -17944,7 +17953,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/Col.js");
 /* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/Card.js");
 /* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/Image.js");
-/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/esm/Button.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
@@ -17997,11 +18005,10 @@ var Index = function Index(props) {
                   className: "card-img-top"
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_8__["default"].Footer, {
                   className: "text-center",
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_10__["default"], {
-                    variant: "success",
-                    onClick: function onClick() {
-                      return document.location.href = "/" + redirect(e["categoria"]);
-                    },
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("a", {
+                    className: "btn btn-success",
+                    href: redirect(e["categoria"]),
+                    role: "button",
                     children: "Informa\xE7\xF5es"
                   })
                 })]

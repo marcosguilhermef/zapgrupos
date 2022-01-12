@@ -36,7 +36,8 @@ const Index = (props) => {
                                                     <Image  src={e.img} onError={(e) => e.target.src = "/img/generico/reactangle.png"} style={style} className="card-img-top"/>)
                                             }
                                             <Card.Footer className="text-center">
-                                                <Button variant="success" onClick={ () =>document.location.href = ("/"+redirect(e["categoria"]))  }>Informações</Button>
+                                                <a className="btn btn-success" href={redirect(e["categoria"])} role="button">Informações</a>
+                                                {/* <Button variant="success" onClick={() =>document.location.href = ("/"+redirect(e["categoria"]))}>Informações</Button> */}
                                             </Card.Footer>
                                         </Card>
                                     </Col>

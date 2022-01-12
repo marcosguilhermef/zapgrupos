@@ -12,6 +12,10 @@ class gruposWhatsApp extends Model
     protected $collection = 'URLs';
     protected $connection = 'mongodb';
     protected $currentPage = 12;
+    protected $casts = [
+        'created_at' => 'datetime:Y-m-d\TH:i:sP',
+        'updated_at' => 'datetime:Y-m-d\TH:i:sP'
+    ];
     public    $timestamps = true;
     //protected $dates = ['birthday'];
 

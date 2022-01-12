@@ -1,6 +1,6 @@
 import React ,{useEffect, useRef, useState}from 'react'
 import Layout from '../../Layout'
-import { Container, Form, Button, Row, Col} from 'react-bootstrap';
+import { Container, Form, Button, Row, Col, Spinner} from 'react-bootstrap';
 import { CardInfo, CardPreview, } from '../Componentes/Cards'
 const Index = (props) => {
 
@@ -12,6 +12,8 @@ const Index = (props) => {
         "categoria": "Sem categoria",
         "tipo": null
     });
+
+    const [loading, setLoading] = useState(false)
 
     const [erros, setErros]            = useState({});
 
@@ -30,7 +32,8 @@ const Index = (props) => {
     }
 
     const submit = () => {
-        fetchRequest(infoClient)
+        setLoading(true)
+        fetchRequest()
     }
 
     const fetchRequest =  async () => {
@@ -45,11 +48,14 @@ const Index = (props) => {
           const dados = await response.json()
           if(response.ok){
             window.location.href = dados.redirect
+            setLoading(false)
           }else{
             setErros(dados)
+            setLoading(false)
           }
         }catch(e){
             console.log(e)
+            setLoading(false)
         }
     }
     function AnalizarUrl(url){
@@ -158,10 +164,27 @@ const Index = (props) => {
                                     }
                                     </Form.Control.Feedback>
                                 </Form.Group>
+                                {
+                                    loading ? (
+                                        <>
+                                            <Button variant="success" type="button" style={{ width: "100%" }}>
+                                                <Spinner
+                                                as="span"
+                                                animation="border"
+                                                size="sm"
+                                                role="status"
+                                                aria-hidden="true"
+                                                />
+                                                    <span className="visually-hidden">Loading...</span>
+                                            </Button>{' '}
+                                        </>
+                                    ) : (
+                                            <Button variant="success" type="button" onClick={submit} style={{ width: "100%" }}>
+                                                Enviar
+                                            </Button>
+                                    )
+                                }
 
-                                <Button variant="success" type="button" onClick={submit} style={{ width: "100%" }}>
-                                    Enviar
-                                </Button>
                             </Form>
                         </Col>
                         <Col xs={12} lg={6} md={6} sm={12}>

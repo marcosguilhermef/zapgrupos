@@ -281,28 +281,6 @@ const CardPreview = (props) => {
                             <Image src={img[0]} onError={(e) => e.target.src = "/img/generico/reactangle.png"} className="card-img-top"/>)
                 }
                 <Card.Body className="card-orverflowy">
-                <span className="card-category">{categoria}</span>
-                <div className="my-2">
-                    <div>
-                        {
-                            created_at ? (
-                                <span className="fs-6"><b>Criado em: </b>{ dateFormat(created_at, "dd-mm-yyyy hh:MM") }</span>
-                            ):(
-                                ''
-                            )
-                        }
-                    </div>
-                    <div>
-                    {
-                            updated_at ? (
-                                <span className="fs-6"><b>Atualizado em: </b>{ dateFormat(updated_at, "dd-mm-yyyy hh:MM") }</span>
-                            ):(
-                                ''
-
-                            )
-                        }
-                    </div>
-                </div>
                 <span className="card-category">
                     {categoria}
                 {
