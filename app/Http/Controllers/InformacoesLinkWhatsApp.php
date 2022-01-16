@@ -29,12 +29,12 @@ class InformacoesLinkWhatsApp extends Controller
         <meta property=\"og:image\" content=\"".$img."\" />\n
         <meta property=\"og:site_name\" content=\"Zapgrupos\" />\n
         <meta itemprop=\"name\" content=\"".$titulo."\">\n
-        <meta itemprop=\"description\" content=\"Grupo de whatsapp: ".$descricao."\">\n
-        <meta itemprop=\"image\" content=\"".$img."\">\n<!– para o Twitter Card–>
-        <meta name=\"twitter:card\" content=\"summary_large_image\">\n
-        <meta name=\"twitter:title\" content=\"".$titulo."\">\n
-        <meta name=\"twitter:description\" content=\"Grupo de whatsapp: ".$descricao."\">\n
-        <meta name=\"twitter:image\" content=\"".$img."\">\n
+        <meta itemprop=\"description\" content=\"Grupo de whatsapp: ".$descricao."\"/>\n
+        <meta itemprop=\"image\" content=\"".$img."\"/>\n<!– para o Twitter Card–>
+        <meta name=\"twitter:card\" content=\"summary_large_image\"/>\n
+        <meta name=\"twitter:title\" content=\"".$titulo."\"/>\n
+        <meta name=\"twitter:description\" content=\"Grupo de whatsapp: ".$descricao."\"/>\n
+        <meta name=\"twitter:image\" content=\"".$img."\"/>\n
         <script type=\"application/ld+json\">
         {
         \"@context\": \"https://schema.org\",
