@@ -22,7 +22,8 @@ class linkProtector extends Controller
         // <script>(function(s,u,z,p){s.src=u,s.setAttribute('data-zone',z),p.appendChild(s);})(document.createElement('script'),'https://iclickcdn.com/tag.min.js',4563784,document.body||document.documentElement)</script>
         //";
         Acesso::addAcesso($this->getID());
-        return Inertia::render('Externo/ProtetorDeLink', $conf);
+        return redirect($this->getLink());
+        //return Inertia::render('Externo/ProtetorDeLink', $conf);
 
 
     }
