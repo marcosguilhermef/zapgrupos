@@ -55,7 +55,7 @@ class addGrupo extends Controller
     public function resgartarImage(String $id, String $url, String $tipo){
         try{
             if($tipo === "whatsapp"){
-                shell_exec('java -jar '.env("JAVA_BOT")." scrapImageWhatsAppGroup $url $id ");
+                shell_exec('java -jar '.env("JAVA_BOT")." -re $id $url");
                 return;
             }
         }catch( \Exception $e ){
