@@ -17071,14 +17071,14 @@ var CardInfo = function CardInfo(props) {
               className: "fs-6",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("b", {
                 children: "Criado em: "
-              }), (0,dateformat__WEBPACK_IMPORTED_MODULE_1__["default"])(created_at, "dd-mm-yyyy hh:MM")]
+              }), (0,dateformat__WEBPACK_IMPORTED_MODULE_1__["default"])(created_at, "dd-mm-yyyy hh:MM:ss")]
             }) : ''
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
             children: updated_at ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("span", {
               className: "fs-6",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("b", {
                 children: "Atualizado em: "
-              }), (0,dateformat__WEBPACK_IMPORTED_MODULE_1__["default"])(updated_at, "dd-mm-yyyy hh:MM")]
+              }), (0,dateformat__WEBPACK_IMPORTED_MODULE_1__["default"])(updated_at, "dd-mm-yyyy hh:MM:ss")]
             }) : ''
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
@@ -17188,14 +17188,14 @@ var CardInfo2 = function CardInfo2(props) {
               className: "fs-6",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("b", {
                 children: "Criado em: "
-              }), (0,dateformat__WEBPACK_IMPORTED_MODULE_1__["default"])(created_at, "dd-mm-yyyy hh:MM")]
+              }), (0,dateformat__WEBPACK_IMPORTED_MODULE_1__["default"])(created_at, "dd-mm-yyyy hh:MM:ss")]
             }) : ''
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
             children: updated_at ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("span", {
               className: "fs-6",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("b", {
                 children: "Atualizado em: "
-              }), (0,dateformat__WEBPACK_IMPORTED_MODULE_1__["default"])(updated_at, "dd-mm-yyyy hh:MM")]
+              }), (0,dateformat__WEBPACK_IMPORTED_MODULE_1__["default"])(updated_at, "dd-mm-yyyy hh:MM:ss")]
             }) : ''
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {

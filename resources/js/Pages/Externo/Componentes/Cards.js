@@ -36,7 +36,7 @@ const CardInfo = (props) => {
                     <div>
                         {
                             created_at ? (
-                                <span className="fs-6"><b>Criado em: </b>{ dateFormat(created_at, "dd-mm-yyyy hh:MM") }</span>
+                                <span className="fs-6"><b>Criado em: </b>{ dateFormat(created_at, "dd-mm-yyyy hh:MM:ss") }</span>
                             ):(
                                 ''
                             )
@@ -45,7 +45,7 @@ const CardInfo = (props) => {
                     <div>
                     {
                             updated_at ? (
-                                <span className="fs-6"><b>Atualizado em: </b>{ dateFormat(updated_at, "dd-mm-yyyy hh:MM") }</span>
+                                <span className="fs-6"><b>Atualizado em: </b>{ dateFormat(updated_at, "dd-mm-yyyy hh:MM:ss") }</span>
                             ):(
                                 ''
 
@@ -134,7 +134,7 @@ const CardInfo2 = (props) => {
                     <div>
                         {
                             created_at ? (
-                                <span className="fs-6"><b>Criado em: </b>{ dateFormat(created_at, "dd-mm-yyyy hh:MM") }</span>
+                                <span className="fs-6"><b>Criado em: </b>{ dateFormat(created_at, "dd-mm-yyyy hh:MM:ss") }</span>
                             ):(
                                 ''
                             )
@@ -143,7 +143,7 @@ const CardInfo2 = (props) => {
                     <div>
                     {
                             updated_at ? (
-                                <span className="fs-6"><b>Atualizado em: </b>{ dateFormat(updated_at, "dd-mm-yyyy hh:MM") }</span>
+                                <span className="fs-6"><b>Atualizado em: </b>{ dateFormat(updated_at, "dd-mm-yyyy hh:MM:ss") }</span>
                             ):(
                                 ''
 
