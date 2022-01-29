@@ -194,7 +194,8 @@ const CardWait = (props) => {
 }
 
 const CardInfoLink = (props) => {
-    const {_id,link, titulo, categoria, descricao, img, created_at, updated_at } = {...props}
+    const {_id,link, titulo, categoria, descricao, img, created_at, updated_at, ativo } = {...props}
+
     const redirect = (cat) =>{
         cat = cat.split(" ").join("-")
         return `/grupo/${_id}`
@@ -204,7 +205,7 @@ const CardInfoLink = (props) => {
         <Col xs={12} sm={12} md={12} lg={12}>
             <Card>
                 <Card.Header>
-                    { titulo  }
+                    { titulo }
                 </Card.Header>
                 {
                     img?.length == 0 || typeof img === "undefined"?
@@ -220,7 +221,11 @@ const CardInfoLink = (props) => {
                     <div>
                         {
                             created_at ? (
-                                <span className="fs-6"><b>Criado em: </b>{ dateFormat(created_at, "dd-mm-yyyy hh:MM") }</span>
+                                    <>
+                                        <span className="fs-6"><b>Criado em: </b>{ dateFormat(created_at, "dd-mm-yyyy hh:MM") }</span>
+                                        <br/>
+                                        <span className="fs-6"><b>Grupo ainda existe? </b>{ ativo ? "sim" : "não" }</span>
+                                    </>
                             ):(
                                 ''
                             )
@@ -229,7 +234,11 @@ const CardInfoLink = (props) => {
                     <div>
                     {
                             updated_at ? (
-                                <span className="fs-6"><b>Atualizado em: </b>{ dateFormat(updated_at, "dd-mm-yyyy hh:MM") }</span>
+                                    <>
+                                        <span className="fs-6"><b>Atualizado em: </b>{ dateFormat(updated_at, "dd-mm-yyyy hh:MM") }</span>
+                                        <br/>
+                                        <span className="fs-6"><b>Grupo ainda existe? </b>{ ativo ? "sim" : "não" }</span>
+                                    </>
                             ):(
                                 ''
 

@@ -6,7 +6,7 @@ import  Carousel  from './Carousel'
 import './grupo.css';
 
 const Index = (props) => {
-    const {_id,titulo,categoria,descricao,url,img} = { ...props.grupo[0] }
+    const {_id,titulo,categoria,descricao,url,img, ativo } = { ...props.grupo[0] }
 
     return(
         <Layout user={props?.user} verified={props?.verified} authenticated={props?.authenticated}>

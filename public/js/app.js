@@ -17013,6 +17013,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+
 var CardInfo = function CardInfo(props) {
   var _props = _objectSpread({}, props),
       _id = _props._id,
@@ -17265,7 +17266,8 @@ var CardInfoLink = function CardInfoLink(props) {
       descricao = _props4.descricao,
       img = _props4.img,
       created_at = _props4.created_at,
-      updated_at = _props4.updated_at;
+      updated_at = _props4.updated_at,
+      ativo = _props4.ativo;
 
   var redirect = function redirect(cat) {
     cat = cat.split(" ").join("-");
@@ -17297,18 +17299,32 @@ var CardInfoLink = function CardInfoLink(props) {
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
           className: "my-2",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-            children: created_at ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("span", {
-              className: "fs-6",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("b", {
-                children: "Criado em: "
-              }), (0,dateformat__WEBPACK_IMPORTED_MODULE_1__["default"])(created_at, "dd-mm-yyyy hh:MM")]
+            children: created_at ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("span", {
+                className: "fs-6",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("b", {
+                  children: "Criado em: "
+                }), (0,dateformat__WEBPACK_IMPORTED_MODULE_1__["default"])(created_at, "dd-mm-yyyy hh:MM")]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("span", {
+                className: "fs-6",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("b", {
+                  children: "Grupo ainda existe? "
+                }), ativo ? "sim" : "não"]
+              })]
             }) : ''
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-            children: updated_at ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("span", {
-              className: "fs-6",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("b", {
-                children: "Atualizado em: "
-              }), (0,dateformat__WEBPACK_IMPORTED_MODULE_1__["default"])(updated_at, "dd-mm-yyyy hh:MM")]
+            children: updated_at ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("span", {
+                className: "fs-6",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("b", {
+                  children: "Atualizado em: "
+                }), (0,dateformat__WEBPACK_IMPORTED_MODULE_1__["default"])(updated_at, "dd-mm-yyyy hh:MM")]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("span", {
+                className: "fs-6",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("b", {
+                  children: "Grupo ainda existe? "
+                }), ativo ? "sim" : "não"]
+              })]
             }) : ''
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
@@ -17687,7 +17703,8 @@ var Index = function Index(props) {
       categoria = _props$grupo$.categoria,
       descricao = _props$grupo$.descricao,
       url = _props$grupo$.url,
-      img = _props$grupo$.img;
+      img = _props$grupo$.img,
+      ativo = _props$grupo$.ativo;
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Layout__WEBPACK_IMPORTED_MODULE_1__["default"], {
     user: props === null || props === void 0 ? void 0 : props.user,
