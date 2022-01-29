@@ -236,8 +236,6 @@ const CardInfoLink = (props) => {
                             updated_at ? (
                                     <>
                                         <span className="fs-6"><b>Atualizado em: </b>{ dateFormat(updated_at, "dd-mm-yyyy hh:MM") }</span>
-                                        <br/>
-                                        <span className="fs-6"><b>Grupo ainda existe? </b>{ ativo ? "sim" : "não" }</span>
                                     </>
                             ):(
                                 ''
