@@ -223,8 +223,6 @@ const CardInfoLink = (props) => {
                             created_at ? (
                                     <>
                                         <span className="fs-6"><b>Criado em: </b>{ dateFormat(created_at, "dd-mm-yyyy hh:MM") }</span>
-                                        <br/>
-                                        <span className="fs-6"><b>Grupo ainda existe? </b>{ ativo ? "sim" : "não" }</span>
                                     </>
                             ):(
                                 ''
@@ -242,6 +240,9 @@ const CardInfoLink = (props) => {
 
                             )
                         }
+                    </div>
+                    <div>
+                        <span className="fs-6"><b>Grupo ainda existe? </b>{ ativo ? "sim" : "não" }</span>
                     </div>
                 </div>
                 <p className="text-justify">
