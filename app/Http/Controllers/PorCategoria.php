@@ -18,10 +18,11 @@ class PorCategoria extends Controller
         $conf["api"]       = 'api/grupos/'.$parametro['categoria'];
         $dados = categorias::getCategoryInformation($parametro['categoria']);
         $img = isset($dados[0]["img"][0]) ? $dados[0]["img"][0] : url()->to('/') .'/img/generico/reactangle.png';
+        $urlCorrent = url()->current();
         $conf['meta'] = "
-    <link rel=\"canonical\" href=\"".url()->current()."\"/>
+        <link rel=\"canonical\" href=\"".$urlCorrent."\"/>
     <meta name=\"description\" content=\"".@$dados[0]["descricao"]."\" />\n
-    <meta property=\"og:url\" content=\"".url()->current()."\" />\n
+    <meta property=\"og:url\" content=\"".$urlCorrent."\" />\n
     <meta property=\"og:type\" content=\"website\" />\n
     <meta property=\"og:title\" content=\"".$conf['title']."\" />\n
     <meta property=\"og:description\" content=\"".@$dados[0]["descricao"]."\" />\n
