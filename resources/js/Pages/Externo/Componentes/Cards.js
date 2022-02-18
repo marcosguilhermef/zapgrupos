@@ -1,6 +1,6 @@
 import { useEffect, Component } from 'react'
 import {Col, Row, Card, Button, Image, Spinner} from 'react-bootstrap'
-import  dateFormat,{ masks  } from 'dateformat'
+import  dateFormat,{ masks } from 'dateformat'
 import './card.css'
 
 const CardInfo = (props) => {

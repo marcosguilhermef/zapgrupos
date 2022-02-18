@@ -19,10 +19,11 @@ class InformacoesLinkWhatsApp extends Controller
         $descricao = htmlentities($conf["grupo"][0]["descricao"]);
         $titulo = htmlentities($conf['title']);
         $data = gruposWhatsApp::getGrupoById($parametro['_id'])->first()->toArray();
+        $urlCorrent = url()->current();
         $conf['meta'] = "
-        <link rel=\"canonical\" href=\"".url()->current()."\"/>
+        <link rel=\"canonical\" href=\"".$urlCorrent."\"/>
         <meta name=\"description\" content=\"Grupo de whatsapp: ".$descricao."\" />\n
-        <meta property=\"og:url\" content=\"".url()->current()."\" />\n
+        <meta property=\"og:url\" content=\"".$urlCorrent."\" />\n
         <meta property=\"og:type\" content=\"article\" />\n
         <meta property=\"og:title\" content=\"".$titulo."\" />\n
         <meta property=\"og:description\" content=\"".$descricao."\" />\n
