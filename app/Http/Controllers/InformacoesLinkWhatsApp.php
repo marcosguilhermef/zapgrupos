@@ -44,7 +44,7 @@ class InformacoesLinkWhatsApp extends Controller
         \"datePublished\": \"".$data["created_at"]."\",
         \"dateModified\": \"".@$data["updated_at"]."\",
         \"image\": \"".$img."\",
-        \"author\": \"zapgrupos.xyz\",
+        \"author\": \"zapgrupos.xyz\"
 
         }\n
         </script>\n
