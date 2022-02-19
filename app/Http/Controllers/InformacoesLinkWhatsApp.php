@@ -40,9 +40,9 @@ class InformacoesLinkWhatsApp extends Controller
         {
         \"@context\": \"https://schema.org\",
         \"@type\": \"NewsArticle\",
-        \"headline\": \"Analyzing Google Search traffic drops\",
-        \"datePublished\": ".$data["created_at"].",
-        \"dateModified\": ".@$data["updated_at"]."
+        \"headline\": \"$titulo\",
+        \"datePublished\": \"".$data["created_at"]."\",
+        \"dateModified\": \"".@$data["updated_at"]."\"
         }\n
         </script>\n
         ";
