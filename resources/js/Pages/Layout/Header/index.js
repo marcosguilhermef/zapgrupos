@@ -47,7 +47,7 @@ const NavBarComponent = (props) => {
                     <NavDropdown.Item href="/comparador">Separated link</NavDropdown.Item> */}
                 </NavDropdown>
                 <Nav.Link href="/adicionar">Adicionar Grupo</Nav.Link>
-                <Nav.Link href="gerar-link-whatsapp">Gerar Link</Nav.Link>
+                <Nav.Link href="/gerar-link-whatsapp">Gerar Link</Nav.Link>
                 <Nav.Link href="/sobre">Sobre</Nav.Link>
 
             </Nav>
