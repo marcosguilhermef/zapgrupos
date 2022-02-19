@@ -39,10 +39,13 @@ class InformacoesLinkWhatsApp extends Controller
         <script type=\"application/ld+json\">
         {
         \"@context\": \"https://schema.org\",
-        \"@type\": \"NewsArticle\",
+        \"@type\": \"Article\",
         \"headline\": \"$titulo\",
         \"datePublished\": \"".$data["created_at"]."\",
-        \"dateModified\": \"".@$data["updated_at"]."\"
+        \"dateModified\": \"".@$data["updated_at"]."\",
+        \"image\": \"".$img."\",
+        \"author\": \"zapgrupos.xyz\",
+
         }\n
         </script>\n
         ";
