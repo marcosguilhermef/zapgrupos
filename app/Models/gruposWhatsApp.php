@@ -35,8 +35,7 @@ class gruposWhatsApp extends Model
         return gruposWhatsApp::where("_id",$_id)->get();
     }
 
-    public static function getGrupoByCategoryPaginate($categoria){
-        $limit = 8 ;
+    public static function getGrupoByCategoryPaginate($categoria, $limit = 8){
         $projections = ["_id", "vizita", "url", "categoria", "descricao", "img","titulo","tipo","created_at","updated_at"];
         //return gruposWhatsApp::where("ativo", true)->where("categoria",$categoria)->orderBy("vizita","asc")->paginate($limit,$projections);
         return gruposWhatsApp::where(['$text' => [ '$search' =>  "\"$categoria\"" , '$diacriticSensitive'=> true], "ativo" => true])->orderBy("vizita","desc")->orderBy("_id","desc")->paginate($limit,$projections);

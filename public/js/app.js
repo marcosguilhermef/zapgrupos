@@ -18405,7 +18405,7 @@ var NavBarComponent = function NavBarComponent(props) {
         href: "/adicionar",
         children: "Adicionar Grupo"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["default"].Link, {
-        href: "gerar-link-whatsapp",
+        href: "/gerar-link-whatsapp",
         children: "Gerar Link"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["default"].Link, {
         href: "/sobre",
