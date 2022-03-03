@@ -68,7 +68,7 @@ class addGrupo extends Controller
 
         $rules = [
             'descricao'     =>      'required|between:30,300',
-            'titulo'        =>      'required|between:5,50',
+            //'titulo'        =>      'required|between:5,50',
             'link'          =>      ["required","url",new uniqmongo],
             'telefone'      =>      'required',
             'categoria'     =>      'required',
@@ -76,7 +76,7 @@ class addGrupo extends Controller
         ];
         $messages    = [
             'descricao.required'     => 'O campo \'Descrição\' não está preenchido.',
-            'titulo.required'     => 'O campo \'Titulo\' não está preenchido.',
+            //'titulo.required'     => 'O campo \'Titulo\' não está preenchido.',
             'link.required'     => 'O campo \'Link\' não está preenchido.',
             'telefone.required'     => 'O campo \'Telefone\' não está preenchido.',
             'categoria.required'     => 'O campo \'Categoria\' não está preenchido.',
