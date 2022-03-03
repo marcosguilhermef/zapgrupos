@@ -33,7 +33,34 @@ class addGrupo extends Controller
         return response()->json(["redirect"=> $save],200);
     }
 
+    public function addGrupoByApi(Request $r){
+        $validate = $this->validateRequest($r);
+        if($validate->fails()){
+            return response()->json($validate->errors(),400);
+        }
+        $save = $this->storeByapi($r->all());
+        return response()->json(["_id"=> $save],200);
+    }
+
     public function store(Array $r){
+        $grupo = new gruposWhatsApp();
+        $grupo->url         =   $r["link"];
+        $grupo->titulo      =   $r["titulo"];
+        $grupo->descricao   =   $r["descricao"];
+        $grupo->tipo        =   $r["tipo"];
+        $grupo->ativo       =   true;
+        $grupo->categoria   =   $r["categoria"];
+        $grupo->email       =   $r["email"];
+        $grupo->telefone    =   $r["telefone"];
+        $grupo->linkOrigem  =   null;
+        $grupo->vizita      =   null;
+        $grupo->siteMae     =   null;
+        $grupo->save();
+        $this->resgartarImage($grupo->_id, $grupo->url,$grupo->tipo);
+        return $grupo->_id;
+
+    }
+    public function storeByapi(Array $r){
         $grupo = new gruposWhatsApp();
         $grupo->url         =   $r["link"];
         $grupo->titulo      =   $r["titulo"];
