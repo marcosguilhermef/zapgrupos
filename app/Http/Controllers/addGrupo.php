@@ -54,6 +54,7 @@ class addGrupo extends Controller
         $grupo->telefone    =   $r["telefone"];
         $grupo->linkOrigem  =   null;
         $grupo->vizita      =   null;
+        $grupo->pais        =   @$r["pais"];
         $grupo->siteMae     =   null;
         $grupo->save();
         $this->resgartarImage($grupo->_id, $grupo->url,$grupo->tipo);
