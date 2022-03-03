@@ -45,7 +45,7 @@ class addGrupo extends Controller
     public function store(Array $r){
         $grupo = new gruposWhatsApp();
         $grupo->url         =   $r["link"];
-        $grupo->titulo      =   $r["titulo"];
+        $grupo->titulo      =   @$r["titulo"];
         $grupo->descricao   =   $r["descricao"];
         $grupo->tipo        =   $r["tipo"];
         $grupo->ativo       =   true;
@@ -64,7 +64,7 @@ class addGrupo extends Controller
     public function storeByapi(Array $r){
         $grupo = new gruposWhatsApp();
         $grupo->url         =   $r["link"];
-        $grupo->titulo      =   $r["titulo"];
+        $grupo->titulo      =   @$r["titulo"];
         $grupo->descricao   =   $r["descricao"];
         $grupo->tipo        =   $r["tipo"];
         $grupo->ativo       =   true;
