@@ -58,9 +58,10 @@ class addGrupo extends Controller
         $grupo->siteMae     =   null;
         $grupo->save();
         $this->resgartarImage($grupo->_id, $grupo->url,$grupo->tipo);
-        return $grupo->_id;
+        return url()->to("/$grupo->categoria/".$grupo->_id);
 
     }
+    
     public function storeByapi(Array $r){
         $grupo = new gruposWhatsApp();
         $grupo->url         =   $r["link"];
@@ -76,7 +77,7 @@ class addGrupo extends Controller
         $grupo->siteMae     =   null;
         $grupo->save();
         $this->resgartarImage($grupo->_id, $grupo->url,$grupo->tipo);
-        return url()->to("/$grupo->categoria/".$grupo->_id);
+        return $grupo->_id;;
 
     }
 
