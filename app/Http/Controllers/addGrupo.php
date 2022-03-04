@@ -68,6 +68,7 @@ class addGrupo extends Controller
         $grupo->titulo      =   @$r["titulo"];
         $grupo->descricao   =   $r["descricao"];
         $grupo->tipo        =   $r["tipo"];
+        $grupo->pais        =   @$r["pais"];
         $grupo->ativo       =   true;
         $grupo->categoria   =   $r["categoria"];
         $grupo->email       =   $r["email"];
