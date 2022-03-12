@@ -12,6 +12,8 @@ class gruposWhatsApp extends Model
     protected $collection = 'URLs';
     protected $connection = 'mongodb';
     protected $currentPage = 12;
+    protected static $projections = ["_id", "vizita","sensivel", "url", "categoria", "descricao", "img","titulo","tipo","created_at","updated_at"];
+
     protected $casts = [
         'created_at' => 'datetime:Y-m-d\TH:i:sP',
         'updated_at' => 'datetime:Y-m-d\TH:i:sP'
@@ -21,14 +23,12 @@ class gruposWhatsApp extends Model
 
     public static function getMaisAcessados(){
         $limit = 8 ;
-        $projections = ["_id", "vizita", "url", "categoria", "descricao", "img","titulo","tipo","created_at","updated_at"];
-        return gruposWhatsApp::where("ativo", true)->orderBy("vizita","asc")->paginate($limit,$projections);
+        return gruposWhatsApp::where("ativo", true)->orderBy("vizita","asc")->paginate($limit,self::$projections);
     }
 
     public static function getRecentes(){
         $limit = 8 ;
-        $projections = ["_id", "vizita", "url", "categoria", "descricao", "img","titulo","tipo","created_at","updated_at"];
-        return gruposWhatsApp::where("ativo", true)->orderBy("_id","desc")->paginate($limit,$projections);
+        return gruposWhatsApp::where("ativo", true)->orderBy("_id","desc")->paginate($limit,self::$projections);
     }
 
     public static function getGrupoById($_id){
@@ -36,9 +36,7 @@ class gruposWhatsApp extends Model
     }
 
     public static function getGrupoByCategoryPaginate($categoria, $limit = 8){
-        $projections = ["_id", "vizita", "url", "categoria", "descricao", "img","titulo","tipo","created_at","updated_at"];
-        //return gruposWhatsApp::where("ativo", true)->where("categoria",$categoria)->orderBy("vizita","asc")->paginate($limit,$projections);
-        return gruposWhatsApp::where(['$text' => [ '$search' =>  "\"$categoria\"" , '$diacriticSensitive'=> true], "ativo" => true])->orderBy("vizita","desc")->orderBy("_id","desc")->paginate($limit,$projections);
+        return gruposWhatsApp::where(['$text' => [ '$search' =>  "\"$categoria\"" , '$diacriticSensitive'=> true], "ativo" => true])->orderBy("vizita","desc")->orderBy("_id","desc")->paginate($limit,self::$projections);
 
     }
 
