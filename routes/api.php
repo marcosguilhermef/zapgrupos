@@ -18,6 +18,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::patch('/grupo/sesivel/{id}', [App\Http\Controllers\Admin\ConteudoSensivel::class,'get_post'] );
 Route::get('/maisAcessados', [App\Http\Controllers\gruposMaisAcessados::class, 'index']);
 Route::get('/grupos/{categoria}', [App\Http\Controllers\ApiGruposPorCategoria::class, 'show']);
 Route::get('/recentes', [App\Http\Controllers\gruposRecentes::class, 'index']);
