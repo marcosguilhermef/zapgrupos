@@ -85,7 +85,8 @@ class addGrupo extends Controller
             'descricao' => $grupo->descricao,
             'pais'      => $grupo->pais,
             'categoria' => $grupo->categoria,
-            'tipo'      => $grupo->tipo
+            'tipo'      => $grupo->tipo,
+            'img'       => null
         ];
 
     }
