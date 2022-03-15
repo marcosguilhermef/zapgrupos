@@ -39,7 +39,7 @@ class addGrupo extends Controller
             return response()->json($validate->errors(),400);
         }
         $save = $this->storeByapi($r->all());
-        return response()->json(["_id"=> $save],200);
+        return response()->json($save,200);
     }
 
     public function store(Array $r){
@@ -78,7 +78,15 @@ class addGrupo extends Controller
         $grupo->siteMae     =   null;
         $grupo->save();
         $this->resgartarImage($grupo->_id, $grupo->url,$grupo->tipo);
-        return $grupo->_id;;
+        return [
+            'id'        => $grupo->_id,
+            'url'       => $grupo->url,
+            'titulo'    => $grupo->titulo,
+            'descricao' => $grupo->descricao,
+            'pais'      => $grupo->pais,
+            'categoria' => $grupo->categoria,
+            'tipo'      => $grupo->tipo
+        ];
 
     }
 
