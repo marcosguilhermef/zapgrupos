@@ -86,7 +86,7 @@ class addGrupo extends Controller
             'pais'      => $grupo->pais,
             'categoria' => $grupo->categoria,
             'tipo'      => $grupo->tipo,
-            'img'       => null
+            'img'       => 'https://zapgrupos.xyz/img/generico/reactangle.png'
         ];
 
     }
