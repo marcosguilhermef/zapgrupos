@@ -49,6 +49,7 @@ class addGrupo extends Controller
         $grupo->descricao   =   $r["descricao"];
         $grupo->tipo        =   $r["tipo"];
         $grupo->ativo       =   true;
+        $grupo->sensivel    =   false;
         $grupo->categoria   =   $r["categoria"];
         $grupo->email       =   $r["email"];
         $grupo->telefone    =   $r["telefone"];
@@ -70,6 +71,7 @@ class addGrupo extends Controller
         $grupo->tipo        =   $r["tipo"];
         $grupo->pais        =   @$r["pais"];
         $grupo->ativo       =   true;
+        $grupo->sensivel    =   false;
         $grupo->categoria   =   $r["categoria"];
         $grupo->email       =   $r["email"];
         $grupo->telefone    =   $r["telefone"];
