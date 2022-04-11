@@ -14,6 +14,11 @@ use MongoDB\BSON\ObjectId;
 
 class addGrupo extends Controller
 {
+    protected $notNullable = [
+        "titulo"    => "", 
+        "ativo"     => true, 
+        "sensivel"  => false
+    ];
 
     public function index(){
         $conf = UsersInfo::getInfor();
@@ -44,59 +49,45 @@ class addGrupo extends Controller
 
     public function store(Array $r){
         $grupo = new gruposWhatsApp();
-        $grupo->url         =   $r["link"];
-        $grupo->titulo      =   @$r["titulo"];
-        $grupo->descricao   =   $r["descricao"];
-        $grupo->tipo        =   $r["tipo"];
-        $grupo->ativo       =   true;
-        $grupo->sensivel    =   false;
-        $grupo->categoria   =   $r["categoria"];
-        $grupo->email       =   $r["email"];
-        $grupo->telefone    =   $r["telefone"];
-        $grupo->linkOrigem  =   null;
-        $grupo->vizita      =   null;
-        $grupo->pais        =   @$r["pais"];
-        $grupo->siteMae     =   null;
-        $grupo->save();
-        $this->resgartarImage($grupo->_id, $grupo->url,$grupo->tipo);
-        return url()->to("/$grupo->categoria/".$grupo->_id);
+        $a = $grupo::create(
+            array_merge(
+                $r,
+                ["url" => $r["link"]],
+                $this->notNullable
+            )
+        );
+        $this->resgartarImage($a->_id, $a->url,$a->tipo);
+        return url()->to("/$grupo->categoria/".$a->_id);
 
     }
     
     public function storeByapi(Array $r){
         $grupo = new gruposWhatsApp();
-        $grupo->url         =   $r["link"];
-        $grupo->titulo      =   @$r["titulo"];
-        $grupo->descricao   =   $r["descricao"];
-        $grupo->tipo        =   $r["tipo"];
-        $grupo->pais        =   @$r["pais"];
-        $grupo->ativo       =   true;
-        $grupo->sensivel    =   false;
-        $grupo->categoria   =   $r["categoria"];
-        $grupo->email       =   $r["email"];
-        $grupo->telefone    =   $r["telefone"];
-        $grupo->linkOrigem  =   null;
-        $grupo->vizita      =   null;
-        $grupo->siteMae     =   null;
-        $grupo->save();
-        $this->resgartarImage($grupo->_id, $grupo->url,$grupo->tipo);
-        return [
-            'id'        => $grupo->_id,
-            'url'       => $grupo->url,
-            'titulo'    => $grupo->titulo,
-            'descricao' => $grupo->descricao,
-            'pais'      => $grupo->pais,
-            'categoria' => $grupo->categoria,
-            'tipo'      => $grupo->tipo,
-            'img'       => 'https://zapgrupos.xyz/img/generico/reactangle.png'
-        ];
+        $a = $grupo::create(
+            array_merge(
+                $r,
+                ["url" => $r["link"]],
+                $this->notNullable,
+            )
+        );
+        $this->resgartarImage($a->_id, $a->url,$a->tipo);
+
+         return [
+             'id'        => $a->_id,
+             'url'       => $a->url,
+             'titulo'    => $a->titulo,
+             'descricao' => $a->descricao,
+             'categoria' => $a->categoria,
+             'tipo'      => $a->tipo,
+             'img'       => 'https://zapgrupos.xyz/img/generico/reactangle.png'
+         ];
 
     }
 
     public function resgartarImage(String $id, String $url, String $tipo){
         try{
-            if($tipo === "whatsapp"){
-                $a = shell_exec('java -jar '.env("JAVA_BOT")." -re $id $url");
+            if($tipo == "whatsapp"){
+                shell_exec('java -jar '.env("JAVA_BOT")." -re $id $url");
                 return;
             }
         }catch( \Exception $e ){

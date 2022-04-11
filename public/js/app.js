@@ -17018,6 +17018,7 @@ var CardInfo = function CardInfo(props) {
   var _props = _objectSpread({}, props),
       _id = _props._id,
       link = _props.link,
+      sensivel = _props.sensivel,
       titulo = _props.titulo,
       categoria = _props.categoria,
       descricao = _props.descricao,
@@ -17039,7 +17040,7 @@ var CardInfo = function CardInfo(props) {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["default"], {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["default"].Header, {
         children: titulo
-      }), (img === null || img === void 0 ? void 0 : img.length) == 0 || typeof img === 'undefined' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      }), (img === null || img === void 0 ? void 0 : img.length) == 0 || typeof img === 'undefined' || sensivel ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__["default"], {
         src: "/img/generico/reactangle.png",
         className: "card-img-top",
         style: {
@@ -17148,6 +17149,7 @@ var CardInfo2 = function CardInfo2(props) {
   var _props2 = _objectSpread({}, props),
       _id = _props2._id,
       link = _props2.link,
+      sensivel = _props2.sensivel,
       titulo = _props2.titulo,
       categoria = _props2.categoria,
       descricao = _props2.descricao,
@@ -17168,7 +17170,7 @@ var CardInfo2 = function CardInfo2(props) {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["default"], {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["default"].Header, {
         children: titulo
-      }), (img === null || img === void 0 ? void 0 : img.length) == 0 || typeof img === "undefined" ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      }), (img === null || img === void 0 ? void 0 : img.length) == 0 || typeof img === "undefined" || sensivel ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__["default"], {
         src: "/img/generico/reactangle.png",
         className: "card-img-top"
       }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__["default"], {
@@ -17261,6 +17263,7 @@ var CardInfoLink = function CardInfoLink(props) {
   var _props4 = _objectSpread({}, props),
       _id = _props4._id,
       link = _props4.link,
+      sensivel = _props4.sensivel,
       titulo = _props4.titulo,
       categoria = _props4.categoria,
       descricao = _props4.descricao,
@@ -17282,7 +17285,7 @@ var CardInfoLink = function CardInfoLink(props) {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["default"], {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["default"].Header, {
         children: titulo
-      }), (img === null || img === void 0 ? void 0 : img.length) == 0 || typeof img === "undefined" ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      }), (img === null || img === void 0 ? void 0 : img.length) == 0 || typeof img === "undefined" || sensivel ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__["default"], {
         src: "/img/generico/reactangle.png",
         className: "card-img-top"
       }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__["default"], {
@@ -17345,6 +17348,7 @@ var CardPreview = function CardPreview(props) {
   var _ref = _objectSpread({}, props || 'Informacao Auxente'),
       _id = _ref._id,
       link = _ref.link,
+      sensivel = _ref.sensivel,
       titulo = _ref.titulo,
       categoria = _ref.categoria,
       descricao = _ref.descricao,
@@ -17386,7 +17390,7 @@ var CardPreview = function CardPreview(props) {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["default"], {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__["default"].Header, {
         children: titulo
-      }), (img === null || img === void 0 ? void 0 : img.length) == 0 || typeof img === "undefined" ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      }), (img === null || img === void 0 ? void 0 : img.length) == 0 || typeof img === "undefined" || sensivel ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__["default"], {
         src: "/img/generico/reactangle.png",
         className: "card-img-top"
       }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_6__["default"], {

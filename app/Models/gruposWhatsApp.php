@@ -12,14 +12,47 @@ class gruposWhatsApp extends Model
     protected $collection = 'URLs';
     protected $connection = 'mongodb';
     protected $currentPage = 12;
-    protected static $projections = ["_id", "vizita","sensivel", "url", "categoria", "descricao", "img","titulo","tipo","created_at","updated_at"];
+    protected $fillable = [
+        "_id", 
+        "vizita",
+        "sensivel", 
+        "url", 
+        "categoria", 
+        "descricao",
+        "img",
+        "titulo",
+        "tipo",
+        "created_at",
+        "pais",
+        "ativo",
+        "email",
+        "telefone",
+        "linkOrigem",
+        "siteMae",
+    ];
+    protected static $projections = 
+        [
+            
+            "_id", 
+            "vizita",
+            "sensivel", 
+            "url", 
+            "categoria", 
+            "descricao",
+            "img",
+            "titulo",
+            "tipo",
+            "created_at",
+            "updated_at"
+        ];
 
     protected $casts = [
         'created_at' => 'datetime:Y-m-d\TH:i:sP',
         'updated_at' => 'datetime:Y-m-d\TH:i:sP'
     ];
-    public    $timestamps = true;
-    //protected $dates = ['birthday'];
+
+    public $timestamps = true;
+
 
     public static function getMaisAcessados(){
         $limit = 8 ;

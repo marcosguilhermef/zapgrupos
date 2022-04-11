@@ -4,7 +4,7 @@ import  dateFormat,{ masks } from 'dateformat'
 import './card.css'
 
 const CardInfo = (props) => {
-    const {_id,link, titulo, categoria, descricao, img, tipo, created_at, updated_at} = {...props}
+    const {_id,link, sensivel , titulo, categoria, descricao, img, tipo, created_at, updated_at} = {...props}
     const redirect = (cat) =>{
             cat = cat.split(" ").join("-")
             return '/'+cat+'/'+_id
@@ -18,7 +18,7 @@ const CardInfo = (props) => {
                     { titulo }
                 </Card.Header>
                 {
-                    img?.length == 0 || typeof img === 'undefined' ?
+                    (img?.length == 0 || typeof img === 'undefined' || sensivel) ?
                     (
                         <Image src="/img/generico/reactangle.png" className="card-img-top" style={{ height:"280px" }} height="280px"/>)
                     :
@@ -109,7 +109,7 @@ const CardAds = (props) => {
 
 
 const CardInfo2 = (props) => {
-    const {_id,link, titulo, categoria, descricao, img, created_at, updated_at} = {...props}
+    const {_id,link,sensivel , titulo, categoria, descricao, img, created_at, updated_at} = {...props}
     const redirect = (cat) =>{
         cat = cat.split(" ").join("-")
         return '/'+cat+'/'+_id
@@ -121,7 +121,7 @@ const CardInfo2 = (props) => {
                     { titulo }
                 </Card.Header>
                 {
-                    img?.length == 0 || typeof img === "undefined"?
+                    (img?.length == 0 || typeof img === "undefined" || sensivel)?
                     (
                         <Image src="/img/generico/reactangle.png" className="card-img-top"/>)
                     :
@@ -194,7 +194,7 @@ const CardWait = (props) => {
 }
 
 const CardInfoLink = (props) => {
-    const {_id,link, titulo, categoria, descricao, img, created_at, updated_at, ativo } = {...props}
+    const {_id,link,sensivel , titulo, categoria, descricao, img, created_at, updated_at, ativo } = {...props}
 
     const redirect = (cat) =>{
         cat = cat.split(" ").join("-")
@@ -208,7 +208,7 @@ const CardInfoLink = (props) => {
                     { titulo }
                 </Card.Header>
                 {
-                    img?.length == 0 || typeof img === "undefined"?
+                    img?.length == 0 || typeof img === "undefined" || sensivel?
                         (
                             <Image src="/img/generico/reactangle.png" className="card-img-top"/>)
                         :
@@ -259,7 +259,7 @@ const CardInfoLink = (props) => {
 }
 
 const CardPreview = (props) => {
-    const {_id,link, titulo, categoria, descricao, img, tipo, created_at, updated_at } = {...props ||'Informacao Auxente'}
+    const {_id,link, sensivel, titulo, categoria, descricao, img, tipo, created_at, updated_at } = {...props ||'Informacao Auxente'}
     const redirect = (cat) =>{
         cat = cat.split(" ").join("-")
         window.location.href = window.location.origin+'/'+cat+'/'+_id
@@ -281,7 +281,7 @@ const CardPreview = (props) => {
                     { titulo }
                 </Card.Header>
                 {
-                    img?.length == 0 || typeof img === "undefined"?
+                    img?.length == 0 || typeof img === "undefined" || sensivel?
                         (
                             <Image src="/img/generico/reactangle.png" className="card-img-top"/>)
                         :
