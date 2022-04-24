@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
-
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +13,36 @@ use Inertia\Inertia;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Auth::routes();
+
+Route::get('/login',[App\Http\Controllers\Externo\Login\Login::class,'showLoginForm'])->name('login');
+Route::post('/login',[App\Http\Controllers\Externo\Login\Login::class,'login']);
+
+Route::middleware('auth:sanctum')->get('/lista-de-grupos', [App\Http\Controllers\Admin\Grupos\ListaDeGrupos\ListaDeGrupos::class,'index']);
+
+
+Route::middleware('auth:sanctum')->get('/grupo-info/{id}',[App\Http\Controllers\Admin\Grupos\Grupo\GrupoInfo::class,'index']);
+Route::middleware('auth:sanctum')->post('/grupo-info',[App\Http\Controllers\Admin\Grupos\Grupo\GrupoInfo::class,'post']);
+Route::middleware('auth:sanctum')->get('/reload/{id}',[App\Http\Controllers\Admin\Grupos\Grupo\Reload::class,'index']);
+
+
+Route::middleware('auth:sanctum')->get('/lista-de-categorias', function(){
+    dd("auth");
+});
+Route::middleware('auth:sanctum')->get('/lista-de-categorias/{categoria}', function(){
+    dd("auth");
+});
+
+Route::middleware('auth:sanctum')->get('/lista-de-usuarios', function(){
+    dd("auth");
+});
+Route::middleware('auth:sanctum')->get('/lista-de-usuarios/{id}', function(){
+    dd("auth");
+});
+
+
+
+
 Route::get('/grupo/{id}', [App\Http\Controllers\linkProtector::class,'index']);
 //Route::get('/sitemap.xml',[App\Http\Controllers\sitemap::class,'index']);
 Route::get('/', [App\Http\Controllers\InicioController::class,'index']);

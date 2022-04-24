@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
+use Jenssegers\Mongodb\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
 class CreatePersonalAccessTokensTable extends Migration
@@ -11,6 +11,7 @@ class CreatePersonalAccessTokensTable extends Migration
      *
      * @return void
      */
+    protected $connection = 'mongodb';
     public function up()
     {
         Schema::create('personal_access_tokens', function (Blueprint $table) {

@@ -4,20 +4,20 @@ use Illuminate\Database\Migrations\Migration;
 use Jenssegers\Mongodb\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePasswordResetsTable extends Migration
+class Acessos extends Migration
 {
     /**
      * Run the migrations.
      *
      * @return void
      */
-    protected $connection = 'mongodb';
     public function up()
     {
-        Schema::create('password_resets', function (Blueprint $table) {
-            $table->string('email')->index();
-            $table->string('token');
-            $table->timestamp('created_at')->nullable();
+        Schema::create('Acessos', function (Blueprint $table) {
+            $table->id();
+            $table->text('ip');
+            $table->timestamps();
+
         });
     }
 
@@ -28,6 +28,6 @@ class CreatePasswordResetsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('password_resets');
+        //Schema::dropIfExists("Acessos");
     }
 }

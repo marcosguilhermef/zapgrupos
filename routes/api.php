@@ -14,15 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+     return dd($request->user());
+ });
 
-Route::patch('/grupo/sesivel/{id}', [App\Http\Controllers\Admin\ConteudoSensivel::class,'get_post'] );
+
 Route::get('/maisAcessados', [App\Http\Controllers\gruposMaisAcessados::class, 'index']);
 Route::get('/grupos/{categoria}', [App\Http\Controllers\ApiGruposPorCategoria::class, 'show']);
 Route::get('/recentes', [App\Http\Controllers\gruposRecentes::class, 'index']);
 Route::post('/add-banca', [App\Http\Controllers\addGrupo::class,'addGrupo']);
 Route::post('/add-grupo', [App\Http\Controllers\addGrupo::class,'addGrupoByApi']);
 Route::get('/mais', [App\Http\Controllers\maisCategorias::class, 'show']);
-
