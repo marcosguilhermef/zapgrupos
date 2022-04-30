@@ -59,8 +59,16 @@ class gruposWhatsApp extends Model
         return gruposWhatsApp::where("ativo", true)->orderBy("vizita","asc")->paginate($limit,self::$projections);
     }
 
-    public static function getRecentes($limit = 8){
-        return gruposWhatsApp::where("ativo", true)->orderBy("_id","desc")->paginate($limit,self::$projections);
+    public static function getRecentes($limit = 8,$categoria = null){
+        if(!$categoria){
+            return gruposWhatsApp::where("ativo", true)->orderBy("_id","desc")->paginate($limit,self::$projections);
+        }else{
+            return gruposWhatsApp::where(
+                    ['$text' => [ '$search' =>  "\"$categoria\"" , '$diacriticSensitive'=> true], "ativo" => true]
+                )
+                ->orderBy("_id","desc")
+                ->paginate($limit,self::$projections);
+        }
     }
 
     public static function getGrupoById($_id){

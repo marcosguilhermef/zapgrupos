@@ -19,6 +19,7 @@ Route::get('/login',[App\Http\Controllers\Externo\Login\Login::class,'showLoginF
 Route::post('/login',[App\Http\Controllers\Externo\Login\Login::class,'login']);
 
 Route::middleware('auth:sanctum')->get('/lista-de-grupos', [App\Http\Controllers\Admin\Grupos\ListaDeGrupos\ListaDeGrupos::class,'index']);
+Route::middleware('auth:sanctum')->get('/lista-de-grupos/{categoria}', [App\Http\Controllers\Admin\Grupos\ListaDeGrupos\ListaDeGrupos::class,'index']);
 
 
 Route::middleware('auth:sanctum')->get('/grupo-info/{id}',[App\Http\Controllers\Admin\Grupos\Grupo\GrupoInfo::class,'index']);

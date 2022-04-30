@@ -5,7 +5,7 @@ import { Container, Form, Button, Image, Row, Col } from 'react-bootstrap';
 import './style.css'
 const Grupos = (props) => {
     const {grupo} = { ...props }
-    const {titulo, img, categoria ,descricao, _id} = { ...grupo }
+    const {titulo, img, categoria ,descricao, _id, url, sensivel} = { ...grupo }
     return(
         <div className="groups">
             <div className="group-image-div">
@@ -21,13 +21,14 @@ const Grupos = (props) => {
             </div>
             <div className="group-info">
                 <div className="group-title">
-                    { `${titulo} (${categoria})` }
+                    { `${titulo} (${categoria}) (${sensivel})` }
                 </div>
                 <div className="group-descricao">
                     { descricao }
                 </div>
                 <div className="group-options">
-                    <a href={`/grupo-info/${_id}`}>Informações</a>
+                    <a href={`/grupo-info/${_id}`}>Informações</a> | <a href={url}>Grupo</a>
+
                 </div>
             </div>
         </div>

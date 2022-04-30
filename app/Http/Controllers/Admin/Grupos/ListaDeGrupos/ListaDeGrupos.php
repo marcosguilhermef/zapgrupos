@@ -7,9 +7,15 @@ use Inertia\Inertia;
 use App\Models\gruposWhatsApp;
 class ListaDeGrupos extends Admin{
 
-    public function index(Request $request){
-        $grupos = gruposWhatsApp::getRecentes(50)->toArray();
-        return Inertia::render('Admin/Grupos/ListaDeGrupos',$grupos);
+    public function index(Request $request, $categoria=null){
+        if(!$categoria){
+            $grupos = gruposWhatsApp::getRecentes(50)->toArray();
+            return Inertia::render('Admin/Grupos/ListaDeGrupos',$grupos);
+        }else{
+            $grupos = gruposWhatsApp::getRecentes(50,$categoria)->toArray();
+            return Inertia::render('Admin/Grupos/ListaDeGrupos',$grupos);
+        }
+
     }
 
 }

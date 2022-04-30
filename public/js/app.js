@@ -16954,7 +16954,9 @@ var Grupos = function Grupos(props) {
       img = _grupo.img,
       categoria = _grupo.categoria,
       descricao = _grupo.descricao,
-      _id = _grupo._id;
+      _id = _grupo._id,
+      url = _grupo.url,
+      sensivel = _grupo.sensivel;
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
     className: "groups",
@@ -16974,16 +16976,19 @@ var Grupos = function Grupos(props) {
       className: "group-info",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
         className: "group-title",
-        children: "".concat(titulo, " (").concat(categoria, ")")
+        children: "".concat(titulo, " (").concat(categoria, ") (").concat(sensivel, ")")
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
         className: "group-descricao",
         children: descricao
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
         className: "group-options",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
           href: "/grupo-info/".concat(_id),
           children: "Informa\xE7\xF5es"
-        })
+        }), " | ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
+          href: url,
+          children: "Grupo"
+        })]
       })]
     })]
   });
