@@ -12,5 +12,4 @@ class AdicionarGrupo extends User{
             'categorias' => categorias::getCategoryPaginate()->toArray()['data']
         ]);
     }
-
 }

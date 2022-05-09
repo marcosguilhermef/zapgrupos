@@ -10,7 +10,7 @@ const Index = () =>{
         window.location.href = link;
     }
     return(
-        <div className="footery px-5 pt-5 pb-2">
+        <div className="footery px-5 pt-5 pb-1">
             <Row>
                 <Col sm={6}>
                     <h3>Categorias</h3>
@@ -68,7 +68,7 @@ const Index = () =>{
                     </Row>
                 </Col>
             </Row>
-            <div className="foo text-center">
+            <div className="foo text-center mt-4">
                 <h6>Copyright 2022 © Zapgrupos</h6>
             </div>
         </div>
