@@ -17,6 +17,7 @@ class UsersInfo{
                 'user' => substr(Auth::guard()->user()->name,0,8).'...',
                 'level' => Auth::guard()->user()->guard,
                 //'verified' => Auth::guard()->user()->hasVerifiedEmail(),
+                'verified' => true,
                 'token_name' => Auth::guard()->user()->api_token,
                 'authenticated' => Auth::guard()->check()
             ];

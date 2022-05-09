@@ -15,7 +15,6 @@ class ListaDeGrupos extends Admin{
             $grupos = gruposWhatsApp::getRecentes(50,$categoria)->toArray();
             return Inertia::render('Admin/Grupos/ListaDeGrupos',$grupos);
         }
-
     }
 
 }

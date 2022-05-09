@@ -79,7 +79,7 @@ const CardGrupo = (props) => {
                         (e,i,a) => (
                             <>
                                 <CardInfo {...e} />
-                                { i%3 === 0 ? <CardAds /> : ''}
+                                {/* { i%3 === 0 ? <CardAds /> : ''} */}
                             </>
 
                     )

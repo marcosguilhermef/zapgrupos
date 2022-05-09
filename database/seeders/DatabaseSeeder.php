@@ -15,14 +15,24 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        
         DB::table('users')->insert([
-            'name'      => 'userTest',
+            'name'      => Str::random(5),
             'email' => Str::random(10).'@gmail.com',
             'password' => Hash::make('password'),
             'role'     => 'admin',
             'email_verified_at' => null,
             'api_token' => Str::random(60),
 
+        ]);
+
+        DB::table('users')->insert([
+            'name'      => Str::random(5),
+            'email' => Str::random(10).'@gmail.com',
+            'password' => Hash::make('password'),
+            'role'     => 'user',
+            'email_verified_at' => null,
+            'api_token' => Str::random(60),
         ]);
     }
 }

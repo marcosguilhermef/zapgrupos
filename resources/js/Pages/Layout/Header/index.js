@@ -20,15 +20,18 @@ const NavBarComponent = (props) => {
                         <Nav className="mr-auto">
                             <Nav.Link href="/">Iniciar</Nav.Link>
                             <NavDropdown title="Categorias" id="basic-nav-dropdown">
-                                <NavDropdown.Item href="/">Amizade</NavDropdown.Item>
-                                <NavDropdown.Item href="/">Namoro</NavDropdown.Item>
-                                <NavDropdown.Item href="/">Trabalho</NavDropdown.Item>
-                                <NavDropdown.Item href="/">Esportes</NavDropdown.Item>
+                                <NavDropdown.Item href="/Amizade">Amizade</NavDropdown.Item>
+                                <NavDropdown.Item href="/Namoro">Namoro</NavDropdown.Item>
+                                <NavDropdown.Item href="/Figurinhas e Stickers">Figurinhas e Stickers</NavDropdown.Item>
+                                <NavDropdown.Item href="/Esportes">Esportes</NavDropdown.Item>
+                                <NavDropdown.Item href="/mais">Mais categorias</NavDropdown.Item>
                                 {/* <NavDropdown.Divider />
                                 <NavDropdown.Item href="/comparador">Separated link</NavDropdown.Item> */}
                             </NavDropdown>
-                            <Nav.Link href="/mais">Adicionar Grupo</Nav.Link>
-
+                            <Nav.Link href="/gerar-link-whatsapp">Gerar Link</Nav.Link>
+                            <Nav.Link href="/meus-grupos">Meus grupos</Nav.Link>
+                            <Nav.Link href="/adicionar-grupo">Adicionar grupo</Nav.Link>
+                            <Nav.Link href="/logout">Sair</Nav.Link>
                         </Nav>
         )
     }
@@ -46,16 +49,13 @@ const NavBarComponent = (props) => {
                     {/* <NavDropdown.Divider />
                     <NavDropdown.Item href="/comparador">Separated link</NavDropdown.Item> */}
                 </NavDropdown>
-                <Nav.Link href="/adicionar">Adicionar Grupo</Nav.Link>
                 <Nav.Link href="/gerar-link-whatsapp">Gerar Link</Nav.Link>
-                <Nav.Link href="/sobre">Sobre</Nav.Link>
-
             </Nav>
         )
     }
 
     return (
-        <Navbar bg="dark"  variant="dark" expand="lg" className="d-flex justify-content-between">
+        <Navbar variant="dark" expand="lg" className="d-flex justify-content-between nav-header">
             <Navbar.Brand href="/">
                 <img
                     alt=""

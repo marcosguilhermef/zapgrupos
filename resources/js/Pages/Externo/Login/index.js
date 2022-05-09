@@ -6,11 +6,14 @@ import { Container, Form, Button, Row, Col } from 'react-bootstrap';
 const Index = (props) => {
     const { user, verified, authenticated, csrf_token, erros } = { ...props };
 
+    function register(){
+        window.location.href = '/register'
+    }
     return (
         <Layout
             user={!user}
             verified={!verified}
-            authenticated={!authenticated}
+            authenticated={false}
         >
             <Container>
                 <h1 className="text-center">Login</h1>
@@ -35,8 +38,11 @@ const Index = (props) => {
                         <Form.Group>
                             <Form.Control type="hidden" name="_token" value={csrf_token}/>
                         </Form.Group>
-                        <Button variant="success" type="submit">
-                            Login
+                        <Button className="w-100 mb-2" variant="success" type="submit">
+                            LOGIN
+                        </Button>
+                        <Button className="w-100" variant="success" onClick={register}>
+                            REGISTRAR-SE
                         </Button>
                     </Form>
                 </div>
