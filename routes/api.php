@@ -25,3 +25,4 @@ Route::get('/recentes', [App\Http\Controllers\gruposRecentes::class, 'index']);
 Route::post('/add-banca', [App\Http\Controllers\addGrupo::class,'addGrupo']);
 Route::post('/add-grupo', [App\Http\Controllers\addGrupo::class,'addGrupoByApi']);
 Route::get('/mais', [App\Http\Controllers\maisCategorias::class, 'show']);
+Route::post('/denuncias', [App\Http\Controllers\Denuncia::class, 'index']);
