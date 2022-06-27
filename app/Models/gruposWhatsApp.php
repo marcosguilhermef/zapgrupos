@@ -73,7 +73,7 @@ class gruposWhatsApp extends Model
                     [
                         '$text' => [ '$search' =>  "\"$categoria\"" , '$diacriticSensitive'=> true], 
                         "ativo" => true, 
-                        "sensivel","=",false
+                        "sensivel" => false
                     ]
                 )
                 ->orderBy("_id","desc")
