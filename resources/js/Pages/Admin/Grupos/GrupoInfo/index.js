@@ -28,7 +28,8 @@ const Index = (props) => {
         email,
         telefone,
         categorias,
-        _token
+        _token,
+        role
     } = { ...props };
 
     const [data, setData] = useState({
@@ -69,9 +70,10 @@ const Index = (props) => {
 
     return (
         <Layout
-            user={!user}
-            verified={!verified}
-            authenticated={!authenticated}
+            user={user}
+            verified={verified}
+            authenticated={authenticated}
+            role={role}
         >
             <Container>
                 <h1 className="text-center">Informações do grupo</h1>
