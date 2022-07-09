@@ -56,7 +56,7 @@ const Index = (props) => {
     })
 
     return(
-        <Layout user={user} verified={verified} authenticated={authenticated}>
+        <Layout {...props}>
             <Container>
                 <h1 className="text-center my-4">Gerador de link para Whatsapp</h1>
                 <h3>Como gerar o seu link?</h3>

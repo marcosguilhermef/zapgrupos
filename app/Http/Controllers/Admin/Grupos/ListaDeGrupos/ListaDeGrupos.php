@@ -10,9 +10,11 @@ class ListaDeGrupos extends Admin{
     public function index(Request $request, $categoria=null){
         if(!$categoria){
             $grupos = gruposWhatsApp::getRecentes(50)->toArray();
+            $grupos = $grupos + $this->authInfo();
             return Inertia::render('Admin/Grupos/ListaDeGrupos',$grupos);
         }else{
             $grupos = gruposWhatsApp::getRecentes(50,$categoria)->toArray();
+            $grupos = $grupos + $this->authInfo();
             return Inertia::render('Admin/Grupos/ListaDeGrupos',$grupos);
         }
     }

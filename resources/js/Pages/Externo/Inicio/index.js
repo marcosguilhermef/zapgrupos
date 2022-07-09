@@ -9,10 +9,10 @@ import { Container } from 'react-bootstrap';
 
 
 const Index = (props) => {
-    const { user, api, titulo, titulo_2, authenticated, verified } = { ...props }
+    const { user, api, titulo, titulo_2, authenticated, verified, role } = { ...props }
     return(
         <Provider store={store}>
-            <Layout user={user} verified={verified} authenticated={authenticated}>
+            <Layout {...props}>
                 <h1 className="text-center my-4">{ titulo }</h1>
                 <h3 className="text-center my-4">{ titulo_2 }</h3>
                 <CardGrupo api={api}></CardGrupo>

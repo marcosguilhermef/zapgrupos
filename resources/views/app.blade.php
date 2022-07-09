@@ -7,7 +7,6 @@
     <meta name="facebook-domain-verification" content="ct721bzana98oh0y6zuftib94fa5k9" />
     <meta name="propeller" content="e91767eddc63b2a7e496835245fe4e98">
     <meta property="fb:app_id" content="1279398252524269" />
-    <meta name="ahrefs-site-verification" content="9166d4c52b2af56d66b35a02ad4659b88541705de263e9f39ba5305247d9b085">
     <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
@@ -19,9 +18,16 @@
     {!! isset($page['props']['meta']) ? $page['props']['meta'] : '' !!}
     <title>{{ isset($page['props']['title']) ? $page['props']['title'] : 'Zapgrupos'  }}</title>
     <link href="{{ mix('/css/app.css') }}" rel="stylesheet" />
-    <script src="{{ mix('/js/app.js') }}" defer></script>
-    <script data-ad-client="ca-pub-8817634033676287" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script src="{{ mix('/js/app.js') }}" defer></script>    
+    @isset($page['props']['role'])
+      @if($page['props']['role'] === 'user')
+        <script data-ad-client="ca-pub-8817634033676287" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      @endif
+    @endisset
 
+    @empty($page['props']['role'])
+      <script data-ad-client="ca-pub-8817634033676287" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    @endempty
   </head>
   <body>
     {!! isset($page['props']['facebook']) ? $page['props']['facebook'] : '' !!}

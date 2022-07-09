@@ -39,9 +39,7 @@ const Index = (props) => {
     const { user, verified, authenticated, data, next_page_url, prev_page_url } = { ...props };
     return (
         <Layout
-            user={!user}
-            verified={!verified}
-            authenticated={!authenticated}
+            {...props}
         >
             <Container>
                 <h1 className="text-center">Lista de grupos</h1>

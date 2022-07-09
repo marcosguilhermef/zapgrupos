@@ -59,7 +59,7 @@ abstract class Authority extends Controller{
             'verified'      => true,
             'authenticated' => Auth::check(),
             'user'          => $this->getUserInfo()["name"],
-            'nivel'         => $this->getUserInfo()["nivel"]
+            'role'         => $this->getUserInfo()["role"]
         ];
     }
 }

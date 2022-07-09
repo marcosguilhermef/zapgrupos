@@ -11,12 +11,11 @@ class UsersInfo{
         'api_token' => Auth::user()->api_token
     ]; */
     public static function getInfor(){
-        //dd(Auth::guard()->check());
         if(!isset(self::$info) &&  Auth::guard()->check()){
+            
             return self::$info = [
                 'user' => substr(Auth::guard()->user()->name,0,8).'...',
-                'level' => Auth::guard()->user()->guard,
-                //'verified' => Auth::guard()->user()->hasVerifiedEmail(),
+                'role' => Auth::guard()->user()->role,
                 'verified' => true,
                 'token_name' => Auth::guard()->user()->api_token,
                 'authenticated' => Auth::guard()->check()

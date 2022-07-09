@@ -54,7 +54,7 @@ const Index = (props) => {
             setLoading(false)
           }
         }catch(e){
-            console.log(e)
+            
             setLoading(false)
         }
     }
@@ -72,7 +72,7 @@ const Index = (props) => {
 
 
     return(
-            <Layout user={user} verified={verified} authenticated={authenticated}>
+            <Layout {...props}>
                 <h1 className="text-center my-4">Adicionar grupo</h1>
                 <p className="text-center">
                     Adicione o seu grupo ao nosso site. Assim novas pessoas poderão participar.

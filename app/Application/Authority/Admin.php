@@ -17,4 +17,8 @@ class Admin extends Authority{
         });
 
     }
+
+    public function noAds(){
+        return true;
+    }
 }

@@ -59,11 +59,10 @@ const Index = (props) => {
             })
             const dados = await response.json()
             if (response.ok) {
-                console.log("enviou")
                 location.reload()
             }
         } catch (e) {
-            console.log('redux ', e)
+           
         }
 
     }

@@ -69,14 +69,12 @@ const CardAds = (props) => {
     useEffect(() => {
         try{
             (window.adsbygoogle = window.adsbygoogle || []).push({});
-            console.log("sucesso: ",window.adsbygoogle)
         }catch{
-            console.log("erro carregamento ads: ",window.adsbygoogle)
             //document.getElementsByName("ins")[0].setAttribute("hidden","true")
         }
     })
     useEffect(() => {
-        console.log("TESTE: ",process)
+
     })
 
     function AdsComponent(){
