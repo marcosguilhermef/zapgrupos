@@ -11,7 +11,7 @@ ReactGA4.initialize('G-FHYP3WSQ38')
 
 ReactGA.pageview(window.location.pathname + window.location.search);
 
-ReactGA.send(
+ReactGA4.send(
     { 
         hitType: "pageview", 
         page: window.location.pathname + window.location.search 
