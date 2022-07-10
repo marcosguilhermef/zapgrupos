@@ -3,7 +3,7 @@ import { Nav, Navbar, Button, NavDropdown, Dropdown, DropdownButton  } from 'rea
 import './styles.css'
 import Verificado  from './verificado'
 import { default as ReactGA } from 'react-ga';
-import { default as ReactGA4 } from 'react-ga';
+import { default as ReactGA4 } from 'react-ga4';
 import NavBarComponent from './NavBarComponent'
 
 ReactGA.initialize('UA-207744095-1');

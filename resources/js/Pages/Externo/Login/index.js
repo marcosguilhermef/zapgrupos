@@ -1,6 +1,7 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useState } from 'react'
 import Layout from '../../Layout'
-import { Container, Form, Button, Row, Col } from 'react-bootstrap';
+import { Container, Form, Button } from 'react-bootstrap';
+import { default as ReactGA4 } from 'react-ga4';
 
 
 const Index = (props) => {
@@ -33,9 +34,10 @@ const Index = (props) => {
 
         if(response.ok){
             setErrors(null)
-            
+            ReactGA4.gtag("event", "login", {
+                method: "normal"
+            });
         }else if( response.status == 400){
-            console.log(dados)
             setErrors(dados)
         }
     }

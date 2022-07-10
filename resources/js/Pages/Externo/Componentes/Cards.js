@@ -1,6 +1,7 @@
 import { useEffect, Component } from 'react'
 import {Col, Row, Card, Button, Image, Spinner} from 'react-bootstrap'
 import  dateFormat,{ masks } from 'dateformat'
+import { default as ReactGA4 } from 'react-ga4';
 import './card.css'
 
 const CardInfo = (props) => {
@@ -194,9 +195,12 @@ const CardWait = (props) => {
 const CardInfoLink = (props) => {
     const {_id,link,sensivel , titulo, categoria, descricao, img, created_at, updated_at, ativo } = {...props}
 
-    const redirect = (cat) =>{
-        cat = cat.split(" ").join("-")
-        return `/grupo/${_id}`
+    const redirect = () =>{
+        ReactGA4.gtag('event','join_group',{
+            group_id: _id
+        });
+          
+        window.location.href = `/grupo/${_id}`
     }
 
     return(
@@ -248,8 +252,7 @@ const CardInfoLink = (props) => {
                 </p>
                 </Card.Body>
                 <Card.Footer className="text-center">
-                    <a className="btn btn-success" href={`/grupo/${_id}`} role="button">Entrar</a>
-                    {/* <Button variant="success" onClick={() => redirect(categoria)}>Entrar</Button> */}
+                    <Button onClick={redirect} variant="success">Entrar</Button>
                 </Card.Footer>
             </Card>
         </Col>
