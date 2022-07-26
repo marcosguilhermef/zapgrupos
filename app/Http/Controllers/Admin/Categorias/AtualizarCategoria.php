@@ -32,7 +32,7 @@ class AtualizarCategoria extends Admin{
 
             $update = CT::where("_id", $request->input("id"))->update([
                 'categoria' => $request->input('categoria'),
-                'img'       => array( $this->salvarImagem($request->input('img')) ),
+                'img'       => $this->salvarImagem($request->input('img')),
                 'descricao' => $request->input('descricao')
             ]);
 
@@ -71,7 +71,7 @@ class AtualizarCategoria extends Admin{
         $pathImage = "/img/generico/$nameImage";
 
         Storage::put($pathImage, base64_decode($imgStr));
-        return array($pathImage);
+        return array(url($pathImage));
     }
          
 }
