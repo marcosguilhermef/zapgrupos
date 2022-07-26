@@ -61,7 +61,7 @@ class AdicionarCategoria extends Admin{
         $imgStr = str_replace(' ', '+', $imgStr);
 
         $nameImage = Str::random(20).'.'.$type;
-        $pathImage = "/img/generico/$nameImage";
+        $pathImage = "/image/$nameImage";
 
         Storage::put($pathImage, base64_decode($imgStr));
         return $pathImage;

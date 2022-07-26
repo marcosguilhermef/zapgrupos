@@ -68,7 +68,7 @@ class AtualizarCategoria extends Admin{
         $imgStr = str_replace(' ', '+', $imgStr);
 
         $nameImage = Str::random(20).'.'.$type;
-        $pathImage = "/img/generico/$nameImage";
+        $pathImage = "/image/$nameImage";
 
         Storage::put($pathImage, base64_decode($imgStr));
         return array(url($pathImage));
