@@ -45,12 +45,22 @@ Route::middleware('auth:sanctum')->get('/lista-de-categorias/{categoria}', funct
     dd("auth");
 });
 
-Route::middleware('auth:sanctum')->get('/lista-de-usuarios', function(){
-    dd("auth");
-});
-Route::middleware('auth:sanctum')->get('/lista-de-usuarios/{id}', function(){
-    dd("auth");
-});
+
+Route::middleware('auth:sanctum')->get('/lista-de-usuarios',[App\Http\Controllers\Admin\Usuarios\ListaUsuarios::class,'index']);
+Route::middleware('auth:sanctum')->get('/usuario/{id}',[App\Http\Controllers\Admin\Usuarios\Usuario::class,'index']);
+
+Route::middleware('auth:sanctum')->get('/categorias',[App\Http\Controllers\Admin\Categorias\Categorias::class,'index']);
+Route::middleware('auth:sanctum')->get('/categoria/{id}',[App\Http\Controllers\Admin\Categorias\InfoCategoria::class,'index']);
+Route::middleware('auth:sanctum')->get('/adicionar-categoria',[App\Http\Controllers\Admin\Categorias\AdicionarCategoria::class,'index']);
+Route::middleware('auth:sanctum')->post('/adicionar-categoria',[App\Http\Controllers\Admin\Categorias\AdicionarCategoria::class,'store']);
+
+Route::middleware('auth:sanctum')->get('/atualizar-categoria/{id}',[App\Http\Controllers\Admin\Categorias\AtualizarCategoria::class,'index']);
+Route::middleware('auth:sanctum')->post('/atualizar-categoria',[App\Http\Controllers\Admin\Categorias\AtualizarCategoria::class,'store']);
+
+
+Route::middleware('auth:sanctum')->get('/denuncias',[App\Http\Controllers\Admin\Denuncias\Denuncias::class,'index']);
+//Route::middleware('auth:sanctum')->get('/denuncias/{id}',[App\Http\Controllers\Admin\Usuarios\Usuario::class,'index']);
+
 
 Route::middleware('auth:sanctum')->get('/generate',function(Request $request){
     $token = $request->user()->createToken('token');

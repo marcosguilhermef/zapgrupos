@@ -16,6 +16,7 @@ class User extends Eloquent implements Authenticatable
 
     protected $connection = 'mongodb';
     protected $collection = 'users';
+    public $timestamps = true;
 
     /**
      * The attributes that are mass assignable.
@@ -45,8 +46,23 @@ class User extends Eloquent implements Authenticatable
      *
      * @var array
      */
+
+    protected static $projections = 
+    [
+        'name',
+        'email',
+        'role'
+    ];
+
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'created_at' => 'datetime:d-m-Y H:i:s',
+        'updated_at' => 'datetime:d-m-Y H:i:s'
     ];
+
+
+    public static function getUserPaginated($limit = 8){
+        return User::orderBy("_id","desc")->paginate($limit,self::$projections);
+    }
 
 }

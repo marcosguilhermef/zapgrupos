@@ -6,7 +6,9 @@ use App\Http\Controllers\Auth\LoginController;
 
 use Inertia\Inertia;
 use Illuminate\Http\Request;
-use Validator;
+use App\Exceptions\LoginError;
+use Illuminate\Support\Facades\Validator;
+
 
 class Login extends LoginController{
 
@@ -27,6 +29,11 @@ class Login extends LoginController{
         // If the class is using the ThrottlesLogins trait, we can automatically throttle
         // the login attempts for this application. We'll key this by the username and
         // the IP address of the client making these requests into this application.
+
+        if($this->validator->fails()){
+            return $this->showLoginForm($this->validator->errors(),"400");
+        }
+
         if (method_exists($this, 'hasTooManyLoginAttempts') &&
             $this->hasTooManyLoginAttempts($request)) {
             $this->fireLockoutEvent($request);
@@ -47,16 +54,23 @@ class Login extends LoginController{
 
     protected function validateLogin(Request $request)
     {
-        $this->validade = Validator::make($request->all(), [
-            'email' => 'required|string|email',
-            'password' => 'required|string'
+        $this->validator =  Validator::make($request->all(), [
+            $this->username() => 'required|string',
+            'password' => 'required|string',
         ]);
-        
+        return $this->validator;
+
     }
 
     protected function sendFailedLoginResponse(Request $request)
     {
-        return $this->showLoginForm($this->validade->errors());
+        return $this->showLoginForm(LoginError::withMessages([$this->username() => [trans('auth.failed')]])->errors(),"400");
     }
+
+    //protected function sendFailedLoginResponse(Request $request)
+    // {
+    //     dd($this->validade->errors());
+    //     return $this->showLoginForm($this->validade->errors());
+    // }
 
 }

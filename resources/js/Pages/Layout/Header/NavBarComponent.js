@@ -69,6 +69,8 @@ const Admin = () => {
             <Nav.Link href="/">Iniciar</Nav.Link>
             <Nav.Link href="/lista-de-grupos">Lista de grupos</Nav.Link>
             <Nav.Link href="/lista-de-usuarios">Lista de usuários</Nav.Link>
+            <Nav.Link href="/denuncias">Denúncias</Nav.Link>
+            <Nav.Link href="/categorias">Categórias</Nav.Link>
             <Nav.Link href="/logout">Sair</Nav.Link>
         </Nav>
 )

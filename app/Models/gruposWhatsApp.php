@@ -30,6 +30,7 @@ class gruposWhatsApp extends Model
         "linkOrigem",
         "siteMae",
     ];
+    
     protected static $projections = 
         [
             
@@ -44,7 +45,7 @@ class gruposWhatsApp extends Model
             "tipo",
             "created_at",
             "updated_at"
-        ];
+    ];
 
     protected $casts = [
         'created_at' => 'datetime:Y-m-d\TH:i:sP',
