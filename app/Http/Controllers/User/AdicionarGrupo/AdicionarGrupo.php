@@ -56,6 +56,7 @@ class AdicionarGrupo extends User{
     public function validateRequest(Request $request){
 
         $rules = [
+            
             'descricao'     =>      'required|between:30,300',
             'link'          =>      ["required","url",new uniqmongo],
             'categoria'     =>      'required',
@@ -73,6 +74,7 @@ class AdicionarGrupo extends User{
         return $validatedData;
 
     }
+
     public function resgartarImage(String $id, String $url, String $tipo){
         try{
             if($tipo == "whatsapp"){
