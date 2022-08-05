@@ -1,0 +1,9 @@
+.grupo{
+    border: 1px solid black;
+    border-radius: 1.5em;
+    box-shadow: .1em 0.1em 1em 0.2em black;
+}
+
+.grupo > img{
+
+}

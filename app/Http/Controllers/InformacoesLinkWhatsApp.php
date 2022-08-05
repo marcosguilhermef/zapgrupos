@@ -22,20 +22,20 @@ class InformacoesLinkWhatsApp extends Controller
         $urlCorrent = url()->current();
         $conf['meta'] = "
         <link rel=\"canonical\" href=\"".$urlCorrent."\"/>
-        <meta name=\"description\" content=\"Grupo de whatsapp: ".$descricao."\" />\n
-        <meta property=\"og:url\" content=\"".$urlCorrent."\" />\n
-        <meta property=\"og:type\" content=\"article\" />\n
-        <meta property=\"og:title\" content=\"".$titulo."\" />\n
-        <meta property=\"og:description\" content=\"".$descricao."\" />\n
-        <meta property=\"og:image\" content=\"".$img."\" />\n
-        <meta property=\"og:site_name\" content=\"Zapgrupos\" />\n
-        <meta itemprop=\"name\" content=\"".$titulo."\">\n
-        <meta itemprop=\"description\" content=\"Grupo de whatsapp: ".$descricao."\"/>\n
-        <meta itemprop=\"image\" content=\"".$img."\"/>\n<!– para o Twitter Card–>
-        <meta name=\"twitter:card\" content=\"summary_large_image\"/>\n
-        <meta name=\"twitter:title\" content=\"".$titulo."\"/>\n
-        <meta name=\"twitter:description\" content=\"Grupo de whatsapp: ".$descricao."\"/>\n
-        <meta name=\"twitter:image\" content=\"".$img."\"/>\n
+        <meta name=\"description\" content=\"Grupo de whatsapp: ".$descricao."\" />
+        <meta property=\"og:url\" content=\"".$urlCorrent."\" />
+        <meta property=\"og:type\" content=\"article\" />
+        <meta property=\"og:title\" content=\"".$titulo."\" />
+        <meta property=\"og:description\" content=\"".$descricao."\" />
+        <meta property=\"og:image\" content=\"".$img."\" />
+        <meta property=\"og:site_name\" content=\"Zapgrupos\" />
+        <meta itemprop=\"name\" content=\"".$titulo."\">
+        <meta itemprop=\"description\" content=\"Grupo de whatsapp: ".$descricao."\"/>
+        <meta itemprop=\"image\" content=\"".$img."\"/>
+        <meta name=\"twitter:card\" content=\"summary_large_image\"/>
+        <meta name=\"twitter:title\" content=\"".$titulo."\"/>
+        <meta name=\"twitter:description\" content=\"Grupo de whatsapp: ".$descricao."\"/>
+        <meta name=\"twitter:image\" content=\"".$img."\"/>
         <script type=\"application/ld+json\">
         {
         \"@context\": \"https://schema.org\",
@@ -45,9 +45,8 @@ class InformacoesLinkWhatsApp extends Controller
         \"dateModified\": \"".@$data["updated_at"]."\",
         \"image\": \"".$img."\",
         \"author\": \"zapgrupos.xyz\"
-
-        }\n
-        </script>\n
+        }
+        </script>
         ";
         return Inertia::render('Externo/Informacoes',$conf);
     }

@@ -24,6 +24,8 @@ Route::post('/register',[App\Http\Controllers\Externo\Register\Register::class,'
 
 Route::middleware('auth:sanctum')->get('/meus-grupos',[App\Http\Controllers\User\MeusGrupos\MeusGrupos::class,'index']);
 Route::middleware('auth:sanctum')->get('/adicionar-grupo',[App\Http\Controllers\User\AdicionarGrupo\AdicionarGrupo::class,'index']);
+Route::middleware('auth:sanctum')->post('/adicionar-grupo',[App\Http\Controllers\User\AdicionarGrupo\AdicionarGrupo::class,'addGrupo']);
+Route::middleware('auth:sanctum')->get('/editar/{_id}',[App\Http\Controllers\User\Editar\Editar::class,'index']);
 
 
 Route::get('/logout',[App\Http\Controllers\Auth\LoginController::class,'logout']);

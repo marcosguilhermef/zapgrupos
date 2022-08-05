@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Jenssegers\Mongodb\Eloquent\Model;
+use MongoDB\BSON\ObjectId;
 
 class gruposWhatsApp extends Model
 {
@@ -29,6 +30,7 @@ class gruposWhatsApp extends Model
         "telefone",
         "linkOrigem",
         "siteMae",
+        "user_id"
     ];
     
     protected static $projections = 
@@ -43,6 +45,7 @@ class gruposWhatsApp extends Model
             "img",
             "titulo",
             "tipo",
+            "ativo",
             "created_at",
             "updated_at"
     ];
@@ -99,6 +102,13 @@ class gruposWhatsApp extends Model
 
     public static function GetAllURLs(){
         return gruposWhatsApp::all();
+    }
+
+    public static  function getGrupoByUserId($user_id, $limit = 5)
+    {
+        return gruposWhatsApp::where("user_id",new \MongoDB\BSON\ObjectId($user_id))
+        ->orderBy("_id","desc")
+        ->paginate($limit,self::$projections);
     }
 
     public static function getGrupoByCategory($categoria){

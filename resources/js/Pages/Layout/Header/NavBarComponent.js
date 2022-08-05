@@ -1,6 +1,6 @@
 
 import React from 'react'
-import { Nav, Navbar, NavDropdown  } from 'react-bootstrap'
+import { Nav, Navbar, NavDropdown, Button  } from 'react-bootstrap'
 
 
 const NavBarComponent = (props) => {
@@ -52,10 +52,17 @@ const NavBarComponent = (props) => {
                 {
                     authenticated ? (
                         <NavParaAuthenticados/>
-                    ): (
-                        <NavParaNaoAuthenticados/>
+                    ): (<>
+                            <NavParaNaoAuthenticados/>
+                            <Button variant='success' onClick={ () => window.location.href = "/login" }>
+                                Login
+                            </Button>
+                        </>
+                        
                     )
                 }
+            
+
 
             </Navbar.Collapse>
 

@@ -1,15 +1,18 @@
 import React, { useEffect, useRef, useState } from 'react'
 import Layout from '../../Layout'
-import { Container, Tabs, Tab, Form, Button } from 'react-bootstrap';
+import { Container, Spinner, Form, Button } from 'react-bootstrap';
 
 const Index = (props) => {
-    const { user, verified, authenticated, categorias, erros } = { ...props };
+    const { categorias, _token } = { ...props };
+    const [erros, setErros]            = useState({});
 
     const [infoClient, setInfoCliente] = useState({
         "titulo" : "Sem titulo",
         "descricao": "Sem descricao",
-        "categoria": "Sem categoria",
-        "tipo": null
+        "categoria": null,
+        "tipo": null,
+        "_token": _token,
+        "link": link
     });
 
     const [loading, setLoading] = useState(false)
@@ -17,11 +20,8 @@ const Index = (props) => {
     //const [erros, setErros]            = useState({});
 
     const link          =       useRef(null)
-    const titulo        =       useRef(null)
     const descricao     =       useRef(null)
     const categoria     =       useRef(null)
-    const email         =       useRef(null)
-    const telefone      =       useRef(null)
 
     const setingClients = (event) => {
         let obj = {
@@ -32,25 +32,54 @@ const Index = (props) => {
 
     const submit = () => {
         setLoading(true)
+        fetchRequest()
+
+    }
+
+    const fetchRequest =  async () => {
+        try{
+          const response =  await fetch('/adicionar-grupo',{
+              method: 'POST',
+              body: JSON.stringify(infoClient),
+              headers: new Headers({
+                "Content-Type": "application/json"
+              })
+          })
+          const dados = await response.json()
+          if(response.ok){
+            window.location.href =  dados.redirect
+            setLoading(false)
+          }else{
+            setErros(dados)
+            setLoading(false)
+          }
+        }catch(e){
+            setLoading(false)
+        }
     }
 
     function AnalizarUrl(url){
         if(/^https:\/\/chat.whatsapp.com\/\w{5,}|^https:\/\/t.me\/\w{4,}/.test(url.target.value)){
 
-            let tipo = url.target.value.match(/(whatsapp)|(t.me)/g)
-            setInfoCliente((value) => ({ ...value, tipo : tipo[0], [url.target.name]:url.target.value }))
+            let tipo = url.target.value.match(/(whatsapp)|(t.me)/g)[0]
+
+            console.log({"tipo": tipo,"teste": "whatsapp" === tipo })
+
+            if( "whatsapp" === tipo){
+                setInfoCliente((value) => ({ ...value, tipo : "whatsapp", [url.target.name]:url.target.value }))
+            }else if("t.me" === tipo){
+                setInfoCliente((value) => ({ ...value, tipo : "telegram", [url.target.name]:url.target.value }))
+            }
+
             setErros((values) => ({ ...values, [url.target.name]: null }))
         }else{
-            setInfoCliente((value) => ({ ...value, tipo : null }))
             setErros((values) => ({ ...values, [url.target.name]: ["Aceitamos apenas URLs de Telegram e WhatsApp. As URLs devem começar com \"https\"."]  }))
         }
     }
 
     return (
         <Layout
-            user={!user}
-            verified={!verified}
-            authenticated={!authenticated}
+            {...props}
         >
             <Container>
                 <Form>
@@ -85,7 +114,18 @@ const Index = (props) => {
                         <Form.Control as="select" name="categoria" aria-label="Escreva uma descição para o seu grupo" ref={categoria} onChange={setingClients} isInvalid={erros?.categoria}>
                             <option value=''></option>
                              {
-                                categorias?.map(
+                                categorias?.sort( (e,a) => {
+                                
+                                    if(e["categoria"] < a["categoria"]){
+                                        return -1;
+                                    }
+
+                                    if( e["categoria"] > a["categoria"] ){
+                                        return 1;
+                                    }
+
+                                    return 0;
+                                }).map(
                                     (e, i, a) => {
                                         return (
                                             <option key={e["_id"]} value={e["categoria"]}>{e["categoria"]}</option>

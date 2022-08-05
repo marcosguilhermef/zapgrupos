@@ -6,10 +6,9 @@ import  Carousel  from './Carousel'
 import './grupo.css';
 
 const Index = (props) => {
-    const {_id,titulo,categoria,descricao,url,img, ativo } = { ...props.grupo[0] }
 
     return(
-        <Layout user={props?.user} verified={props?.verified} authenticated={props?.authenticated}>
+        <Layout { ...props }>
             <div className="m-lg-5 mx-sm-5 mt-5 mx-1 px-lg-5 px-md-3 px-0">
                 <h1 className="text-center my-3">Informações do grupo</h1>
                 <Row className="text-center">

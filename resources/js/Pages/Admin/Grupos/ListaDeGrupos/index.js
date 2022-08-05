@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react'
 import Layout from '../../../Layout'
 import { Container, Form, Button, Image, Row, Col } from 'react-bootstrap';
-
 import './style.css'
+
 const Grupos = (props) => {
     const {grupo} = { ...props }
     const {titulo, img, categoria ,descricao, _id, url, sensivel} = { ...grupo }

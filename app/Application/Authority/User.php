@@ -24,4 +24,8 @@ class User extends Authority{
         $request->session()->regenerateToken();
         return dd("login");  
     }
+
+    public function noAds(){
+        return false;
+    }
 }

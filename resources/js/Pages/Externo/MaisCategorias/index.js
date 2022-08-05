@@ -16,7 +16,7 @@ const Index = (props) => {
     }
     return(
         <Provider store={store}>
-            <Layout user={props?.user} verified={props?.verified} authenticated={props?.authenticated}>
+            <Layout {...props}>
                 <Container>
                     <Row>
                         {

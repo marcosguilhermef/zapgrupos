@@ -13,7 +13,7 @@ const CardInfo = (props) => {
     }
 
     return(
-        <Col xs={12} sm={12} md={4} lg={2} >
+        <Col xs={12} sm={12} md={4} lg={3} xl={2} xxl={2}>
             <Card>
                 <Card.Header>
                     { titulo }
