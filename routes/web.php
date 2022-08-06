@@ -85,7 +85,7 @@ Route::get('/grupo/{id}', [App\Http\Controllers\linkProtector::class,'index']);
 Route::get('/', [App\Http\Controllers\InicioController::class,'index'])->name('home');
 Route::get('/mais', [App\Http\Controllers\maisCategorias::class, 'index']);
 Route::get('/sobre',[App\Http\Controllers\sobre::class, 'index']);
-Route::get('/adicionar',[App\Http\Controllers\addGrupo::class,'index']);
+//Route::get('/adicionar',[App\Http\Controllers\addGrupo::class,'index']);
 Route::get('/gerar-link-whatsapp',[App\Http\Controllers\gerarLink::class,'index']);
 Route::get('/{categoria}/{id}', [App\Http\Controllers\InformacoesLinkWhatsApp::class,'index']);
 Route::get('/{categoria}', [App\Http\Controllers\PorCategoria::class,'index']);
