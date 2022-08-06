@@ -15,7 +15,7 @@ const CardInfo = (props) => {
     return(
         <Col xs={12} sm={12} md={4} lg={3} xl={2} xxl={2}>
             <Card>
-                <Card.Header>
+                <Card.Header as="h5">
                     { titulo }
                 </Card.Header>
                 {
@@ -116,7 +116,7 @@ const CardInfo2 = (props) => {
     return(
         <Col xs={12} sm={12} md={12} lg={12}>
             <Card>
-                <Card.Header>
+                <Card.Header  as="h5">
                     { titulo }
                 </Card.Header>
                 {
@@ -168,7 +168,7 @@ const CardWait = (props) => {
     return(
             <Col xs={12} sm={12} md={4} lg={2} hidden={ativo}>
                 <Card>
-                    <Card.Header>
+                    <Card.Header as="h5">
                         Aguarde
                     </Card.Header>
                     <Image src="/img/generico/reactangle.png" className="card-img-top"/>
@@ -206,7 +206,7 @@ const CardInfoLink = (props) => {
     return(
         <Col xs={12} sm={12} md={12} lg={12}>
             <Card>
-                <Card.Header>
+                <Card.Header as="h5">
                     { titulo }
                 </Card.Header>
                 {
@@ -278,7 +278,7 @@ const CardPreview = (props) => {
     return(
         <Col xs={12} sm={12} md={12} lg={12}>
             <Card>
-                <Card.Header>
+                <Card.Header as="h5">
                     { titulo }
                 </Card.Header>
                 {

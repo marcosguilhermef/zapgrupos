@@ -10,7 +10,7 @@ const Index = (props) => {
     return(
         <Layout { ...props }>
             <div className="m-lg-5 mx-sm-5 mt-5 mx-1 px-lg-5 px-md-3 px-0">
-                <h1 className="text-center my-3">Informações do grupo</h1>
+                <h1 className="text-center my-5">{props?.grupo?.[0]?.titulo}</h1>
                 <Row className="text-center">
                     <Col lg={6}>
                         <h3 className="text-center my-3">Grupo que você escolheu</h3>
