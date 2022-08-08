@@ -18,7 +18,7 @@ class InformacoesLinkWhatsApp extends Controller
         $img = @$conf["grupo"][0]["img"][0] !== null ? @$conf["grupo"][0]["img"][0] : url()->to("/").'/img/generico/reactangle.png' ;
         $descricao = htmlentities($conf["grupo"][0]["descricao"]);
         $titulo = htmlentities($conf['title']);
-        $data = gruposWhatsApp::getGrupoById($parametro['_id'])->first()->toArray();
+        $data = $conf['grupo']->first()->toArray();
         $urlCorrent = url()->current();
         $conf['meta'] = "
         <link rel=\"canonical\" href=\"".$urlCorrent."\"/>
