@@ -88,6 +88,7 @@ const GroupsContainer = (props) => {
                                 categoria={ e?.categoria }
                                 img={e?.img}
                                 _id={ e?._id }
+                                key={e?._id}
                                 />
                         )
                     )
@@ -108,8 +109,8 @@ const GroupsContainer = (props) => {
             <>
                 <RenderGrupo/>
                 {
-                    [1,2,3,4,5,6,7,8,9,10].map( (e) => (
-                        <GrupoLoading/>
+                    [1,2,3,4,5,6,7,8,9,10].map( (e,i,a) => (
+                        <GrupoLoading key={i+"-grupo"}/>
                     ))
                 }
             </>
