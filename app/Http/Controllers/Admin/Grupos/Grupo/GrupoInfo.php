@@ -14,7 +14,7 @@ class GrupoInfo extends Admin{
         $grupo = gruposWhatsApp::getGrupoById($id)->first()->toArray()+UsersInfo::getInfor();
         $grupo['categorias'] = categorias::all()->toArray();
         $grupo["_token"]     = csrf_token();
-        return Inertia::render('Admin/Grupos/GrupoInfo',$grupo);
+        return Inertia::render('v1.0/Admin/Grupos/GrupoInfo',$grupo);
     }
 
     public function post(Request $request){

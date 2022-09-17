@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Inertia\Inertia;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,6 +16,10 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 //Auth::routes();
+
+Route::get('/teste', function(){
+    return Inertia::render("v2.0/Test");
+});
 
 Route::get('/login',[App\Http\Controllers\Externo\Login\Login::class,'showLoginForm'])->name('login');
 Route::post('/login',[App\Http\Controllers\Externo\Login\Login::class,'login']);
@@ -80,6 +86,7 @@ Route::middleware('auth:sanctum')->get('/dashboard',
 
 
 
+Route::get('/{version}/', [App\Http\Controllers\InicioController::class,'index'])->name('home');
 Route::get('/grupo/{id}', [App\Http\Controllers\linkProtector::class,'index']);
 //Route::get('/sitemap.xml',[App\Http\Controllers\sitemap::class,'index']);
 Route::get('/', [App\Http\Controllers\InicioController::class,'index'])->name('home');

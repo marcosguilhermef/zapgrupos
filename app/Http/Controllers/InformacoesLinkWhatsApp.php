@@ -48,7 +48,7 @@ class InformacoesLinkWhatsApp extends Controller
         }
         </script>
         ";
-        return Inertia::render('Externo/Informacoes',$conf);
+        return Inertia::render('v1.0/Externo/Informacoes',$conf);
     }
 
     public function parametrizar($categoria,$id){

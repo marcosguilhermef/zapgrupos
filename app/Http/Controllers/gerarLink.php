@@ -14,6 +14,6 @@ class gerarLink extends Controller
         $conf['meta'] = "
 <link rel=\"canonical\" href=\"".url()->current()."\"/>
 <meta name=\"description\" content=\"Gerador de link de compartilhamento no whatsapp.\" />\n";
-        return Inertia::render('Externo/GerarLink', $conf);
+        return Inertia::render('v1.0/Externo/GerarLink', $conf);
     }
 }

@@ -23,7 +23,7 @@ class linkProtector extends Controller
         //";
         Acesso::addAcesso($this->getID());
         return redirect($this->getLink());
-        //return Inertia::render('Externo/ProtetorDeLink', $conf);
+        //return Inertia::render('v1.0/Externo/ProtetorDeLink', $conf);
 
 
     }

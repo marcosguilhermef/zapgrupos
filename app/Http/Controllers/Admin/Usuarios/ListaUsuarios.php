@@ -11,7 +11,7 @@ class ListaUsuarios extends Admin{
     public function index(Request $request){
         $data = User::getUserPaginated(8)->toArray();
         $data = $data + $this->authInfo();
-        return Inertia::render('Admin/Usuarios/ListaUsuarios',$data);
+        return Inertia::render('v1.0/Admin/Usuarios/ListaUsuarios',$data);
     }
 
 }

@@ -1,0 +1,50 @@
+
+@import "../Component/color.css";
+hr{
+    margin: 0em;
+    border-color: var(--fonte-3);
+}
+.hr-1{
+    margin: 0em;
+    border-color: var(--fonte-3);
+}
+
+.foot-root{
+    position: relative;
+    bottom: -1px;
+}
+
+.footery{
+    width: 100%;
+    background-color: var(--white);
+    color:  var(--fonte-1);
+}
+.foot-categorias{
+    list-style-type: none;
+    margin-block-start:0px;
+    padding-inline-start:10px;
+}
+ul[class="foot-categorias"] li a, ul[class="foot-categorias"] li a:hover, .foot-contato{
+    text-decoration: none;
+    color:  var(--fonte-1)
+}
+ul[class="foot-categorias"] li a:hover{
+    text-decoration: underline
+}
+
+.redes-sociais{
+    cursor: pointer;
+    color:  var(--fonte-1);
+    font-size: 1.5em;
+    margin-right: 2em;
+}
+.redes-sociais-grupo, .faca-download-grupo{
+    text-align: left;
+    margin: 2em 0;
+}
+
+.redes-sociais:hover{
+    cursor: pointer;
+    color:  var(--ice);
+    margin-right: 2em;
+}

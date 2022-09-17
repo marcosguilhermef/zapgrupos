@@ -21,7 +21,7 @@ class AdicionarGrupo extends User{
 
     public function index(Request $request){
         $data = $this->authInfo() + ['categorias' => categorias::getCategoryPaginate()->toArray()['data'], '_token' => csrf_token()];
-        return Inertia::render('User/AdicionarGrupo', $data);
+        return Inertia::render('v1.0/User/AdicionarGrupo', $data);
     }
 
     public function addGrupo(Request $r){

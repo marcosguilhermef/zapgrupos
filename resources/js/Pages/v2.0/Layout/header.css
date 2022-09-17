@@ -1,0 +1,16 @@
+@import "../Component/color.css";
+.bg-color{
+    background-color: var(--marinho);
+}
+
+.navbar-font{
+    color: var(--ice) !important;
+}
+
+.nav-link{
+    color: var(--ice) !important
+}
+
+.nav-link:hover{
+    color: var(--gray) !important;
+}

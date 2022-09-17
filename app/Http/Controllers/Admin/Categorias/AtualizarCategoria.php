@@ -15,7 +15,7 @@ class AtualizarCategoria extends Admin{
 
     public function index($id){
         $data = $this->authInfo() + [ "_token" => csrf_token() ] + CT::find($id)->toArray();
-        return Inertia::render("Admin/Categorias/UpdateCategoria", $data);
+        return Inertia::render("v1.0/Admin/Categorias/UpdateCategoria", $data);
     }
 
     public function store(Request $request){

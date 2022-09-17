@@ -11,6 +11,6 @@ class sobre extends Controller
 {
     public function index(){
         $conf = UsersInfo::getInfor();
-        return Inertia::render('Externo/Sobre',$conf);
+        return Inertia::render('v1.0/Externo/Sobre',$conf);
     }
 }

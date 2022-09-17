@@ -11,7 +11,7 @@ class maisCategorias extends Controller
     public function index(){
         $conf = UsersInfo::getInfor();
         $conf['dados'] = categorias::getCategoryPaginate();
-        return Inertia::render('Externo/MaisCategorias', $conf);
+        return Inertia::render('v1.0/Externo/MaisCategorias', $conf);
     }
     public function show(){
         $conf = UsersInfo::getInfor();

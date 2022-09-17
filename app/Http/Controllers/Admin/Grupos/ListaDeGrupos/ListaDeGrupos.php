@@ -11,11 +11,11 @@ class ListaDeGrupos extends Admin{
         if(!$categoria){
             $grupos = gruposWhatsApp::getRecentes(50)->toArray();
             $grupos = $grupos + $this->authInfo();
-            return Inertia::render('Admin/Grupos/ListaDeGrupos',$grupos);
+            return Inertia::render('v1.0/Admin/Grupos/ListaDeGrupos',$grupos);
         }else{
             $grupos = gruposWhatsApp::getRecentes(50,$categoria)->toArray();
             $grupos = $grupos + $this->authInfo();
-            return Inertia::render('Admin/Grupos/ListaDeGrupos',$grupos);
+            return Inertia::render('v1.0/Admin/Grupos/ListaDeGrupos',$grupos);
         }
     }
 

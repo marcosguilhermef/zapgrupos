@@ -14,7 +14,7 @@ class Editar extends User{
 
     public function index(Request $request, $_id){
         $data = $this->authInfo() + [ '_token' => csrf_token()]+gruposWhatsApp::find($_id)->toArray()+[ "categorias" => categorias::all()->toArray()];
-        return Inertia::render('User/Editar',$data);
+        return Inertia::render('v1.0/User/Editar',$data);
     }
 
     public function store(Request $request){

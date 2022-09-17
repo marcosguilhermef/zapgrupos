@@ -1,0 +1,31 @@
+
+.groups{
+    border: .1em solid black;
+    border-radius: 1em;
+    margin: 1em;
+    padding: 1em;
+    box-shadow: 1em .7em #888888;
+}
+.group-image-div{
+    display: inline-block;
+}
+.group-info{
+    display: inline-block;
+    width: 80%;
+}
+
+.gruoup-img{
+    width: 10em;
+    height: 10em;
+    margin: 0 auto;
+    padding: 1em;
+}
+
+.group-title{
+    font-weight: bold;
+}
+
+.group-descricao{}
+
+
+.group-options{}

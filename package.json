@@ -12,7 +12,7 @@
     "devDependencies": {
         "@babel/preset-react": "^7.13.13",
         "axios": "^0.21",
-        "bootstrap": "^4.6.0",
+        "bootstrap": "^5.2.0",
         "jquery": "^3.6",
         "laravel-mix": "^6.0.6",
         "lodash": "^4.17.19",
@@ -36,7 +36,7 @@
         "@reduxjs/toolkit": "^1.6.0",
         "dateformat": "^5.0.2",
         "mix-env-file": "^0.1.1",
-        "react-bootstrap": "^1.6.1",
+        "react-bootstrap": "^2.5.0",
         "react-ga": "^3.3.0",
         "react-ga4": "^1.4.1",
         "react-redux": "^7.2.4",

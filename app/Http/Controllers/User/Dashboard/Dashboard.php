@@ -8,7 +8,7 @@ use Inertia\Inertia;
 class Dashboard extends User{
 
     public function index(Request $request){
-        return Inertia::render('User/Dashboard');
+        return Inertia::render('v1.0/User/Dashboard');
     }
 
 }

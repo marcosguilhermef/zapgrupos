@@ -11,6 +11,6 @@ class Usuario extends Admin{
     public function index(Request $request, $id){
         $data = User::find($id)->toArray();
         $data = [ "data" => $data] + $this->authInfo();
-        return Inertia::render('Admin/Usuarios/Usuario',$data);
+        return Inertia::render('v1.0/Admin/Usuarios/Usuario',$data);
     }
 }

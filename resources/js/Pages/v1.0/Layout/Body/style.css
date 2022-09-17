@@ -1,0 +1,9 @@
+.body, .foot {
+    width: 100%;
+}
+
+.foot{
+    height: 100%;
+    background-color: #292929 !important;
+    color: rgba(255, 255, 255, 0.5);
+}

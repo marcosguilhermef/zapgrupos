@@ -107,7 +107,7 @@ class RegisterController extends Controller
     public function showRegistrationForm($erros = null){
         $token = csrf_token();
 
-        return Inertia::render('Externo/Register',[
+        return Inertia::render('v1.0/Externo/Register',[
             'csrf_token' => $token,
             'erros'      => $erros
         ]);

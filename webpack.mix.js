@@ -30,4 +30,8 @@ mix.react()
     .version()
 ;
 
+mix.disableSuccessNotifications();
+mix.disableNotifications();
+
+
 //mix.env(process.env.ENV_FILE);

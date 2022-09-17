@@ -1,8 +1,8 @@
 import React from 'react'
 import { render } from 'react-dom'
 import { createInertiaApp } from '@inertiajs/inertia-react'
-import '../css/app.css'
-require("./bootstrap")
+import 'bootstrap/dist/css/bootstrap.min.css';
+//require("./bootstrap")
 
 createInertiaApp({
   resolve: name => require(`./Pages/${name}`),

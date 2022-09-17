@@ -15,7 +15,7 @@ class AdicionarCategoria extends Admin{
 
     public function index(){
         $data = $this->authInfo() + [ "_token" => csrf_token() ];
-        return Inertia::render("Admin/Categorias/AddCategorias", $data);
+        return Inertia::render("v1.0/Admin/Categorias/AddCategorias", $data);
     }
 
     public function store(Request $request){

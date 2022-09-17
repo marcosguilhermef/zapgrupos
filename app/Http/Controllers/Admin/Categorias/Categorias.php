@@ -10,6 +10,6 @@ class Categorias extends Admin{
 
     public function index(Request $request){
         $data = $this->authInfo() + ['data' => CT::all()->toArray()];
-        return Inertia::render('Admin/Categorias/ListaCategorias',$data);
+        return Inertia::render('v1.0/Admin/Categorias/ListaCategorias',$data);
     }
 }

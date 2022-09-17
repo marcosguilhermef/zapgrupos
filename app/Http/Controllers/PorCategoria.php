@@ -39,7 +39,7 @@ class PorCategoria extends Controller
     <meta name=\"twitter:image\" content=\"".$img."\">\n
         ";
 
-        return Inertia::render('Externo/Inicio', $conf);
+        return Inertia::render('v1.0/Externo/Inicio', $conf);
     }
 
     public function parametrizar($categoria,$id = null){

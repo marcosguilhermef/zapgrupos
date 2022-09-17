@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 class MeusGrupos extends User{
     public function index(Request $request){
         $data = $this->authInfo() + gruposWhatsApp::getGrupoByUserId(Auth::user()->id)->toArray();
-        return Inertia::render('User/MeusGrupos', $data);
+        return Inertia::render('v1.0/User/MeusGrupos', $data);
     }
 
 }

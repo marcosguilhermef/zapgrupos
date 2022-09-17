@@ -1,0 +1,27 @@
+.card-category {
+    padding: .25rem .5rem;
+    font-size: .7rem;
+    line-height: 1.5;
+    border-radius: .2rem;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #343a40;
+    border-color: #343a40;
+    position: absolute;
+    margin-top: -32px;
+    font-weight: 600;
+}
+.card-img-top {
+    flex-shrink: 0;
+    width: 100%;
+}
+
+.card-category img{
+    width: 15px;
+    height: 15px;
+    margin-left: 10px;
+}
+.card-orverflowy{
+    overflow-y: auto;
+    height: 12em;
+}

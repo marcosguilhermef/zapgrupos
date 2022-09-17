@@ -26,7 +26,7 @@ class addGrupo extends Controller
         $conf["titulo"]     =   $conf["title"];
         $conf["categorias"] =   categorias::all()->toArray();
         $conf["_token"]     =   csrf_token();
-        return Inertia::render('Externo/AddGrupo', $conf);
+        return Inertia::render('v1.0/Externo/AddGrupo', $conf);
 
     }
     public function addGrupo(Request $r){

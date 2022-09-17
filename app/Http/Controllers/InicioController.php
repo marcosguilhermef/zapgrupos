@@ -8,7 +8,7 @@ use App\Http\Controllers\Auth\UsersInfo;
 
 class InicioController extends Controller
 {
-    public function index(){
+    public function index($version = "v1.0"){
         $conf = UsersInfo::getInfor();
         $conf["titulo"] = 'Grupos de whatsapp';
         $conf["titulo_2"] = 'Grupos recem criados';
@@ -50,6 +50,6 @@ class InicioController extends Controller
               "operatingSystem": ["ANDROID", "WEB"]
         }
         </script>';
-        return Inertia::render("Externo/Inicio", $conf);
+        return Inertia::render("$version/Externo/Inicio", $conf);
     }
 }
