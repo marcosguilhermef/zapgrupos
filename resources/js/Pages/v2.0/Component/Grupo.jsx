@@ -14,7 +14,7 @@ const Options = (props) => {
     const TEXTO_BASE = `Olá, encontrei o link desde grupo no https://zapgrupos.xyz . Creio que vc vai gostar dele: ${URL_BASE}`
     const URL_BASE_WHATSAPP = `https://api.whatsapp.com/send?text=${encodeURI(TEXTO_BASE)}`
     const URL_BASE_TELEGRAM = `https://t.me/share?url=${URL_BASE}&text=${TEXTO_BASE}`
-    const URL_BASE_FACEBOOK = `https://www.facebook.com/sharer/sharer.php?u=${URL_BASE})`
+    const URL_BASE_FACEBOOK = `https://www.facebook.com/sharer/sharer.php?u=${URL_BASE}`
 
     function copy(){
         navigator.clipboard.writeText(TEXTO_BASE);
