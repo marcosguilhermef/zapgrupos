@@ -2,18 +2,39 @@ import React from "react";
 import { Image, Placeholder, Card  } from "react-bootstrap";
 
 import "./grupos.css"
+
+const Img = () => {}
+
 const GrupoLoading = (props) => {
-    const descricao = "Aqui temos um grupo de empreendedorimos e aprendizadoAqui temos um grupo de empreendedorimos e aprendizadoAqui temos um grupo de empreendedorimos e aprendizadoAqui temos um grupo de empreendedorimos e aprendizado                       Aqui temos um grupo de empreendedorimos e aprendizadoAqui temos um grupo de empreendedorimos e aprendizadoAqui temos um grupo de empreendedorimos e aprendizadoqui temos um grupo de empreendedorimos e aprendizadoAqui temos um grupo de empreendedorimos e aprendizadoAqui temos um grupo de empreendedorimos e aprendizadoAqui temos um grupo de empreendedorimos e aprendizado"
+    
+    const { titulo, descricao, _id, categoria, img } = props
+
+
+    const GroupImage = () => {
+        return(
+            <div className="grupo-image">
+                    {
+                        img?.[0] ? (
+                            <Image
+                            src={img?.[0]}
+                            thumbnail="true"
+                        />
+                        ) : (
+                            <Image
+                            src={'/img/generico/reactangle.png'}
+                            thumbnail="true"
+                        />
+                        )
+                    }
+
+            </div>
+        )
+    }
+
     return(
-        <div className="grupo-root">
+    <div className="grupo-root">
             <div className="grupo-container">
-                <div className="grupo-image">
-                    <Image
-                        src="/img/generico/reactangle.png"
-                        width="250rem"
-                        height="250rem"
-                    />
-                </div>
+                <GroupImage/>
                 <div className="grupo-informations">
                     <Placeholder as="h5" animation="wave">
                             <Placeholder style={{ width: "50%" }} />           

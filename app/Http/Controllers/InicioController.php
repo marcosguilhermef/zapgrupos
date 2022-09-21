@@ -5,10 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use App\Http\Controllers\Auth\UsersInfo;
-
 class InicioController extends Controller
 {
-    public function index($version = "v1.0"){
+    public function index(){
         $conf = UsersInfo::getInfor();
         $conf["titulo"] = 'Grupos de whatsapp';
         $conf["titulo_2"] = 'Grupos recem criados';
@@ -50,6 +49,6 @@ class InicioController extends Controller
               "operatingSystem": ["ANDROID", "WEB"]
         }
         </script>';
-        return Inertia::render("$version/Externo/Inicio", $conf);
+        return Inertia::render("v2.0/Externo/Inicio", $conf);
     }
 }

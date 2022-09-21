@@ -19,7 +19,14 @@ class ApiGruposPorCategoria extends Controller
     public function show(Request $request,$categoria)
     {
         $limit = @$request->query()["limit"] ? $request->query()["limit"] : 8;
-        return response()->json(gruposWhatsApp::getGrupoByCategoryPaginate($categoria,(Integer)$limit),200,['Content-Type' => 'application/json;charset=UTF-8', 'Charset' => 'utf-8'],JSON_UNESCAPED_UNICODE);
+
+        return response()
+                    ->json(
+                            gruposWhatsApp::getGrupoByCategoryPaginate($categoria,(Integer)$limit),
+                            200,
+                            ['Content-Type' => 'application/json;charset=UTF-8', 'Charset' => 'utf-8'],
+                            JSON_UNESCAPED_UNICODE
+                        );
     }
 
     /**

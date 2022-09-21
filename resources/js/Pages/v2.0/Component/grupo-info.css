@@ -1,0 +1,39 @@
+@import "./color.css";
+
+.grupo-info-root{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    border: 1px solid var(--ice);
+    box-shadow: 1px 1px 2px 2px var(--ice);
+}
+
+.grupo-info{
+    display: flex;
+    flex-direction: column;
+    margin-top: .5rem;
+}
+
+.grupo-info-img{
+    display: flex;
+    margin-right: .5rem;
+}
+
+.grupo-category {
+    background-color: #343a40;
+    border-color: #343a40;
+    border-radius: 0.2rem;
+    color: #fff;
+    font-size: .7rem;
+    font-weight: 600;
+    line-height: 1.5;
+    padding: 0.25rem 0.5rem;
+    text-transform: uppercase;
+    align-self: baseline;
+}
+
+.grupo-category img {
+    height: 15px;
+    margin-left: 5px;
+    width: 15px;
+}

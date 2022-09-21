@@ -3,18 +3,13 @@
     }
 
     .grupo-root p,
-    .grupo-root h1,
-    .grupo-root h2,
-    .grupo-root h3,
-    .grupo-root h4,
-    .grupo-root h5,
-    .grupo-root h6,
     .grupo-root span,
     .grupo-root button
     {
-        font-size: x-small;
+        font-size: small;
     }
     
+ 
     .grupo-container{
         display: flex;
         width: 100%;
@@ -26,12 +21,10 @@
         box-shadow: 3px 3px 4px 4px var(--ice);
     }
     
-    .grupo-informations{
-        display: block;
-    }
-
     .grupo-image{
         display: flex;
+        margin: auto .5rem;
+        max-width: 30%;
     }
     
     .grupo-options hr{
@@ -39,13 +32,9 @@
     }
     
     .grupo-informations{
-        margin: 1em 1em 0em 0em;
-        width: 100%;
-    }
-    
-    .grupo-image{
-        margin-right: 0.5rem;
-        max-width: 30%;
+        margin: 1em 0em;
+        max-width: 70%;
+        display: block;
     }
     
     .grupo-category {
@@ -53,7 +42,7 @@
         border-color: #343a40;
         border-radius: 0.2rem;
         color: #fff;
-        font-size: .7rem;
+        font-size: small;
         font-weight: 600;
         line-height: 1.5;
         padding: 0.25rem 0.5rem;
@@ -69,17 +58,15 @@
     .grupo-options{
         display: block;
         position: relative;
-        bottom: 0rem
     }
     
     .grupo-options .btn{
         margin: .1rem .1rem .1rem .1rem;
-    }
-    .grupo-options button{
         font-size: xx-small;
     }
+    
     .grupo-options img{
-        width: 1rem;
+        width: 0.5rem;
     }
     
     .btn-entrar, 
@@ -146,6 +133,22 @@
     .btn-telegram:focus{
         background-color: var(--telegram);
         border-color: var(--telegram);
+        box-shadow: var(--verde-shadow-2);
+        color: var(--white)
+    }
+
+    .btn-share{
+        background-color: var(--verde-1);
+        color: var(--white);
+        border-color: var(--verde-1);
+    }
+    
+    .btn-share:hover,
+    .btn-share:active,
+    .btn-share:active:focus,
+    .btn-share:focus{
+        background-color: var(--verde-2);
+        border-color: var(--verde-2);
         box-shadow: var(--verde-shadow-2);
         color: var(--white)
     }
