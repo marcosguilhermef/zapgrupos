@@ -39,6 +39,11 @@ const Options = (props) => {
 const Index = (props) => {
     const { descricao, _id, categoria, img } = props
     const URL = `/${categoria}`;
+    const style = {
+        height: "200px",
+        width: "180px",
+        objectFit: "cover",
+    }
 
     return(
         <div className="py-5 ">
@@ -49,12 +54,15 @@ const Index = (props) => {
                             <Image
                             src={img?.[0]}
                             thumbnail="true"
+                            style={style}
                         />
                         ) : (
                             <Image
                             src={'/img/generico/reactangle.png'}
                             width="250rem"
                             height="250rem"
+                            thumbnail="true"
+                            style={style}
                         />
                         )
                     }
