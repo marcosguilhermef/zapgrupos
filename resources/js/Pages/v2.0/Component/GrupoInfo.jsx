@@ -41,7 +41,13 @@ const Index = (props) => {
                             { descricao }
                         </p>
                     </div>
-                    <Options categoria={categoria} _id={_id} URL={URL}/>
+
+                    <Options 
+                        categoria={categoria} 
+                        _id={_id} 
+                        URL={URL}
+                    />
+
                 </div>
             </div>
         </div>

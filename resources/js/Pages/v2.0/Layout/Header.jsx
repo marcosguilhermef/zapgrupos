@@ -1,6 +1,20 @@
 import React from 'react'
 import {  Button, Nav, Navbar, Container } from 'react-bootstrap'
 import "./header.css"
+import { default as ReactGA } from 'react-ga';
+import { default as ReactGA4 } from 'react-ga4';
+
+
+ReactGA.initialize('UA-207744095-1');
+ReactGA4.initialize('G-FHYP3WSQ38')
+
+ReactGA.pageview(window.location.pathname + window.location.search);
+ReactGA4.send(
+    { 
+        hitType: "pageview", 
+        page: window.location.pathname + window.location.search 
+    }
+);
 
 function verifyAuth(){
 

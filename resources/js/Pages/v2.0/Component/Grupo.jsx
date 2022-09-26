@@ -113,7 +113,7 @@ const Grupo = (props) => {
             </span>
             
             <p className="grupo-descricao">
-                { descricao.substring(0,150)}
+                { descricao }
             </p>
             <Options categoria={categoria} _id={_id}/>
         </div>
