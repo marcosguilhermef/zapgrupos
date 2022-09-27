@@ -63,7 +63,7 @@ const Index = (props) => {
                 </div>
             </div>
             <div className="my-3">
-                <Button as="a" href={`/${categoria}`}>
+                <Button as="a" href={`/${categoria}`} className="btn-whatsapp">
                     Acessar mais grupos da categoria "{categoria}".
                 </Button>
             </div>
