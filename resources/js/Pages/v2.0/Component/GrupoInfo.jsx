@@ -3,7 +3,7 @@ import { Image } from "react-bootstrap"
 import { Options } from "./Grupo"
 import "./grupo-info.css"
 const Index = (props) => {
-    const { titulo, descricao, _id, categoria, img } = props
+    const { titulo, descricao, _id, categoria, img, created_at, updated_at } = props
     const URL = `/grupo/redirect/${_id}`;
 
     return(
@@ -37,6 +37,19 @@ const Index = (props) => {
                         <img src="/img/generico/whatsapp.png" class=""/>
                     </span>
                     <div>
+                        <span className="d-block">
+                            <b>Postado em {created_at}</b>
+                        </span>
+                        {
+                            updated_at ? (
+                                    <span className="d-block">
+                                        <b>Atualizado em  {updated_at}</b>
+                                    </span>
+                                ) : (
+                                    <></>
+                                )
+                        }
+                        
                         <p>
                             { descricao }
                         </p>

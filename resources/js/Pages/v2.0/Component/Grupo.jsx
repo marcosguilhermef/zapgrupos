@@ -17,8 +17,9 @@ const Options = (props) => {
     const URL_BASE_FACEBOOK = `https://www.facebook.com/sharer/sharer.php?u=${URL_BASE}`
 
     function copy(){
-        navigator.clipboard.writeText(TEXTO_BASE);
-        alert("Url do grupo copiada com sucesso!")
+        navigator.clipboard.writeText(TEXTO_BASE).then(
+            (e) => alert("Link do grupo copiado com sucesso!")
+        )
     }
 
     return(

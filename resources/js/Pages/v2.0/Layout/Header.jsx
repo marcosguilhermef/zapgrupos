@@ -107,13 +107,12 @@ const Sckelleton = (props) => {
     return(
         <Navbar className="bg-color" expand="lg">
                 <Container>
-                    <Navbar.Brand className="navbar-font" href="#">
+                    <Navbar.Brand className="navbar-font" href="/">
                     <img
                         src="/img/logo/logo.png"
                         width="30"
                         height="30"
                         className="d-inline-block align-top"
-                        alt="React Bootstrap logo"
                         />{' '}
                         Zapgrupos
                     </Navbar.Brand>
