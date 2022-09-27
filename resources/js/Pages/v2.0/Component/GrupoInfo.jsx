@@ -1,5 +1,5 @@
 import React from "react"
-import { Image } from "react-bootstrap"
+import { Image,Button } from "react-bootstrap"
 import { Options } from "./Grupo"
 import "./grupo-info.css"
 const Index = (props) => {
@@ -49,7 +49,6 @@ const Index = (props) => {
                                     <></>
                                 )
                         }
-                        
                         <p>
                             { descricao }
                         </p>
@@ -62,6 +61,11 @@ const Index = (props) => {
                     />
 
                 </div>
+            </div>
+            <div className="my-3">
+                <Button as="a" href={`/${categoria}`}>
+                    Acessar mais grupos da categoria "{categoria}".
+                </Button>
             </div>
         </div>
     );
