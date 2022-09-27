@@ -6,6 +6,11 @@ const Index = (props) => {
     const { titulo, descricao, _id, categoria, img, created_at, updated_at } = props
     const URL = `/grupo/redirect/${_id}`;
 
+    const grupo = () => {
+        let url = categoria.toLowerCase().replaceAll(" ","-")
+        return `/${url}`;
+    }
+
     return(
         <div className="py-5 ">
             <div className="grupo-info-root">
@@ -63,7 +68,7 @@ const Index = (props) => {
                 </div>
             </div>
             <div className="my-3">
-                <Button as="a" href={`/${categoria}`} className="btn-whatsapp">
+                <Button as="a" href={grupo()} className="btn-whatsapp">
                     Acessar mais grupos da categoria "{categoria}".
                 </Button>
             </div>
