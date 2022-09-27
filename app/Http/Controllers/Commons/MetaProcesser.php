@@ -25,8 +25,16 @@ class MetaProcesser
     ];
     
     protected $normal = [
-        "canonical" => "<link rel=\"canonical\" href=\"{canonical}\"/>\n",
-        "description" => "<meta name=\"description\" content=\"{description}\">\n",
+        "canonical"     => "<link rel=\"canonical\" href=\"{canonical}\"/>\n",
+        "description"   => "<meta name=\"description\" content=\"{description}\">\n",
+        "robots"        => "<meta name=\"robots\" content=\"{robots}\">\n",
+        "lang"          => "<meta name=\"lang\" content=\"{lang}\">\n",
+        "ms.locate"     => "<meta name=\"ms.locate\" content=\"{ms.locate}\">\n",
+        "distribution"  => "<meta name=\"distribution\" content=\"{distribution}\">\n",
+        "rating"        => "<meta name=\"rating\" content=\"{rating}\">\n",
+        "doc-rights"    => "<meta name=\"doc-rights\" content=\"{doc-rights}\">\n",
+        "revisit-after" => "<meta name=\"revisit-after\" content=\"{revisit-after}\">\n",
+        "http-equiv"    => "<meta http-equiv=\"Content-Language\" content=\"{http-equiv}\" />"
     ];
 
     protected $twitter = [
