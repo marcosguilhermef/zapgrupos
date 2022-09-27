@@ -52,7 +52,7 @@ class gruposWhatsApp extends Model
 
     protected $casts = [
         'created_at' => 'datetime:d \d\e F \d\e Y, \à\s H:i:s ',
-        'created_at' => 'datetime:d \d\e F \d\e Y, \à\s H:i:s',
+        'updated_at' => 'datetime:d \d\e F \d\e Y, \à\s H:i:s',
     ];
 
     public $timestamps = true;
