@@ -16,33 +16,33 @@ class MetaProcesser
     ];
 
     protected $facebook = [
-        "url" => "<meta property=\"og:url\" content=\"{url}\" />\n",
-        "type" => "<meta property=\"og:type\" content=\"{type}\" />\n",
-        "title" => "<meta property=\"og:title\" content=\"{title}\" />\n",
-        "description" => "<meta property=\"og:description\" content=\"{description}\" />\n",
-        "image" => "<meta property=\"og:image\" content=\"{image}\" />\n",
-        "site_name" => "<meta property=\"og:site_name\" content=\"{site_name}\" />\n"
+        "url"           => "\t<meta property=\"og:url\" content=\"{url}\" />\n",
+        "type"          => "\t<meta property=\"og:type\" content=\"{type}\" />\n",
+        "title"         => "\t<meta property=\"og:title\" content=\"{title}\" />\n",
+        "description"   => "\t<meta property=\"og:description\" content=\"{description}\" />\n",
+        "image"         => "\t<meta property=\"og:image\" content=\"{image}\" />\n",
+        "site_name"     => "\t<meta property=\"og:site_name\" content=\"{site_name}\" />\n"
     ];
     
     protected $normal = [
         "canonical"     => "<link rel=\"canonical\" href=\"{canonical}\"/>\n",
-        "description"   => "<meta name=\"description\" content=\"{description}\">\n",
-        "robots"        => "<meta name=\"robots\" content=\"{robots}\">\n",
-        "lang"          => "<meta name=\"lang\" content=\"{lang}\">\n",
-        "ms.locate"     => "<meta name=\"ms.locate\" content=\"{ms.locate}\">\n",
-        "distribution"  => "<meta name=\"distribution\" content=\"{distribution}\">\n",
-        "rating"        => "<meta name=\"rating\" content=\"{rating}\">\n",
-        "doc-rights"    => "<meta name=\"doc-rights\" content=\"{doc-rights}\">\n",
-        "revisit-after" => "<meta name=\"revisit-after\" content=\"{revisit-after}\">\n",
-        "http-equiv"    => "<meta http-equiv=\"Content-Language\" content=\"{http-equiv}\" />"
+        "description"   => "\t<meta name=\"description\" content=\"{description}\">\n",
+        "robots"        => "\t<meta name=\"robots\" content=\"{robots}\">\n",
+        "lang"          => "\t<meta name=\"lang\" content=\"{lang}\">\n",
+        "ms.locate"     => "\t<meta name=\"ms.locate\" content=\"{ms.locate}\">\n",
+        "distribution"  => "\t<meta name=\"distribution\" content=\"{distribution}\">\n",
+        "rating"        => "\t<meta name=\"rating\" content=\"{rating}\">\n",
+        "doc-rights"    => "\t<meta name=\"doc-rights\" content=\"{doc-rights}\">\n",
+        "revisit-after" => "\t<meta name=\"revisit-after\" content=\"{revisit-after}\">\n",
+        "http-equiv"    => "\t<meta http-equiv=\"Content-Language\" content=\"{http-equiv}\" />\n"
     ];
 
     protected $twitter = [
-        "url" =>"<meta name=\"twitter:url\" content=\"{url}\"/>\n",
-        "title" =>"<meta name=\"twitter:title\" content=\"{title}\"/>\n",
-        "card" =>"<meta name=\"twitter:card\" content=\"{card}\"/>\n",
-        "description" =>"<meta name=\"twitter:description\" content=\"{description}\"/>\n",
-        "image" =>"<meta name=\"twitter:image\" content=\"{image}\"/>\n",
+        "url"           =>"\t<meta name=\"twitter:url\" content=\"{url}\"/>\n",
+        "title"         =>"\t<meta name=\"twitter:title\" content=\"{title}\"/>\n",
+        "card"          =>"\t<meta name=\"twitter:card\" content=\"{card}\"/>\n",
+        "description"   =>"\t<meta name=\"twitter:description\" content=\"{description}\"/>\n",
+        "image"         =>"\t<meta name=\"twitter:image\" content=\"{image}\"/>\n",
     ];
 
     protected $metaString;
@@ -57,7 +57,7 @@ class MetaProcesser
         $str = "";
         foreach($this->twitter as $key => $value ){
             if(isset($this->metaAbributes[$key])){
-                $str .= preg_replace("/{\w+}/",$this->metaAbributes[$key],$value);
+                $str .= preg_replace("/{\w+}|-/",$this->metaAbributes[$key],$value);
             }
         }
         return $str;
@@ -67,7 +67,7 @@ class MetaProcesser
         $str = "";
         foreach($this->normal as $key => $value ){
             if(isset($this->metaAbributes[$key])){
-                $str .= preg_replace("/{\w+}/",$this->metaAbributes[$key],$value);
+                $str .= preg_replace("/{[\w.-]+}/",$this->metaAbributes[$key],$value);
             }
         }
         return $str;
@@ -77,7 +77,7 @@ class MetaProcesser
         $str = "";
         foreach($this->facebook as $key => $value ){
             if(isset($this->metaAbributes[$key])){
-                $str .= preg_replace("/{\w+}/",$this->metaAbributes[$key],$value);
+                $str .= preg_replace("/{[\w.-]+}/",$this->metaAbributes[$key],$value);
             }
         }
         return $str;
