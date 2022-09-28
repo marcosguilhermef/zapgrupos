@@ -92,6 +92,7 @@ const Grupo = (props) => {
                             <Image
                                 src={img?.[0]}
                                 thumbnail="true"
+                                onError={(e) => e.target.src = "/img/generico/reactangle.png"}
                         />
                         ) : (
                             <Image
