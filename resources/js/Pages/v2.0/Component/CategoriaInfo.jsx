@@ -52,9 +52,10 @@ const Index = (props) => {
                 {
                         img?.[0] ? (
                             <Image
-                            src={img?.[0]}
-                            thumbnail="true"
-                            style={style}
+                                src={img?.[0]}
+                                thumbnail="true"
+                                onError={(e) => e.target.src = "/img/generico/reactangle.png"}
+                                style={style}
                         />
                         ) : (
                             <Image
