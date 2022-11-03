@@ -17,7 +17,7 @@
     <link href="{{ mix('/css/app.css') }}" rel="stylesheet" />
     <script src="{{ mix('/js/app.js') }}" defer></script> 
        
-    @isset($page['props']['role'])
+    {{-- @isset($page['props']['role'])
       @if($page['props']['role'] === 'user')
         <script data-ad-client="ca-pub-8817634033676287" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
       @endif
@@ -25,7 +25,7 @@
 
     @empty($page['props']['role'])
       <script data-ad-client="ca-pub-8817634033676287" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    @endempty
+    @endempty --}}
   </head>
   <body>
     {!! isset($page['props']['facebook']) ? $page['props']['facebook'] : '' !!}
