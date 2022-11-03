@@ -3,7 +3,7 @@ import { Image,Button } from "react-bootstrap"
 import { Options } from "./Grupo"
 import "./grupo-info.css"
 const Index = (props) => {
-    const { titulo, descricao, _id, categoria, img, created_at, updated_at } = props
+    const { titulo, descricao, sensivel, _id, categoria, img, created_at, updated_at } = props
     const URL = `/grupo/redirect/${_id}`;
 
     const grupo = () => {
@@ -11,12 +11,16 @@ const Index = (props) => {
         return `/${url}`;
     }
 
+    function Issensivel(str){
+        return !sensivel ? str: "Grupo removido por quebra nossas políticas de conteúdo.";
+    }
+
     return(
         <div className="py-5 ">
             <div className="grupo-info-root">
                 <div className="grupo-info-img">
                 {
-                        img?.[0] ? (
+                        img?.[0] && !sensivel? (
                             <Image
                                 src={img?.[0]}
                                 thumbnail="true"
@@ -33,7 +37,7 @@ const Index = (props) => {
                 <div className="grupo-info">
                     <h5>
                         {
-                            titulo
+                            Issensivel(titulo)
                         }
                     </h5>
                     <span className="grupo-category">
@@ -56,7 +60,7 @@ const Index = (props) => {
                                 )
                         }
                         <p>
-                            { descricao }
+                            { Issensivel(descricao) }
                         </p>
                     </div>
 
