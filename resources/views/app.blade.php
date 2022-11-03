@@ -21,12 +21,38 @@
       @if($page['props']['role'] === 'user')
         {{-- <script data-ad-client="ca-pub-8817634033676287" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> --}}
         <script async="async" data-cfasync="false" src="//arsnivyr.com/1?z=5492708"></script>
+
+        <script type="text/javascript">
+          var vglnk = {key: '96899712de6cc08a2bbae6d220c21b71'};
+          (function(d, t) {
+              var s = d.createElement(t);
+                  s.type = 'text/javascript';
+                  s.async = true;
+                  s.src = '//cdn.viglink.com/api/vglnk.js';
+              var r = d.getElementsByTagName(t)[0];
+                  r.parentNode.insertBefore(s, r);
+          }(document, 'script'));
+        </script>
+
       @endif
     @endisset
 
     @empty($page['props']['role'])
         {{-- <script data-ad-client="ca-pub-8817634033676287" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> --}}
         <script async="async" data-cfasync="false" src="//arsnivyr.com/1?z=5492708"></script>
+
+        <script type="text/javascript">
+          var vglnk = {key: '96899712de6cc08a2bbae6d220c21b71'};
+          (function(d, t) {
+              var s = d.createElement(t);
+                  s.type = 'text/javascript';
+                  s.async = true;
+                  s.src = '//cdn.viglink.com/api/vglnk.js';
+              var r = d.getElementsByTagName(t)[0];
+                  r.parentNode.insertBefore(s, r);
+          }(document, 'script'));
+      </script>
+
     @endempty
   </head>
   <body>
