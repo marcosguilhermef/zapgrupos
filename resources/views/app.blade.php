@@ -24,40 +24,28 @@
 
     @isset($page['props']['role'])
       @if($page['props']['role'] === 'user')
-        {{-- <script data-ad-client="ca-pub-8817634033676287" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> --}}
-        <script async="async" data-cfasync="false" src="//arsnivyr.com/1?z=5492708"></script>
-
-        <script type="text/javascript">
-          var vglnk = {key: '96899712de6cc08a2bbae6d220c21b71'};
-          (function(d, t) {
-              var s = d.createElement(t);
-                  s.type = 'text/javascript';
-                  s.async = true;
-                  s.src = '//cdn.viglink.com/api/vglnk.js';
-              var r = d.getElementsByTagName(t)[0];
-                  r.parentNode.insertBefore(s, r);
-          }(document, 'script'));
-        </script>
-
+          <script type="text/javascript">
+            amzn_assoc_ad_type = "link_enhancement_widget";
+            amzn_assoc_tracking_id = "nixeassociate-20";
+            amzn_assoc_linkid = "1f06cdab451d513b1acb8cbb189cf301";
+            amzn_assoc_placement = "";
+            amzn_assoc_marketplace = "amazon";
+            amzn_assoc_region = "US";
+          </script>
+          <script src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&Operation=GetScript&ID=OneJS&WS=1&MarketPlace=US"></script>
       @endif
     @endisset
 
     @empty($page['props']['role'])
-        {{-- <script data-ad-client="ca-pub-8817634033676287" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> --}}
-        <script async="async" data-cfasync="false" src="//arsnivyr.com/1?z=5492708"></script>
-
-        <script type="text/javascript">
-          var vglnk = {key: '96899712de6cc08a2bbae6d220c21b71'};
-          (function(d, t) {
-              var s = d.createElement(t);
-                  s.type = 'text/javascript';
-                  s.async = true;
-                  s.src = '//cdn.viglink.com/api/vglnk.js';
-              var r = d.getElementsByTagName(t)[0];
-                  r.parentNode.insertBefore(s, r);
-          }(document, 'script'));
-      </script>
-
+          <script type="text/javascript">
+            amzn_assoc_ad_type = "link_enhancement_widget";
+            amzn_assoc_tracking_id = "nixeassociate-20";
+            amzn_assoc_linkid = "1f06cdab451d513b1acb8cbb189cf301";
+            amzn_assoc_placement = "";
+            amzn_assoc_marketplace = "amazon";
+            amzn_assoc_region = "US";
+        </script>
+        <script src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&Operation=GetScript&ID=OneJS&WS=1&MarketPlace=US"></script>
     @endempty
     
   </body>
