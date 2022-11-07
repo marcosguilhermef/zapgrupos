@@ -18,58 +18,60 @@ const Index = (props) => {
     return(
         <div className="py-5 ">
             <div className="grupo-info-root">
-                <div className="grupo-info-img">
-                {
-                        img?.[0] && !sensivel? (
-                            <Image
-                                src={img?.[0]}
-                                thumbnail="true"
-                                onError={(e) => e.target.src = "/img/generico/reactangle.png"}
-                        />
-                        ) : (
-                            <Image
-                                src={'/img/generico/reactangle.png'}
-                                thumbnail="true"
+                <div className="grupo-container">
+                    <div className="grupo-info-img">
+                    {
+                            img?.[0] && !sensivel? (
+                                <Image
+                                    src={img?.[0]}
+                                    thumbnail="true"
+                                    onError={(e) => e.target.src = "/img/generico/reactangle.png"}
                             />
-                        )
-                    }
-                </div>
-                <div className="grupo-info">
-                    <h5>
-                        {
-                            Issensivel(titulo)
+                            ) : (
+                                <Image
+                                    src={'/img/generico/reactangle.png'}
+                                    thumbnail="true"
+                                />
+                            )
                         }
-                    </h5>
-                    <span className="grupo-category">
-                        {
-                            categoria
-                        }
-                        <img src="/img/generico/whatsapp.png" class=""/>
-                    </span>
-                    <div>
-                        <span className="d-block">
-                            <b>Postado em {created_at}</b>
-                        </span>
-                        {
-                            updated_at ? (
-                                    <span className="d-block">
-                                        <b>Atualizado em  {updated_at}</b>
-                                    </span>
-                                ) : (
-                                    <></>
-                                )
-                        }
-                        <p>
-                            { Issensivel(descricao) }
-                        </p>
                     </div>
+                    <div className="grupo-info">
+                        <h5>
+                            {
+                                Issensivel(titulo)
+                            }
+                        </h5>
+                        <span className="grupo-category">
+                            {
+                                categoria
+                            }
+                            <img src="/img/generico/whatsapp.png" class=""/>
+                        </span>
+                        <div>
+                            <span className="d-block">
+                                <b>Postado em {created_at}</b>
+                            </span>
+                            {
+                                updated_at ? (
+                                        <span className="d-block">
+                                            <b>Atualizado em  {updated_at}</b>
+                                        </span>
+                                    ) : (
+                                        <></>
+                                    )
+                            }
+                            <p>
+                                { Issensivel(descricao) }
+                            </p>
+                        </div>
 
-                    <Options 
-                        categoria={categoria} 
-                        _id={_id} 
-                        URL={URL}
-                    />
+                        <Options 
+                            categoria={categoria} 
+                            _id={_id} 
+                            URL={URL}
+                        />
 
+                    </div>
                 </div>
             </div>
             <div className="my-3">

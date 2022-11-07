@@ -12,9 +12,12 @@
     display: inline-flex;
     flex-direction: column;
 }
+.grupo-info{
+    margin: 1em 1em 0em 0em;
+}
 
 .grupo-info-img{
-    margin: 1.5rem;
+    margin-right: .5rem;
     max-width: 100%;
 }
 
