@@ -78,17 +78,60 @@ const Options = (props) => {
     )
 }
 
+const GrupoInfo = (props) => {
+
+}
+
+const GroupInformationContainer = (props) => {
+    const {titulo, categoria, descricao,_id} = props
+
+    return(
+        <div className="grupo-informations">
+        <h6>{ titulo }</h6>
+        <span className="grupo-category">
+            { categoria } <img src="/img/generico/whatsapp.png" class=""/>
+        </span>
+        
+        <p className="grupo-descricao">
+            { descricao }
+        </p>
+        <Options categoria={categoria} _id={_id}/>
+    </div>
+    )
+}
+
+const GroupInformationContainerFull = (props) => {
+    const {titulo, categoria, descricao, _id, sensivel, created_at, updated_at } = props
+    const content = "Grupo removido por quebrar nossas políticas de conteúdo."
+
+    function Issensivel(str){
+        return sensivel ? content : str;
+    }
+
+    return(
+        <div className="grupo-informations">
+        <h6>{ Issensivel(titulo) }</h6>
+        <span className="grupo-category">
+            { categoria } <img src="/img/generico/whatsapp.png" class=""/>
+        </span>
+        
+        <p className="grupo-descricao">
+            { Issensivel(descricao) }
+        </p>
+        <Options categoria={categoria} _id={_id}/>
+    </div>
+    )
+}
+
 const Grupo = (props) => {
     
-    const { titulo, descricao, _id, categoria, img } = props
-
-
+    const { titulo, descricao, _id, categoria, sensivel, img, isInfo, created_at, updated_at } = props
 
     const GroupImage = () => {
         return(
             <div className="grupo-image">
                     {
-                        img?.[0] ? (
+                        img?.[0] && !sensivel ? (
                             <Image
                                 src={img?.[0]}
                                 thumbnail="true"
@@ -106,32 +149,30 @@ const Grupo = (props) => {
         )
     }
 
-    const GroupInformationContainer = () => {
-        return(
-            <div className="grupo-informations">
-            <h6>{ titulo }</h6>
-            <span className="grupo-category">
-                { categoria } <img src="/img/generico/whatsapp.png" class=""/>
-            </span>
-            
-            <p className="grupo-descricao">
-                { descricao }
-            </p>
-            <Options categoria={categoria} _id={_id}/>
-        </div>
-        )
-    }
-
-
-
     return(
         <div className="grupo-root">
             <div className="grupo-container">
                 <GroupImage/>
-                <GroupInformationContainer/>
+                {
+                    isInfo ? 
+                    (         
+                        <GroupInformationContainerFull
+                            {...props}
+                        />       
+
+                    ) : 
+                    (
+                        <GroupInformationContainer
+                            titulo={titulo}
+                            categoria={categoria}
+                            descricao={descricao}
+                            _id={_id}
+                        />
+                    )
+                }
             </div>
         </div>
     );
 }
 
-export {Grupo,Options};
+export { Grupo, Options };
