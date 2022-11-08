@@ -110,29 +110,50 @@ const GroupInformationContainerFull = (props) => {
     }
 
     return(
-        <div className="grupo-informations">
-        <h6>{ Issensivel(titulo) }</h6>
+        <>
+            <div className="grupo-informations">
+                <h6>{Issensivel(titulo)}</h6>
 
-        <span className="grupo-category">
-            { categoria } <img src="/img/generico/whatsapp.png" class=""/>
-        </span>
-        
-        <p className="grupo-descricao">
-            { Issensivel(descricao) }
-        </p>
+                <span className="grupo-category">
+                    {categoria} <img src="/img/generico/whatsapp.png" class="" />
+                </span>
 
-        <Options 
-            categoria={categoria} 
-            _id={_id}
-            URL={URL}
-            />
-    </div>
+                <p className="grupo-descricao">
+                    {Issensivel(descricao)}
+                </p>
+
+                <Options
+                    categoria={categoria}
+                    _id={_id}
+                    URL={URL}
+                />
+            </div>
+        </>
     )
 }
 
 const Grupo = (props) => {
     
     const { titulo, descricao, _id, categoria, sensivel, img, isInfo, created_at, updated_at } = props
+
+    const grupo = () => {
+        let url = categoria.toLowerCase().replaceAll(" ","-")
+        return `/${url}`;
+    }
+
+    const MaisGrupos = () => {
+        if(isInfo){
+            return(
+                <div className="my-3">
+                    <Button as="a" href={grupo()} className="btn-whatsapp">
+                    Acessar mais grupos da categoria <i>{categoria}</i>.
+                    </Button>
+                </div>
+            )
+        }
+         
+        return(null);
+    }
 
     const GroupImage = () => {
         return(
@@ -157,28 +178,31 @@ const Grupo = (props) => {
     }
 
     return(
-        <div className="grupo-root">
-            <div className="grupo-container">
-                <GroupImage/>
-                {
-                    isInfo ? 
-                    (         
-                        <GroupInformationContainerFull
-                            {...props}
-                        />       
-
-                    ) : 
-                    (
-                        <GroupInformationContainer
-                            titulo={titulo}
-                            categoria={categoria}
-                            descricao={descricao}
-                            _id={_id}
-                        />
-                    )
-                }
+        <>
+            <div className="grupo-root">
+                <div className="grupo-container">
+                    <GroupImage/>
+                    {
+                        isInfo ? 
+                        (   
+                                
+                            <GroupInformationContainerFull
+                                {...props}
+                            />       
+                        ) : 
+                        (
+                            <GroupInformationContainer
+                                titulo={titulo}
+                                categoria={categoria}
+                                descricao={descricao}
+                                _id={_id}
+                            />
+                        )
+                    }
+                </div>
             </div>
-        </div>
+            <MaisGrupos/>
+        </>
     );
 }
 
