@@ -103,6 +103,7 @@ const GroupInformationContainer = (props) => {
 const GroupInformationContainerFull = (props) => {
     const {titulo, categoria, descricao, _id, sensivel, created_at, updated_at } = props
     const content = "Grupo removido por quebrar nossas políticas de conteúdo."
+    const URL = `/grupo/redirect/${_id}`;
 
     function Issensivel(str){
         return sensivel ? content : str;
@@ -111,6 +112,7 @@ const GroupInformationContainerFull = (props) => {
     return(
         <div className="grupo-informations">
         <h6>{ Issensivel(titulo) }</h6>
+
         <span className="grupo-category">
             { categoria } <img src="/img/generico/whatsapp.png" class=""/>
         </span>
@@ -118,7 +120,12 @@ const GroupInformationContainerFull = (props) => {
         <p className="grupo-descricao">
             { Issensivel(descricao) }
         </p>
-        <Options categoria={categoria} _id={_id}/>
+
+        <Options 
+            categoria={categoria} 
+            _id={_id}
+            URL={URL}
+            />
     </div>
     )
 }
