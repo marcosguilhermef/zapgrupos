@@ -86,7 +86,7 @@ class gruposWhatsApp extends Model
     }
 
     public static function getGrupoById($_id){
-        return gruposWhatsApp::where([["_id","=",$_id]])->get();
+        return gruposWhatsApp::select(self::$projections)->where([["_id","=",$_id]])->get();
     }
 
     public static function getGrupoByCategoryPaginate($categoria, $limit = 8){
