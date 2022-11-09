@@ -48,7 +48,7 @@ const Index = (props) => {
         //                     }
         //                     <img src="/img/generico/whatsapp.png" class=""/>
         //                 </span>
-        //                 <div>
+        //                 div<>
         //                     <span className="d-block">
         //                         <b>Postado em {created_at}</b>
         //                     </span>

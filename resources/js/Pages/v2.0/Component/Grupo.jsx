@@ -117,7 +117,20 @@ const GroupInformationContainerFull = (props) => {
                 <span className="grupo-category">
                     {categoria} <img src="/img/generico/whatsapp.png" class="" />
                 </span>
-
+                <div>
+                    <span className="d-block">
+                        <b>Postado em {created_at}</b>
+                    </span>
+                    {
+                        updated_at ? (
+                                <span className="d-block">
+                                    <b>Atualizado em  {updated_at}</b>
+                            </span>
+                            ) : (
+                                <></>
+                            )
+                    }
+                </div>
                 <p className="grupo-descricao">
                     {Issensivel(descricao)}
                 </p>
@@ -146,7 +159,7 @@ const Grupo = (props) => {
             return(
                 <div className="my-3">
                     <Button as="a" href={grupo()} className="btn-whatsapp">
-                    Acessar mais grupos da categoria <i>{categoria}</i>.
+                        Acessar mais grupos da categoria <i>{categoria}</i>.
                     </Button>
                 </div>
             )

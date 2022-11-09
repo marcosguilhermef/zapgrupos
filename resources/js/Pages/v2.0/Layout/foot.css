@@ -24,11 +24,12 @@ hr{
     margin-block-start:0px;
     padding-inline-start:10px;
 }
-ul[class="foot-categorias"] li a, ul[class="foot-categorias"] li a:hover, .foot-contato{
+ul[class="foot-categorias"] > li >a, ul[class="foot-categorias"] > li a:hover, .foot-contato{
     text-decoration: none;
     color:  var(--fonte-1)
 }
-ul[class="foot-categorias"] li a:hover{
+
+ul[class="foot-categorias"] > li > a:hover{
     text-decoration: underline
 }
 
