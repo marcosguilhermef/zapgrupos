@@ -1,5 +1,5 @@
-import React, {useState, useEffect} from "react";
-import Layout ,{ Header, Body, Foot } from '../../Layout'
+import React from "react";
+import Layout from '../../Layout'
 import { Container, Form, Button } from 'react-bootstrap';
 import { default as ReactGA4 } from 'react-ga4';
 
