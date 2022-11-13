@@ -25,12 +25,12 @@
     @isset($page['props']['role'])
       @if($page['props']['role'] === 'user')
           <script type="text/javascript">
-            amzn_assoc_ad_type = "link_enhancement_widget";
-            amzn_assoc_tracking_id = "nixeassociate-20";
-            amzn_assoc_linkid = "1f06cdab451d513b1acb8cbb189cf301";
-            amzn_assoc_placement = "";
-            amzn_assoc_marketplace = "amazon";
-            amzn_assoc_region = "US";
+            var amzn_assoc_ad_type = "link_enhancement_widget";
+            var amzn_assoc_tracking_id = "nixeassociate-20";
+            var amzn_assoc_linkid = "1f06cdab451d513b1acb8cbb189cf301";
+            var amzn_assoc_placement = "";
+            var amzn_assoc_marketplace = "amazon";
+            var amzn_assoc_region = "US";
           </script>
           <script src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&Operation=GetScript&ID=OneJS&WS=1&MarketPlace=US"></script>
       @endif
@@ -38,12 +38,12 @@
 
     @empty($page['props']['role'])
           <script type="text/javascript">
-            amzn_assoc_ad_type = "link_enhancement_widget";
-            amzn_assoc_tracking_id = "nixeassociate-20";
-            amzn_assoc_linkid = "1f06cdab451d513b1acb8cbb189cf301";
-            amzn_assoc_placement = "";
-            amzn_assoc_marketplace = "amazon";
-            amzn_assoc_region = "US";
+            var amzn_assoc_ad_type = "link_enhancement_widget";
+            var amzn_assoc_tracking_id = "nixeassociate-20";
+            var amzn_assoc_linkid = "1f06cdab451d513b1acb8cbb189cf301";
+            var amzn_assoc_placement = "";
+            var amzn_assoc_marketplace = "amazon";
+            var amzn_assoc_region = "US";
         </script>
         <script src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&Operation=GetScript&ID=OneJS&WS=1&MarketPlace=US"></script>
     @endempty
