@@ -17,7 +17,7 @@ class Login extends LoginController{
 
     public function showLoginForm($erros = null){
         $token = csrf_token();
-        return Inertia::render('v1.0/Externo/Login', [
+        return Inertia::render('v2.0/Externo/Login', [
             'csrf_token' => $token,
             'erros'      => $erros
         ]);

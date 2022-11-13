@@ -36,12 +36,16 @@ const Options = (props) => {
     )
 }
 
+const Imagem = (props) =>{ 
+
+}
+
 const Index = (props) => {
     const { descricao, _id, categoria, img } = props
     const URL = `/${categoria}`;
     const style = {
-        height: "200px",
-        width: "180px",
+        height: "157px",
+        width: "300px",
         objectFit: "cover",
     }
 
@@ -60,8 +64,8 @@ const Index = (props) => {
                         ) : (
                             <Image
                             src={'/img/generico/reactangle.png'}
-                            width="250rem"
-                            height="250rem"
+                            width="300px"
+                            height="157px"
                             thumbnail="true"
                             style={style}
                         />
@@ -69,17 +73,18 @@ const Index = (props) => {
                     }
                 </div>
                 <div className="grupo-info w-100">
-                    <h5>
-                        {
-                            categoria
-                        }
+                    <h5>{ categoria }
                     </h5>
                     <div>
                         <p>
                             { descricao }
                         </p>
                     </div>
-                    <Options categoria={categoria} _id={_id} URL={URL}/>
+                    <Options 
+                        categoria={categoria} 
+                        _id={_id} 
+                        URL={URL}
+                    />
                 </div>
             </div>
         </div>

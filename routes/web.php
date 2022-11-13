@@ -28,7 +28,7 @@ Route::get('/register',[App\Http\Controllers\Externo\Register\Register::class,'s
 Route::post('/register',[App\Http\Controllers\Externo\Register\Register::class,'register']);
 
 
-Route::middleware('auth:sactum')->group(function(){
+Route::middleware('auth')->group(function(){
     Route::get('/meus-grupos',[App\Http\Controllers\User\MeusGrupos\MeusGrupos::class,'index']);
     Route::get('/adicionar-grupo',[App\Http\Controllers\User\AdicionarGrupo\AdicionarGrupo::class,'index']);
     Route::post('/adicionar-grupo',[App\Http\Controllers\User\AdicionarGrupo\AdicionarGrupo::class,'addGrupo']);
@@ -62,7 +62,6 @@ Route::get('/', [App\Http\Controllers\InicioController::class,'index'])->name('h
 
 Route::get('/{categoria}/{id}', [App\Http\Controllers\InformacoesLinkWhatsApp::class,'index']);
 Route::get('/grupo/redirect/{id}', [App\Http\Controllers\linkProtector::class,'index']);
-
 Route::get('/mais', [App\Http\Controllers\maisCategorias::class, 'index']);
 Route::get('/sobre',[App\Http\Controllers\sobre::class, 'index']);
 Route::get('/gerar-link-whatsapp',[App\Http\Controllers\gerarLink::class,'index']);

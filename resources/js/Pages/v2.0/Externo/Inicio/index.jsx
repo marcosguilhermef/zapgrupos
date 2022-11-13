@@ -222,7 +222,7 @@ const Index = (props) => {
                 api={api}
             />
 
-            <Seo/>
+            {/* <Seo/> */}
         </Layout>
     )
 }
