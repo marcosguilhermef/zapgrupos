@@ -175,15 +175,21 @@ const GroupInformationContainerFull = (props) => {
 
 const Ads = () => {
     return(
-        <div id='div-gpt-ad-1668454181285-0' style={{ minWidth: "728px", minHeight: "90px", marginTop: "50px"}}>
-        {
-            googletag.cmd.push(
-                { function() 
+        <div 
+            id='div-gpt-ad-1668454181285-0' 
+            style={
                     { 
-                        googletag.display('div-gpt-ad-1668454181285-0') 
+                        minWidth: "728px", 
+                        minHeight: "90px", 
+                        marginTop: "25px",
+                        marginBotton: "25px",
+                        textAlign: "center",
+                        position: "relative",
+                        display: "block"
                     }
-                }
-            )
+                }>
+        {
+            googletag.cmd.push(() => { googletag.display('div-gpt-ad-1668454181285-0') })
         }
         </div>
     )
@@ -258,6 +264,7 @@ const Grupo = (props) => {
                     }
                 </div>
             </div>
+
             <MaisGrupos />
         </>
     );

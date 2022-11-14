@@ -221,9 +221,6 @@ const Index = (props) => {
             <GroupsContainer
                 api={api}
             />
-
-            <Ads />
-            {/* <Seo/> */}
         </Layout>
     )
 }

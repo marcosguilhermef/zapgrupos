@@ -2,6 +2,7 @@ import React from "react";
 import { Body } from "./Body";
 import { Header } from "./Header";
 import { Foot } from "./Foot"
+import { Ads } from '../Component/Grupo'
 import "./layout.css"
 
 const Layout = (props) => {
@@ -17,6 +18,7 @@ const Layout = (props) => {
             <Body>
                 { children }
             </Body>
+            <Ads />
             <Foot/>
         </>
     )
