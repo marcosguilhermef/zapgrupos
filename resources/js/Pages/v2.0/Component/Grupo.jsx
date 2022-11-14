@@ -173,6 +173,22 @@ const GroupInformationContainerFull = (props) => {
     )
 }
 
+const Ads = () => {
+    return(
+        <div id='div-gpt-ad-1668454181285-0' style={{ minWidth: "728px", minHeight: "90px", marginTop: "50px"}}>
+        {
+            googletag.cmd.push(
+                { function() 
+                    { 
+                        googletag.display('div-gpt-ad-1668454181285-0') 
+                    }
+                }
+            )
+        }
+        </div>
+    )
+}
+
 const Grupo = (props) => {
 
     const { titulo, descricao, _id, categoria, sensivel, img, isInfo, created_at, updated_at } = props
@@ -247,4 +263,4 @@ const Grupo = (props) => {
     );
 }
 
-export { Grupo, Options };
+export { Grupo, Options, Ads };

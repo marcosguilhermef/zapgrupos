@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import Layout, { Header, Body, Foot } from '../../Layout'
-import { Grupo } from '../../Component/Grupo'
+import Layout from '../../Layout'
+import { Grupo, Ads } from '../../Component/Grupo'
 import { GrupoLoading } from '../../Component/GrupoLoading'
 import { Button } from 'react-bootstrap'
 
@@ -222,6 +222,7 @@ const Index = (props) => {
                 api={api}
             />
 
+            <Ads />
             {/* <Seo/> */}
         </Layout>
     )
