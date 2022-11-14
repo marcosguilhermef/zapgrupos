@@ -114,8 +114,8 @@ const GroupInformationContainer = (props) => {
     const { titulo, categoria, descricao, _id } = props
 
     return (
-        <div className="grupo-informations">
-            <h6>{titulo}</h6>
+        <div className="grupo-informations" itemscope>
+            <h6 itemProp="name">{titulo}</h6>
             <span className="grupo-category">
                 {categoria} <img src="/img/generico/whatsapp.png" class="" />
             </span>
@@ -139,20 +139,20 @@ const GroupInformationContainerFull = (props) => {
 
     return (
         <>
-            <div className="grupo-informations">
-                <h6>{Issensivel(titulo)}</h6>
+            <div className="grupo-informations" itemScope>
+                <h6 itemProp="name">{Issensivel(titulo)}</h6>
 
                 <span className="grupo-category">
                     {categoria} <img src="/img/generico/whatsapp.png" class="" />
                 </span>
                 <div>
                     <span className="d-block">
-                        <b>Postado em {dateFormat(created_at, "d 'de' mmmm 'de' yyyy")}</b>
+                        <b>Postado em <time itemProp="datePublished" datetime={dateFormat(created_at, "yyyy-mm-dd")}>{dateFormat(created_at, "d 'de' mmmm 'de' yyyy")}</time></b>
                     </span>
                     {
                         updated_at ? (
                             <span className="d-block">
-                                <b>Atualizado em  {dateFormat(updated_at, "d 'de' mmmm 'de' yyyy")}</b>
+                                <b>Atualizado em  <time itemProp="dateModified" datetime={dateFormat(updated_at, "yyyy-mm-dd")}>{dateFormat(updated_at, "d 'de' mmmm 'de' yyyy")}</time></b>
                             </span>
                         ) : (
                             <></>
