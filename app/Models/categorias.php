@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Jenssegers\Mongodb\Eloquent\Model;
+use MongoDB\BSON\Regex;
 
 class categorias extends Model
 {
@@ -22,6 +23,6 @@ class categorias extends Model
     }
 
     public static function getCategoryInformation($categorioa){
-        return categorias::where("categoria",$categorioa)->get();
+        return categorias::where("categoria","regex",new Regex($categorioa, "i"))->get();
     }
 }
