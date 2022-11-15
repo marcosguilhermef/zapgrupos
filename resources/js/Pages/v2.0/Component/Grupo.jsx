@@ -1,4 +1,4 @@
-import React from "react";
+import React , { useEffect }from "react";
 import { Image, Button, OverlayTrigger, Tooltip } from "react-bootstrap";
 import "./grupos.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -173,27 +173,7 @@ const GroupInformationContainerFull = (props) => {
     )
 }
 
-const Ads = () => {
-    return(
-        <div 
-            id='div-gpt-ad-1668454181285-0' 
-            style={
-                    { 
-                        minWidth: "728px", 
-                        minHeight: "90px", 
-                        marginTop: "25px",
-                        marginBotton: "25px",
-                        textAlign: "center",
-                        position: "relative",
-                        display: "block"
-                    }
-                }>
-        {
-            googletag.cmd.push(() => { googletag.display('div-gpt-ad-1668454181285-0') })
-        }
-        </div>
-    )
-}
+
 
 const Grupo = (props) => {
 
@@ -270,4 +250,4 @@ const Grupo = (props) => {
     );
 }
 
-export { Grupo, Options, Ads };
+export { Grupo, Options };

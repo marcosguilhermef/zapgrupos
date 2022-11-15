@@ -16,16 +16,10 @@
     <title>{{ isset($page['props']['title']) ? $page['props']['title'] : 'Zapgrupos'  }}</title>
     <link href="{{ mix('/css/app.css') }}" rel="stylesheet" />
     <script src="{{ mix('/js/app.js') }}" defer></script> 
+    
     <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
-    <script>
-      window.googletag = window.googletag || {cmd: []};
-      googletag.cmd.push(function() {
-        googletag.defineSlot('/22764566987/5ca26276-6452-11ed-81ce-0242ac120002', [728, 90], 'div-gpt-ad-1668454181285-0').addService(googletag.pubads());
-        googletag.pubads().enableSingleRequest();
-        googletag.enableServices();
-      });
-    </script>
-  </head>
+    
+</head>
   <body>
     {!! isset($page['props']['facebook']) ? $page['props']['facebook'] : '' !!}
     @inertia
