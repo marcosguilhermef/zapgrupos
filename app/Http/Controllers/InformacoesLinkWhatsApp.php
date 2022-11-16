@@ -35,7 +35,95 @@ class InformacoesLinkWhatsApp extends Controller
             ]
         );
 
+
         $conf["meta"] = $metaConstructor->getAllAtributes();
+
+
+        $conf["meta"] .= '
+            <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "NewsArticle",
+                "headline": "'.@$titulo.'",
+                "mainEntityOfPage": {
+                    "@type": "WebPage",
+                    "@id": "'.@$urlCorrent.'"
+                },
+                "datePublished": "'.@$conf['grupo'][0]['created_at'].'",
+                "dateModified": "'.@$conf['grupo'][0]['updated_ad'].'",
+                "image": [
+                    "'.@$img.'"
+                ],
+                "author": [{
+                    "@type": "Organization",
+                    "name": "zapgrupos.xyz",
+                    "url": "https://zapgrupos.xyz"
+                }],
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "Zapgrupos",
+                    "url": "https://zapgrupos.xyz",
+                    "logo": {
+                        "@type": "ImageObject",
+                        "url": "https://zapgrupos.xyz/img/logo/logo.png",
+                        "width": 200,
+                        "height": 200
+                    }
+                }
+            }          
+            </script>
+        ';
+
+        $conf["meta"] .= '
+            <script type="application/ld+json">
+            [
+                {
+                    "@context": "https://schema.org",
+                    "@type": "BreadcrumbList",
+                    "@id": "'.@$urlCorrent.'",
+                    "itemListElement": [
+                        {
+                            "@type": "ListItem",
+                            "position": 1,
+                            "name": "zapgrupos.xyz",
+                            "item": "https://zapgrupos.xyz"
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 2,
+                            "name": "'.@$titulo.'",
+                            "item": "'.@$urlCorrent.'"
+                        }
+                    ]
+                },
+                {
+                    "@context": "https://schema.org",
+                    "@type": "BreadcrumbList",
+                    "@id": "'.@$urlCorrent.'",
+                    "itemListElement": [
+                        {
+                            "@type": "ListItem",
+                            "position": 1,
+                            "name": "zapgrupos.xyz",
+                            "item": "https://zapgrupos.xyz"
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 2,
+                            "name": "Grupos de WhatsApp de Amizade",
+                            "item": "https://zapgrupos.xyz/'.@$categoria.'"
+                        },
+                        {
+                            "@type": "ListItem",
+                            "position": 3,
+                            "name": "Grupo de WhatsApp •●TIᑎKY๛ᗯIᑎKY●•",
+                            "item": "'.@$urlCorrent.'"
+                        }
+                    ]
+                }
+            ]
+            </script>
+        ';
 
         return Inertia::render("v2.0/Externo/Grupo",$conf);
     }

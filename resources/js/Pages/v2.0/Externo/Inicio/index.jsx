@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import Layout from '../../Layout'
-import { Grupo, Ads } from '../../Component/Grupo'
+import { Grupo } from '../../Component/Grupo'
 import { GrupoLoading } from '../../Component/GrupoLoading'
 import { Button } from 'react-bootstrap'
-
+import Ads from '../../Component/Ads'
 const GroupsContainer = (props) => {
 
     const { api } = props
@@ -80,17 +80,44 @@ const GroupsContainer = (props) => {
         return (
             <>
                 {
-                    grupos?.data?.map((e, i, a) =>
-                    (
-                        <Grupo
-                            titulo={e?.titulo}
-                            descricao={e?.descricao}
-                            categoria={e?.categoria}
-                            img={e?.img}
-                            _id={e?._id}
-                            key={e?._id}
-                        />
-                    )
+                    grupos?.data?.map((e, i, a) => {
+
+                        if (i%5 === 0) {
+                            return (
+                                <>
+                                    <Grupo
+                                        titulo={e?.titulo}
+                                        descricao={e?.descricao}
+                                        categoria={e?.categoria}
+                                        img={e?.img}
+                                        _id={e?._id}
+                                        key={e?._id}
+                                    />
+                                    <Ads
+                                        path='/22764566987/c3834062-64c2-11ed-9022-0242ac120002'
+                                        size={['fluid']}
+                                        id='div-gpt-ad-1668509046500-0'
+                                        style={{
+                                            marginTop: "25px",
+                                            marginBotton: "25px",
+                                        }}
+                                    />
+                                </>
+                            )
+                        }
+
+                        return (
+                            <Grupo
+                                titulo={e?.titulo}
+                                descricao={e?.descricao}
+                                categoria={e?.categoria}
+                                img={e?.img}
+                                _id={e?._id}
+                                key={e?._id}
+                            />
+                        )
+                    }
+
                     )
                 }
                 <Button
