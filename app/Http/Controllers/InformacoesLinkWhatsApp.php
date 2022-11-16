@@ -116,7 +116,7 @@ class InformacoesLinkWhatsApp extends Controller
                         {
                             "@type": "ListItem",
                             "position": 3,
-                            "name": "Grupo de WhatsApp •●TIᑎKY๛ᗯIᑎKY●•",
+                            "name": "'.@$titulo.'",
                             "item": "'.@$urlCorrent.'"
                         }
                     ]
