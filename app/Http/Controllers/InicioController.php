@@ -40,6 +40,30 @@ class InicioController extends Controller
         );
 
         $conf["meta"] = $metaConstructor->getAllAtributes();
+
+        $conf["meta"] .= '
+        <script type="application/ld+json">
+        {
+            "@type": "WebSite",
+            "@context": "https://schema.org",
+            "name": "zapgrupos.xyz",
+            "description": "O maior repositório de links de grupos de WhatsApp e Telegram do mundo. Encontre links de grupos para encontrar amizagos, etudar, se divertir, etc.",
+            "url": "https://zapgrupos.xyz/",
+            "image": "https://zapgrupos.xyz/img/logo/logo.png",
+            "potentialAction": [
+                {
+                    "@type": "SearchAction",
+                    "target": {
+                        "@type": "EntryPoint",
+                        "urlTemplate": "https://zapgrupos.xyz/search/?q={search_term_string}"
+                    },
+                    "query-input": "required name=search_term_string"
+                }
+            ],
+            "inLanguage": "pt-BR"
+        }
+        </script>
+    ';
         return Inertia::render("v2.0/Externo/Inicio", $conf);
     }
 }
