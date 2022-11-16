@@ -5,6 +5,16 @@ const useDfpSlot = ({ path, size, id }) => {
     const [_size, setSize] = useState(size)
     const [_id, setId] = useState(id)
 
+    /*
+     <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+    <script>
+      window.googletag = window.googletag || {cmd: []};
+      googletag.cmd.push(function() {
+        googletag.defineSlot('/22764566987/c3834062-64c2-11ed-9022-0242ac120002', ['fluid'], 'div-gpt-ad-1668590229667-0').addService(googletag.pubads());
+        googletag.enableServices();
+      });
+    </script> 
+     */
     useEffect(() => {
       const googletag = window.googletag || {};
       googletag.cmd = googletag.cmd || [];
