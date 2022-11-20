@@ -50,7 +50,7 @@ class InformacoesLinkWhatsApp extends Controller
                     "@id": "'.@$urlCorrent.'"
                 },
                 "datePublished": "'.@$conf['grupo'][0]['created_at'].'",
-                "dateModified": "'.@$conf['grupo'][0]['updated_ad'].'",
+                "dateModified": "'.@$conf['grupo'][0]['updated_at'].'",
                 "image": [
                     "'.@$img.'"
                 ],
