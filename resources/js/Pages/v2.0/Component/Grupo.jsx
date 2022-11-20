@@ -147,12 +147,12 @@ const GroupInformationContainerFull = (props) => {
                 </span>
                 <div>
                     <span className="d-block">
-                        <b>Postado em <time itemProp="datePublished" datetime={dateFormat(created_at, "yyyy-mm-dd")}>{dateFormat(created_at, "d 'de' mmmm 'de' yyyy")}</time></b>
+                        <b>Postado em {dateFormat(created_at, "d 'de' mmmm 'de' yyyy")}</b>
                     </span>
                     {
                         updated_at ? (
                             <span className="d-block">
-                                <b>Atualizado em  <time itemProp="dateModified" datetime={dateFormat(updated_at, "yyyy-mm-dd")}>{dateFormat(updated_at, "d 'de' mmmm 'de' yyyy")}</time></b>
+                                <b>Atualizado em  {dateFormat(updated_at, "d 'de' mmmm 'de' yyyy")}</b>
                             </span>
                         ) : (
                             <></>
