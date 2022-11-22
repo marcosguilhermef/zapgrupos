@@ -82,7 +82,7 @@ const GroupsContainer = (props) => {
                 {
                     grupos?.data?.map((e, i, a) => {
 
-                        if ((i == 8) && (i != 0)) {
+                        if ((i == 3) && (i != 0)) {
                             return (
                                 <>
                                     <Grupo
