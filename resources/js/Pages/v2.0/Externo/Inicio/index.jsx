@@ -125,7 +125,7 @@ const GroupsContainer = (props) => {
                     onClick={() => { nextPage(current_page) }}
                     hidden={loading}
                 >
-                    Veja Mais
+                    <a href>Veja Mais</a>
                 </Button>
             </>
         )
