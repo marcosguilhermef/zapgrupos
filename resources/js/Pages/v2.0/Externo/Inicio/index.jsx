@@ -124,10 +124,11 @@ const GroupsContainer = (props) => {
                     className="w-100 mt-5 mais-grupos-button"
                     onClick={() => { nextPage(current_page) }}
                     hidden={loading}
+                    style={{ color: "#ffffff", textDecoration: "none" }}
+                    as="a"
+                    href={null}
                 >
-                    <a 
-                        style={{ color: "#ffffff", textDecoration: "none" }}
-                        href="">Veja Mais</a>
+                    Veja Mais
                 </Button>
             </>
         )
