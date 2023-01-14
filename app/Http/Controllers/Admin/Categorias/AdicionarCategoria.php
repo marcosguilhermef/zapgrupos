@@ -48,7 +48,8 @@ class AdicionarCategoria extends Admin{
     private function validateImput(Request $request){
         $this->validation = Validator::make($request->all(), [
             'categoria' => 'required|unique:Categorias,categoria',
-            'descricao' => 'required'
+            'descricao' => 'required',
+            'img'       => 'mimes:jpg'
         ]);
 
     }
