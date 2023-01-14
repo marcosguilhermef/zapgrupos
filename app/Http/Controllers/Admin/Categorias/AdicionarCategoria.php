@@ -56,7 +56,7 @@ class AdicionarCategoria extends Admin{
     private function salvarImagem($Image){
         $img = getimagesize( $Image );
 
-        $type = ".png";
+        $type = ".jpg";
 
         $imgStr = str_replace('data:'.$img['mime'].';base64,', '', $Image);
         $imgStr = str_replace(' ', '+', $imgStr);
