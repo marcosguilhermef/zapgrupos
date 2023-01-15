@@ -18,7 +18,8 @@
     <script src="{{ mix('/js/app.js') }}" defer></script> 
     
     <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
-
+    <meta name="coinzilla" content="d26db9f445cba783ca304a05a0430daf" />
+    
     <script type="text/javascript">
       (function(c,l,a,r,i,t,y){
           c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
