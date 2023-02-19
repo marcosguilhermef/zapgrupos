@@ -111,13 +111,16 @@ const GrupoInfo = (props) => {
 }
 
 const GroupInformationContainer = (props) => {
-    const { titulo, categoria, descricao, _id } = props
+    const { titulo, categoria, descricao, type, _id } = props
 
     return (
         <div className="grupo-informations" itemscope>
             <h6 itemProp="name">{titulo}</h6>
             <span className="grupo-category">
-                {categoria} <img src="/img/generico/whatsapp.png" class="" />
+                    {categoria} 
+                    {
+                       type  == "WhatsApp" ? (<img src="/img/generico/whatsapp.png" class="" />) : (<img src="/img/generico/telegram.png" class="" />)
+                    }
             </span>
 
             <p className="grupo-descricao">
@@ -129,7 +132,7 @@ const GroupInformationContainer = (props) => {
 }
 
 const GroupInformationContainerFull = (props) => {
-    const { titulo, categoria, descricao, _id, sensivel, created_at, updated_at } = props
+    const { titulo, categoria, type, descricao, _id, sensivel, created_at, updated_at } = props
     const content = "Grupo removido por quebrar nossas políticas de conteúdo."
     const URL = `/grupo/redirect/${_id}`;
 
@@ -143,7 +146,10 @@ const GroupInformationContainerFull = (props) => {
                 <h6 itemProp="name">{Issensivel(titulo)}</h6>
 
                 <span className="grupo-category">
-                    {categoria} <img src="/img/generico/whatsapp.png" class="" />
+                {categoria} 
+                    {
+                       type  == "WhatsApp" ? (<img src="/img/generico/whatsapp.png" class="" />) : (<img src="/img/generico/telegram.png" class="" />)
+                    }
                 </span>
                 <div>
                     <span className="d-block">
@@ -177,7 +183,7 @@ const GroupInformationContainerFull = (props) => {
 
 const Grupo = (props) => {
 
-    const { titulo, descricao, _id, categoria, sensivel, img, isInfo, created_at, updated_at } = props
+    const { titulo, descricao, _id, type, categoria, sensivel, img, isInfo, created_at, updated_at } = props
 
     const grupo = () => {
         let url = categoria.toLowerCase().replaceAll(" ", "-")
@@ -239,6 +245,7 @@ const Grupo = (props) => {
                                     categoria={categoria}
                                     descricao={descricao}
                                     _id={_id}
+                                    type={type}
                                 />
                             )
                     }
