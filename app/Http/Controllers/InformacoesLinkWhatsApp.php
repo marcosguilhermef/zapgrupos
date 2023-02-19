@@ -16,7 +16,7 @@ class InformacoesLinkWhatsApp extends Controller
         $parametro = $this->parametrizar($categoria,$id);
         $conf = UsersInfo::getInfor();
         $conf['grupo'] = gruposWhatsApp::getGrupoById($parametro['_id']);
-        $conf['title'] = htmlentities("Grupo de whatsapp: ".$conf['grupo'][0]['titulo']);
+        $conf['title'] = htmlentities("Grupo de ".$conf["grupo"][0]["type"].": ".$conf['grupo'][0]['titulo']);
         $img = @$conf["grupo"][0]["img"][0] !== null ? @$conf["grupo"][0]["img"][0] : url()->to("/").'/img/generico/reactangle.png' ;
         $descricao = htmlentities($conf["grupo"][0]["descricao"]);
         $titulo = htmlentities($conf['title']);
