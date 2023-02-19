@@ -205,23 +205,38 @@ const Grupo = (props) => {
     }
 
     const GroupImage = () => {
-        return (
-            <div className="grupo-image">
-                {
-                    img?.[0] && !sensivel ? (
-                        <Image
-                            src={img?.[0]}
+        const ImageGroup = () => {
+            if(sensivel){
+                return (
+                <Image
+                    src={'/img/generico/reactangle.png'}
+                    thumbnail="true"
+                />
+                )
+
+            }
+
+            if((typeof img !== 'null') && (img?.length !== 0)){
+                return (
+                    <Image
+                            src={img[img?.length - 1]}
                             thumbnail="true"
                             onError={(e) => e.target.src = "/img/generico/reactangle.png"}
                         />
-                    ) : (
-                        <Image
-                            src={'/img/generico/reactangle.png'}
-                            thumbnail="true"
-                        />
-                    )
-                }
+                )
+            }
 
+            return (
+                <Image
+                    src={'/img/generico/reactangle.png'}
+                    thumbnail="true"
+                />
+                )
+
+        }
+        return (
+            <div className="grupo-image">
+                <ImageGroup />
             </div>
         )
     }
