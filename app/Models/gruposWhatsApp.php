@@ -30,7 +30,8 @@ class gruposWhatsApp extends Model
         "telefone",
         "linkOrigem",
         "siteMae",
-        "user_id"
+        "user_id",
+        "type"
     ];
     
     protected static $projections = 
@@ -46,6 +47,7 @@ class gruposWhatsApp extends Model
             "titulo",
             "tipo",
             "ativo",
+            "type",
             "created_at",
             "updated_at"
     ];

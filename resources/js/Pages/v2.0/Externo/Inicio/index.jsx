@@ -92,6 +92,7 @@ const GroupsContainer = (props) => {
                                         img={e?.img}
                                         _id={e?._id}
                                         key={e?._id}
+                                        type={e?.type}
                                     />
                                     <Ads
                                         path='/22764566987/c3834062-64c2-11ed-9022-0242ac120002'
@@ -111,6 +112,7 @@ const GroupsContainer = (props) => {
                                 titulo={e?.titulo}
                                 descricao={e?.descricao}
                                 categoria={e?.categoria}
+                                type={e?.type}
                                 img={e?.img}
                                 _id={e?._id}
                                 key={e?._id}

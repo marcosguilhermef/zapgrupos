@@ -3,7 +3,7 @@ import { Image,Button } from "react-bootstrap"
 import { Grupo } from "./Grupo"
 import "./grupo-info.css"
 const Index = (props) => {
-    const { titulo, descricao, sensivel, _id, categoria, img, created_at, updated_at } = props
+    const { titulo, descricao,type,sensivel, _id, categoria, img, created_at, updated_at } = props
     const URL = `/grupo/redirect/${_id}`;
 
     const grupo = () => {
@@ -28,6 +28,7 @@ const Index = (props) => {
             created_at={created_at}
             updated_at={updated_at}
             isInfo={true}
+            type={type}
         />
     );
 }
