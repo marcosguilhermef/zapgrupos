@@ -62,7 +62,7 @@ class AtualizarCategoria extends Admin{
             return null;
         } 
 
-        $type = ".jpg";
+        $type = "jpg";
 
         $imgStr = str_replace('data:'.$img['mime'].';base64,', '', $Image);
         $imgStr = str_replace(' ', '+', $imgStr);
