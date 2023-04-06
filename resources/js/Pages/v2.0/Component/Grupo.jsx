@@ -219,7 +219,7 @@ const Grupo = (props) => {
             if((typeof img !== 'null') && (img?.length !== 0)){
                 return (
                     <Image
-                            src={img[img?.length - 1]}
+                            src={img?.[img?.length - 1 || 0]}
                             thumbnail="true"
                             onError={(e) => e.target.src = "/img/generico/reactangle.png"}
                         />
